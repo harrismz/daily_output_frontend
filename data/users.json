@@ -1,0 +1,7 @@
+{
+    "success": true,
+    "users": [
+        {"id": 1, "name": "Eddit" ,    "email": "ed@sencha.com"},
+        {"id": 2, "name": "Tommy turnn" , "email": "tommy@sencha.com"}
+    ]
+}
