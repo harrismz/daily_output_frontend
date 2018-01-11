@@ -8,7 +8,7 @@ Ext.define('helloext.controller.Daily_output_controller', {
     ],
     init :  function(){
     	// console.log('hai im helloext')
-    	this.control({
+    	/*this.control({
     		
            //namaview selector : eventhandler 
            daily_output_grid: {
@@ -16,7 +16,7 @@ Ext.define('helloext.controller.Daily_output_controller', {
                 click: this.onClick
            }
 
-    	});
+    	});*/
 
     },
 

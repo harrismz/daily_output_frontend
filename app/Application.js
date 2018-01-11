@@ -6,7 +6,12 @@ Ext.define('helloext.Application', {
     requires: [
         'Ext.container.Viewport',
         'Ext.form.Panel',
-        'Ext.data.proxy.Rest'
+        'Ext.data.proxy.Rest',
+        'Ext.toolbar.Paging',
+        'Ext.grid.plugin.CellEditing',
+        'Ext.ux.ProgressBarPager',
+        'Ext.grid.RowNumberer'
+        // 'KitchenSink.model.Company'
      ],
 
     views: [
@@ -15,7 +20,8 @@ Ext.define('helloext.Application', {
         'user.Edit',
         'user.Create',*/
         'user.ActionPanel',
-        'daily_output_grid'
+        'daily_output_grid',
+        'test'
     ],
 
     controllers: [
@@ -40,16 +46,22 @@ Ext.define('helloext.Application', {
     launch: function() {
         Ext.create('Ext.container.Container', {
             items: [
-                
-                {
-                    xtype:'actionpanel'
-                },
-                {
-                    xtype:'daily_output_grid'
+                {   
+                    title: 'Daily output controll',
+                    xtype:'daily_output_grid',
+                    bbar: {
+                        xtype: 'pagingtoolbar',
+                        pageSize: 50,
+                        store: 'Daily_outputs',
+                        emptyMsg: 'Sorry, No Records Are Available At The Moment.',   
+                        displayInfo: true,
+                        //plugins: new Ext.ux.ProgressBarPager()
+                    }
                 }
             ],
 
             renderTo: "mainPanel"
+            // renderTo: Ext.getBody()
         });
     }
 
