@@ -21,7 +21,7 @@ Ext.define('helloext.Application', {
         'user.Create',*/
         'user.ActionPanel',
         'daily_output_grid',
-        'test'
+        'MyToolBar'
     ],
 
     controllers: [
@@ -46,6 +46,7 @@ Ext.define('helloext.Application', {
     launch: function() {
         Ext.create('Ext.container.Container', {
             items: [
+                
                 {   
                     title: 'Daily output controll',
                     xtype:'daily_output_grid',
@@ -55,10 +56,16 @@ Ext.define('helloext.Application', {
                         store: 'Daily_outputs',
                         emptyMsg: 'Sorry, No Records Are Available At The Moment.',   
                         displayInfo: true,
-                        //plugins: new Ext.ux.ProgressBarPager()
-                    }
+                        plugins: new Ext.ux.ProgressBarPager()
+                    },
+                    tbar:{
+                        xtype: 'mytoolbar'
+                    },
+                    height: 500,
                 }
             ],
+
+            
 
             renderTo: "mainPanel"
             // renderTo: Ext.getBody()

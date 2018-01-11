@@ -27,27 +27,11 @@ Ext.define('helloext.view.daily_output_grid', {
     autoScroll: true,
 
     store:  'Daily_outputs', //store = colletion
-	
-    // title:'Daily Grid',
-
-	/*initComponent: function() {
-         
-        this.columns = [
-            { text: 'id',  dataIndex: 'id', locked   : true },
-            {text: 'line_name', editor: 'textfield', dataIndex: 'line_name', locked   : true},
-            {text: 'time',editor: 'textfield', dataIndex: 'time',  locked   : true }
-
-        ]
-
-        // this.store.load();
-
-        this.callParent(arguments);
-    },*/
 
     columns : [
         { text: 'id',  dataIndex: 'id', locked   : true  /*/*flex: 1*/},
-        {text: 'line_name', editor: 'textfield', dataIndex: 'line_name', locked   : true /*flex: 1*/},
-        {text: 'time',editor: 'textfield', dataIndex: 'time',  locked   : true },
+        {text: 'line_name', editor: 'textfield', dataIndex: 'line_name'/*flex: 1*/},
+        {text: 'time',editor: 'textfield', dataIndex: 'time' },
 
         {text: 'minute',editor: 'textfield', dataIndex: 'minute', /*flex: 1*/},
         {text: 'target_sop',editor: 'textfield', dataIndex: 'target_sop', /*flex: 1*/},
@@ -57,13 +41,13 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {text: 'delay_type', /*dataIndex: 'delay_type',*/  columns:[
             {text: 'BOARD DELAY',editor: 'textfield', dataIndex: '', /*flex: 1*/},
-            {text: 'PART DELAY',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'EQP TROUBLE',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'QUALITY PROB',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'BAL. PROB',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'OTHERS',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'SUPPORT',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
-            {text: 'CHANGE MODEL',editor: 'textfield', dataIndex: 'delay_type', /*flex: 1*/},
+            {text: 'PART DELAY',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'EQP TROUBLE',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'QUALITY PROB',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'BAL. PROB',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'OTHERS',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'SUPPORT',editor: 'textfield', dataIndex: '', /*flex: 1*/},
+            {text: 'CHANGE MODEL',editor: 'textfield', dataIndex: '', /*flex: 1*/},
         ]},
         
         {text: 'problem',editor: 'textarea', dataIndex: 'problem', /*flex: 1*/},

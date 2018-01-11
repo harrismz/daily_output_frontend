@@ -8,15 +8,21 @@ Ext.define('helloext.controller.Daily_output_controller', {
     ],
     init :  function(){
     	// console.log('hai im helloext')
-    	/*this.control({
+    	this.control({
     		
            //namaview selector : eventhandler 
-           daily_output_grid: {
+           /*daily_output_grid: {
                 itemdblclick: this.editItem,
                 click: this.onClick
+           }*/
+
+           'mytoolbar': {
+                'click #btnAdd' : function(){
+                    console.log('click')
+                }
            }
 
-    	});*/
+    	});
 
     },
 
