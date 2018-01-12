@@ -10,30 +10,26 @@ Ext.define('helloext.Application', {
         'Ext.toolbar.Paging',
         'Ext.grid.plugin.CellEditing',
         'Ext.ux.ProgressBarPager',
-        'Ext.grid.RowNumberer'
+        'Ext.grid.RowNumberer',
+        'Ext.grid.plugin.RowEditing'
         // 'KitchenSink.model.Company'
      ],
 
     views: [
         // TODO: add views here
-        /*'user.List',
-        'user.Edit',
-        'user.Create',*/
-        'user.ActionPanel',
+        /*'user.ActionPanel',*/
+        'Create',
         'daily_output_grid',
         'MyToolBar'
     ],
 
     controllers: [
-        // TODO: add controllers here
-        /*'Users'*/
-        'Daily_output_controller'
+        'Daily_outputs',
+        'MyToolBar'
     ],
 
     //Collection
     stores: [
-        // TODO: add stores here
-        /*'Users'*/
         'Daily_outputs'
     ],
 
@@ -48,8 +44,14 @@ Ext.define('helloext.Application', {
             items: [
                 
                 {   
-                    title: 'Daily output controll',
                     xtype:'daily_output_grid',
+
+                    title: 'Daily output controll',
+                    
+                    tbar:{
+                        xtype: 'MyToolBar'
+                    },
+
                     bbar: {
                         xtype: 'pagingtoolbar',
                         pageSize: 50,
@@ -58,9 +60,7 @@ Ext.define('helloext.Application', {
                         displayInfo: true,
                         plugins: new Ext.ux.ProgressBarPager()
                     },
-                    tbar:{
-                        xtype: 'mytoolbar'
-                    },
+                    
                     height: 500,
                 }
             ],
