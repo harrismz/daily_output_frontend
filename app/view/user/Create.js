@@ -7,7 +7,7 @@ Ext.define('helloext.view.user.Create', {
 
 	autoShow: true,
 
-	initComponent(){
+	initComponent: function (){
 
 		//console.log('edit view initialize')
 

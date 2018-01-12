@@ -13,6 +13,9 @@ Ext.define('helloext.view.daily_output_grid', {
 
     layout: 'fit',
 
+    /*width: 1335,
+    height: 75,*/
+
     columnLines : true,
     
     multiSelect : true,

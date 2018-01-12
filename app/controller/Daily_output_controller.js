@@ -18,7 +18,7 @@ Ext.define('helloext.controller.Daily_output_controller', {
 
            'mytoolbar': {
                 'click #btnAdd' : function(){
-                    console.log('click')
+                    console.log('click');
                 }
            }
 
@@ -26,16 +26,16 @@ Ext.define('helloext.controller.Daily_output_controller', {
 
     },
 
-    editItem(grid, record ){
-        //console.log('Double clicked on ' + record.get('name'));
-        // console.log('item clicked' + {grid, record})
-        /*var view = Ext.widget('useredit');
-        view.down('form').loadRecord(record);*/
-        console.log('eidt', record)
+    editItem: function (grid, record){
+        // //console.log('Double clicked on ' + record.get('name'));
+        // // console.log('item clicked' + {grid, record})
+        // /*var view = Ext.widget('useredit');
+        // view.down('form').loadRecord(record);
+        // console.log('eidt', record)*/
     },
 
-    onClick(){
-        console.log('on click')
+    onClick: function (){
+        console.log('on click');
     }
 
 });

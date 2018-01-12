@@ -29,7 +29,7 @@ Ext.define('helloext.controller.Users', {
 
     },
 
-    updateUser(button){
+    updateUser: function (button){
     	console.log('updateUser');
 
     	var win    = button.up('window'),
@@ -43,12 +43,12 @@ Ext.define('helloext.controller.Users', {
     	this.getUsersStore().sync();
     },
 
-    btnAddonClick(param){
+    btnAddonClick: function (param){
         var view = Ext.widget('userCreate');
 
     },
 
-    btnDeleteOnClick(){
+    btnDeleteOnClick: function (){
         console.log('btnDeleteOnClick');
         if (userlist.getSelectionModel().hasSelection()) {
            var row = userlist.getSelectionModel().getSelection()[0];
@@ -56,14 +56,14 @@ Ext.define('helloext.controller.Users', {
         }   
     },
 
-    editUser(grid, record){
+    editUser: function (grid, record){
     	//console.log('Double clicked on ' + record.get('name'));
     	var view = Ext.widget('useredit');
 		view.down('form').loadRecord(record);
 
     },
 
-    btnSaveOnClick(param){
+    btnSaveOnClick: function (param){
     	var win    = param.up('window'),
         form   = win.down('form'), 
         values = form.getValues();
