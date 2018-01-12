@@ -19,6 +19,8 @@ Ext.define('helloext.view.daily_output_grid', {
 	extend: 'Ext.grid.Panel',
 
 	alias:'widget.daily_output_grid',
+
+    id: 'doGrid',
     
     xtype: 'locking-grid',
 

@@ -30,7 +30,7 @@ Ext.define('helloext.controller.MyToolBar', {
     },
 
     btnDeleteOnClick: function (){
-        var view = this.getView('daily_output_grid');
-        console.log(view, "btnDeleteOnClick")
+        var rows = this.up("panel").down("doGrid").getSelectionModel().getSelection();
+        console.log(rows)
     }
 });
