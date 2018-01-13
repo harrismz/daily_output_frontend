@@ -11,7 +11,9 @@ Ext.define('helloext.Application', {
         'Ext.grid.plugin.CellEditing',
         'Ext.ux.ProgressBarPager',
         'Ext.grid.RowNumberer',
-        'Ext.grid.plugin.RowEditing'
+        'Ext.grid.plugin.RowEditing',
+        'Ext.form.field.ComboBox',
+        'Ext.form.field.Date'
         // 'KitchenSink.model.Company'
      ],
 
@@ -30,13 +32,15 @@ Ext.define('helloext.Application', {
 
     //Collection
     stores: [
-        'Daily_outputs'
+        'Daily_outputs',
+        'timeCombos'
     ],
 
     //model
     models:[
         /*'User'*/
-        'Daily_output'
+        'Daily_output',
+        'timeCombo'
     ],
 
     launch: function() {

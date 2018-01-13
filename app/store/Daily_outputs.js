@@ -5,9 +5,11 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
     autoSync: true,
     pageSize: 7,
     remoteSort: true,
+
     proxy: {
         type: 'rest',
-        enablePaging:true,  
+        enablePaging:true,
+        //extraParams: {tanggal: new Date() },  
         url: 'http://localhost/daily_output/public/api/daily_outputs',
         reader:{
             root: 'data',

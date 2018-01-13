@@ -13,7 +13,13 @@ Ext.define('helloext.controller.MyToolBar', {
 
             'MyToolBar button#btnDelete':{
                 click: this.btnDeleteOnClick
-            }            	
+            },
+
+            'MyToolBar #tanggal':{
+                change: this.onTanggalChanges
+            }
+
+
     	});
     	
     },
@@ -26,11 +32,42 @@ Ext.define('helloext.controller.MyToolBar', {
         //console.log(model);
         store.insert(0, model );
         RowEditing.startEdit(0, 0);
-        
     },
 
-    btnDeleteOnClick: function (){
-        var rows = this.up("panel").down("doGrid").getSelectionModel().getSelection();
-        console.log(rows)
+    btnDeleteOnClick: function (button){
+        var grid = Ext.ComponentQuery.query('daily_output_grid')[0]; //ambil object grid
+
+        if (grid) {
+            var sm = grid.getSelectionModel(); //ambil model dari grid tsb, *daily_ouput //contructor   
+            var rs = sm.getSelection(); //ambil object modelnya, berupa array
+            
+            if (!rs.length) {
+              Ext.Msg.alert('Info', 'No Record Selected');
+              return;
+            }
+            Ext.Msg.confirm('Remove Record', 
+              'Are you sure you want to delete?', 
+              function (button) {
+                if (button == 'yes') {
+                  grid.store.remove(rs[0]);
+                }
+            });
+        }    
+    },
+
+    onTanggalChanges: function (component){
+        var store = this.getDaily_outputsStore();
+        var tanggal = component.rawValue;
+        // console.log(tanggal)
+        store.proxy.setExtraParam('tanggal', tanggal);
+        store.load({
+            callback: function (){
+                console.log(store.totalCount)
+                if (store.totalCount == 0){
+                    console.log('data empty')
+                } 
+            }
+        }); 
+        
     }
 });

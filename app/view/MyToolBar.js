@@ -12,6 +12,16 @@ Ext.define("helloext.view.MyToolBar", {
             xtype:'button',
             id:'btnDelete',
             text: 'Delete'
+        }, '-',
+        {
+            xtype: 'datefield',
+            id: 'tanggal',
+            format: 'Y-m-d',          
+            allowBlank: true,
+            emptyText:'yyyy-mm-dd',
+            value: new Date(),
+            //renderer: formatDate
         }
+
     ]
 });
