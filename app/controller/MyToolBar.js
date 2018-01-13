@@ -17,7 +17,11 @@ Ext.define('helloext.controller.MyToolBar', {
 
             'MyToolBar #tanggal':{
                 change: this.onTanggalChanges
-            }
+            },
+
+            'MyToolBar #comboShift':{
+                change: this.onComboShiftChange
+            },            
 
 
     	});
@@ -55,19 +59,54 @@ Ext.define('helloext.controller.MyToolBar', {
         }    
     },
 
-    onTanggalChanges: function (component){
+    onTanggalChanges: function (component, value){
         var store = this.getDaily_outputsStore();
-        var tanggal = component.rawValue;
-        // console.log(tanggal)
+        var tanggal = value;//component.rawValue;
+ 
         store.proxy.setExtraParam('tanggal', tanggal);
         store.load({
             callback: function (){
-                console.log(store.totalCount)
+                
                 if (store.totalCount == 0){
-                    console.log('data empty')
+                    console.log('data empty');
+
+                    var a =[{id:1, name: '06-07'},
+                        {id:2, name: '07-08'},
+                        {id:3, name: '08-09'},
+                        {id:4, name: '09-10'},
+                        {id:5, name: '10-11'},
+                        {id:6, name: '11-12'},
+                        {id:7, name: '12-13'},
+                        {id:8, name: '13-14'},
+                        {id:9, name: '14-15'},
+                        {id:10, name: '15-16'}
+                    ];
+
+                    var b = [
+                        {id:11, name: '16-17'},
+                        {id:12, name: '18-19'},
+                        {id:13, name: '19-20'},
+                        {id:14, name: '20-21'},
+                        {id:15, name: '21-22'},
+                        {id:16, name: '22-23'},
+                        {id:17, name: '23-24'}
+                    ];
+
+                    comboShift = component.next('combo')
+                    console.log(comboShift.value)
+
+                    if(comboShift.value == 'B'){
+                        console.log('comboShift B')
+                    }
+
+                    
                 } 
             }
         }); 
         
+    },
+
+    onComboShiftChange: function (component, value){
+        console.log({component, value})
     }
 });

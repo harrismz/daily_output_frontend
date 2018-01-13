@@ -21,6 +21,16 @@ Ext.define("helloext.view.MyToolBar", {
             emptyText:'yyyy-mm-dd',
             value: new Date(),
             //renderer: formatDate
+        }, '-',
+        {   
+            text: 'comboShift',
+            xtype: 'combo',
+            store: 'comboShifts',
+            emptyText : 'Shift',
+            id: 'comboShift',
+            displayField:'name',
+            valueField:'name',
+             queryMode: 'local'
         }
 
     ]

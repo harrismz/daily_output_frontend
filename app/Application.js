@@ -33,7 +33,8 @@ Ext.define('helloext.Application', {
     //Collection
     stores: [
         'Daily_outputs',
-        'timeCombos'
+        'timeCombos',
+        'comboShifts'
     ],
 
     //model
