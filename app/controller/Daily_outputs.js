@@ -17,9 +17,9 @@ Ext.define('helloext.controller.Daily_outputs', {
     },
 
     editItem: function (grid, record){
-        console.log({grid, record})
+        console.log({grid, record});
         if (record.field == "osc_output"){
-            console.log('on edit')
+            console.log('on edit');
         }
     },
 

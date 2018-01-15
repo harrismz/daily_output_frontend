@@ -30,7 +30,9 @@ Ext.define("helloext.view.MyToolBar", {
             id: 'comboShift',
             displayField:'name',
             valueField:'name',
-             queryMode: 'local'
+            queryMode: 'local',
+            forceSelection: true,
+            value:'A'
         }
 
     ]

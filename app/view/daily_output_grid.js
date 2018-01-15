@@ -17,6 +17,8 @@ var RowEditing = Ext.create('Ext.grid.plugin.RowEditing',{
     }
 });
 
+
+
 Ext.define('helloext.view.daily_output_grid', {
 	extend: 'Ext.grid.Panel',
 
@@ -31,6 +33,10 @@ Ext.define('helloext.view.daily_output_grid', {
     layout: 'fit',
 
     plugins: [ /*CellEditing,*/ RowEditing ],
+
+    features: [{
+        ftype: 'summary'
+    }],
 
     columnLines : true,
     
@@ -58,12 +64,12 @@ Ext.define('helloext.view.daily_output_grid', {
                                 valueField:'name',
                                  queryMode: 'local' }, dataIndex: 'time' },
 
-        {text: 'minute', dataIndex: 'minute' ,field: {xtype: 'textfield', id:'edtMinute' }},
+        {text: 'minute', dataIndex: 'minute' ,field: {xtype: 'numberfield', id:'edtMinute' }, summaryType: 'sum', dock:'bottom' },
 
-        {text: 'target_sop', dataIndex: 'target_sop', field: {xtype: 'textfield', id:'edtTargetSop' } },
+        {text: 'target_sop', dataIndex: 'target_sop', field: {xtype: 'numberfield', id:'edtTargetSop' } },
 
         {text: 'osc_output', dataIndex: 'osc_output', 
-            field: { xtype: 'textfield',
+            field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
                 listeners:{
@@ -94,19 +100,19 @@ Ext.define('helloext.view.daily_output_grid', {
             } 
         },
 
-        {text: 'plus_minus', dataIndex: 'plus_minus', field: {xtype: 'textfield', id: 'edtPlusMinus'} },
+        {text: 'plus_minus', dataIndex: 'plus_minus', field: {xtype: 'textfield', id: 'edtPlusMinus', disabled:true} },
 
-        {text: 'lost_hour', dataIndex: 'lost_hour', field: {xtype: 'textfield'}},
+        {text: 'lost_hour', dataIndex: 'lost_hour', field: {xtype: 'textfield', disabled:true}},
 
         {text: 'delay_type',  columns:[
-            {text: 'BOARD DELAY', dataIndex: '', field: {xtype: 'textfield'}},
-            {text: 'PART DELAY', dataIndex: '', field: {xtype: 'textfield'} },
-            {text: 'EQP TROUBLE', dataIndex: '', field: {xtype: 'textfield'} },
-            {text: 'QUALITY PROB', dataIndex: '', field: {xtype: 'textfield'}},
-            {text: 'BAL. PROB', dataIndex: '', field: {xtype: 'textfield'} },
-            {text: 'OTHERS', dataIndex: '' , field: {xtype: 'textfield'} },
-            {text: 'SUPPORT', dataIndex: '', field: {xtype: 'textfield'} },
-            {text: 'CHANGE MODEL', dataIndex: '', field: {xtype: 'textfield'} },
+            {text: 'BOARD DELAY', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'PART DELAY', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'EQP TROUBLE', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'QUALITY PROB', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom'},
+            {text: 'BAL. PROB', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'OTHERS', dataIndex: '' , field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'SUPPORT', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
+            {text: 'CHANGE MODEL', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
         ]},
         
         {text: 'problem',editor: 'textarea', dataIndex: 'problem',field: {xtype: 'textfield'}},
@@ -117,9 +123,15 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
-        {text: 'shift', dataIndex: 'shift', field: {xtype: 'textfield'}},
+        {text: 'shift', dataIndex: 'shift', field: {xtype: 'textfield', disabled:true}},
 
-        {text: 'tanggal', dataIndex: 'tanggal',field: {xtype: 'textfield'}}
+        {text: 'tanggal', dataIndex: 'tanggal', field: {
+            xtype: 'datefield',
+            format: 'Y-m-d',          
+            allowBlank: true,
+            emptyText:'yyyy-mm-dd',
+            disabled: true
+        }}
 
     ]
 

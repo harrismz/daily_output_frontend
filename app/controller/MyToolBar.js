@@ -61,14 +61,14 @@ Ext.define('helloext.controller.MyToolBar', {
 
     onTanggalChanges: function (component, value){
         var store = this.getDaily_outputsStore();
-        var tanggal = value;//component.rawValue;
- 
+        var tanggal = component.rawValue;
+        console.log(tanggal)
         store.proxy.setExtraParam('tanggal', tanggal);
         store.load({
             callback: function (){
                 
                 if (store.totalCount == 0){
-                    console.log('data empty');
+                    //console.log('data empty');
 
                     var a =[{id:1, name: '06-07'},
                         {id:2, name: '07-08'},
@@ -93,11 +93,25 @@ Ext.define('helloext.controller.MyToolBar', {
                     ];
 
                     comboShift = component.next('combo')
-                    console.log(comboShift.value)
+                    
 
-                    if(comboShift.value == 'B'){
-                        console.log('comboShift B')
+                    //var store = this.getDaily_outputsStore();   
+                    if(comboShift.value == 'A'){
+                        var counter = 0;
+                        for (var i = (a.length-1) ; i >= 0; i--) {
+                            //console.log(value, tanggal)
+                            var model = new helloext.model.Daily_output({time: a[i].name, shift: 'A', tanggal: tanggal});
+                            store.insert(0,model);
+                        }
+
+                    }else{
+                        for (var i = (b.length-1); i >= 0; i--) {
+                            var model = new helloext.model.Daily_output({time: b[i].name, shift: 'B', tanggal: tanggal});
+                            store.insert(0,model);
+                        }
                     }
+
+                    RowEditing.startEdit(0, 0);
 
                     
                 } 

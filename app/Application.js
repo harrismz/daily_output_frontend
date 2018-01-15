@@ -13,7 +13,8 @@ Ext.define('helloext.Application', {
         'Ext.grid.RowNumberer',
         'Ext.grid.plugin.RowEditing',
         'Ext.form.field.ComboBox',
-        'Ext.form.field.Date'
+        'Ext.form.field.Date',
+        'Ext.grid.feature.Summary'
         // 'KitchenSink.model.Company'
      ],
 
@@ -47,7 +48,6 @@ Ext.define('helloext.Application', {
     launch: function() {
         Ext.create('Ext.container.Container', {
             items: [
-                
                 {   
                     xtype:'daily_output_grid',
 
