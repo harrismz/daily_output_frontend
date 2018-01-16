@@ -11,7 +11,8 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
         enablePaging:true,
         extraParams: {
             tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
-            shift: 'A'
+            shift: 'A',
+            line_name: 1
           },  
         url: 'http://localhost/daily_output/public/api/daily_outputs',
         reader:{

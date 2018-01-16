@@ -27,6 +27,7 @@ Ext.define('helloext.Application', {
     ],
 
     controllers: [
+        'Main',
         'Daily_outputs',
         'MyToolBar'
     ],
@@ -34,8 +35,9 @@ Ext.define('helloext.Application', {
     //Collection
     stores: [
         'Daily_outputs',
-        'timeCombos',
-        'comboShifts'
+        'timeCombos', //untuk combobox time 06-07 dll
+        'comboShifts', //untuk combobox shift
+        'lines' //untuk combobox lines
     ],
 
     //model
@@ -46,7 +48,8 @@ Ext.define('helloext.Application', {
     ],
 
     launch: function() {
-        Ext.create('Ext.container.Container', {
+        
+        /*Ext.create('Ext.container.Container', {
             items: [
                 {   
                     xtype:'daily_output_grid',
@@ -69,12 +72,10 @@ Ext.define('helloext.Application', {
                     height: 500,
                 }
             ],
-
-            
-
             renderTo: "mainPanel"
             // renderTo: Ext.getBody()
-        });
+        });*/
+        Ext.create('helloext.view.Viewport', {id: 'viewport'});
     }
 
 });

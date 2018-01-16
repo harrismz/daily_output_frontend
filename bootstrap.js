@@ -866,6 +866,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.store.Daily_outputs": [],
   "helloext.store.Users": [],
   "helloext.store.comboShifts": [],
+  "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.view.Create": [],
   "helloext.view.Main": [],
@@ -1896,6 +1897,7 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.store.Daily_outputs": [],
   "helloext.store.Users": [],
   "helloext.store.comboShifts": [],
+  "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.view.Create": [
     "widget.booksform"

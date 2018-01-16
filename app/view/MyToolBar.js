@@ -38,10 +38,17 @@ Ext.define("helloext.view.MyToolBar", {
             value:'A'
         },
         {
-            xtype:'textfield',
-            id:'edtLine',
+            text: 'Line',
+            xtype: 'combo',
             fieldLabel:'Line',
-            tooltip:'Line' 
+            store: 'lines',
+            emptyText : 'lines',
+            id: 'comboLine',
+            displayField:'name',
+            valueField:'name',
+            queryMode: 'local',
+            forceSelection: true,
+            value:'1'
             
         }
 
