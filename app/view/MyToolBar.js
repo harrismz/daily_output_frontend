@@ -20,11 +20,14 @@ Ext.define("helloext.view.MyToolBar", {
             allowBlank: true,
             emptyText:'yyyy-mm-dd',
             value: new Date(),
+            fieldLabel:'Tanggal'
             //renderer: formatDate
         }, '-',
         {   
             text: 'comboShift',
             xtype: 'combo',
+            fieldLabel:'Shift',
+            labelPad: 15,
             store: 'comboShifts',
             emptyText : 'Shift',
             id: 'comboShift',
@@ -33,6 +36,13 @@ Ext.define("helloext.view.MyToolBar", {
             queryMode: 'local',
             forceSelection: true,
             value:'A'
+        },
+        {
+            xtype:'textfield',
+            id:'edtLine',
+            fieldLabel:'Line',
+            tooltip:'Line' 
+            
         }
 
     ]

@@ -6,25 +6,30 @@ Ext.define('helloext.controller.Daily_outputs', {
     models:[
         'Daily_output'
     ],
+
+    views: [ 'daily_output_grid' ],
     init :  function(){
     	// console.log('hai im helloext')
     	this.control({
     		
-           
+           'daily_output_grid': {
+                edit: this.onEditItem,
+
+                beforesync: this.onBeforeSync
+           }
  
     	});
 
     },
 
-    editItem: function (grid, record){
-        console.log({grid, record});
-        if (record.field == "osc_output"){
-            console.log('on edit');
-        }
+    onEditItem: function (grid, e){
+        // console.log({grid, e});
+        /*e.record.commit();*/
+
     },
 
-    onClick: function (){
-        console.log('on click');
+    onBeforeSync: function (options, eOpts){
+        // console.log({options, eOpts});
     }
 
 });

@@ -8,6 +8,16 @@ Ext.define('helloext.model.Daily_output', {
      'osc_output',
      'plus_minus',
      'lost_hour',
+     //new column
+     'board_delay',
+     'part_delay',
+     'eqp_trouble',
+     'quality_problem_delay',
+     'bal_problem',
+     'others',
+     'support',
+     'change_model',
+     //end new column
      'delay_type',
      'problem',
      'dic',

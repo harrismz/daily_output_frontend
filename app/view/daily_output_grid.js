@@ -54,21 +54,48 @@ Ext.define('helloext.view.daily_output_grid', {
     store:  'Daily_outputs', //store = colletion
 
     columns : [
-        { text: 'id',  dataIndex: 'id', locked   : true },
+        { text: 'id',  dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
 
         {text: 'line_name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
 
-        {text: 'time', field: {xtype: 'combobox', 
-                                store: 'timeCombos',
-                                displayField:'name',
-                                valueField:'name',
-                                 queryMode: 'local' }, dataIndex: 'time' },
+        {text: 'time', field: {
+            xtype: 'combobox', 
+            store: 'timeCombos',
+            displayField:'name',
+            valueField:'name',
+            queryMode: 'local' }, 
+            dataIndex: 'time'
+        },
 
-        {text: 'minute', dataIndex: 'minute' ,field: {xtype: 'numberfield', id:'edtMinute' }, summaryType: 'sum', dock:'bottom' },
+        {
+            text: 'minute',
+            dataIndex: 'minute' ,
+            field: {xtype: 'numberfield', id:'edtMinute' },
+            summaryType: 'sum',
+            dock:'bottom',
+            summaryRenderer: function (value){
+                if (value === null || value === "") {
+                     value = 0;
+                   }                
+                return value;
+            }
+        },
 
-        {text: 'target_sop', dataIndex: 'target_sop', field: {xtype: 'numberfield', id:'edtTargetSop' } },
+        {   
+            text: 'target_sop',
+            dataIndex: 'target_sop',
+            summaryType: 'sum',
+            dock:'bottom',
+            field: {xtype: 'numberfield', id:'edtTargetSop' },
+            summaryRenderer: function (value){
+                if (value === null || value === "") {
+                     value = 0;
+                   }                
+                return value;
+            }
+        },
 
-        {text: 'osc_output', dataIndex: 'osc_output', 
+        {text: 'osc_output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
             field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
@@ -97,23 +124,53 @@ Ext.define('helloext.view.daily_output_grid', {
 
                     }
                 } 
+            },
+            summaryRenderer: function (value){
+                if (value === null || value === "") {
+                     value = 0;
+                   }                
+                return value;
             } 
         },
 
-        {text: 'plus_minus', dataIndex: 'plus_minus', field: {xtype: 'textfield', id: 'edtPlusMinus', disabled:true} },
+        {
+            text: 'Plus Minus',
+            dataIndex: 'plus_minus',
+            summaryType: 'sum',
+            dock:'bottom',
+            field: {
+                xtype: 'textfield',
+                id: 'edtPlusMinus', 
+            },
+            summaryRenderer: function (value){
+            if (value === null || value === "") {
+                value = 0;
+            }                
+            return value;
+            }   
+        },
 
-        {text: 'lost_hour', dataIndex: 'lost_hour', field: {xtype: 'textfield', disabled:true}},
+        {
+            text: 'lost_hour', 
+            dataIndex: 'lost_hour', 
+            summaryType: 'sum',
+            dock:'bottom',
+            field: {xtype: 'textfield', /*disabled:true*/}
+        },
 
-        {text: 'delay_type',  columns:[
-            {text: 'BOARD DELAY', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'PART DELAY', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'EQP TROUBLE', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'QUALITY PROB', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom'},
-            {text: 'BAL. PROB', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'OTHERS', dataIndex: '' , field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'SUPPORT', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-            {text: 'CHANGE MODEL', dataIndex: '', field: {xtype: 'textfield'},summaryType: 'sum', dock:'bottom' },
-        ]},
+        {
+            text: 'DELAY TYPE',
+              columns:[
+                {text: 'BOARD DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'PART DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'EQP TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'QUALITY PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
+                {text: 'BAL. PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'CHANGE MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+              ]
+        },
         
         {text: 'problem',editor: 'textarea', dataIndex: 'problem',field: {xtype: 'textfield'}},
 

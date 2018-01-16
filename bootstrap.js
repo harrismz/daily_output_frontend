@@ -865,16 +865,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Users": [],
+  "helloext.store.comboShifts": [],
   "helloext.store.timeCombos": [],
   "helloext.view.Create": [],
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
   "helloext.view.Viewport": [],
-  "helloext.view.daily_output_grid": [],
-  "helloext.view.user.ActionPanel": [],
-  "helloext.view.user.Create": [],
-  "helloext.view.user.Edit": [],
-  "helloext.view.user.List": []
+  "helloext.view.daily_output_grid": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1898,6 +1895,7 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Users": [],
+  "helloext.store.comboShifts": [],
   "helloext.store.timeCombos": [],
   "helloext.view.Create": [
     "widget.booksform"
@@ -1913,18 +1911,6 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.daily_output_grid": [
     "widget.daily_output_grid",
     "widget.locking-grid"
-  ],
-  "helloext.view.user.ActionPanel": [
-    "widget.actionpanel"
-  ],
-  "helloext.view.user.Create": [
-    "widget.userCreate"
-  ],
-  "helloext.view.user.Edit": [
-    "widget.useredit"
-  ],
-  "helloext.view.user.List": [
-    "widget.userlist"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");

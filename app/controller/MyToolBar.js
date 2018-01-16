@@ -2,7 +2,7 @@ Ext.define('helloext.controller.MyToolBar', {
     extend: 'Ext.app.Controller',
     models:[ 'Daily_output' ],
     stores:[ 'Daily_outputs' ],
-    views:['daily_output_grid', 'Create' ],
+    views:['daily_output_grid'],
     init : function (){
     	console.log('init MyToolBar controller ')
 
@@ -21,6 +21,10 @@ Ext.define('helloext.controller.MyToolBar', {
 
             'MyToolBar #comboShift':{
                 change: this.onComboShiftChange
+            },
+
+            'MyToolBar #btnTest':{
+                click: this.onBtnTestOnClick
             },            
 
 
@@ -29,11 +33,9 @@ Ext.define('helloext.controller.MyToolBar', {
     },
 
     btnAddOnClick: function(){
-    	//var view = Ext.widget('create');
-        //var store = Ext.create('helloext.store.Daily_outputs', {} );
+
         var store = this.getDaily_outputsStore();
         var model = new helloext.model.Daily_output();
-        //console.log(model);
         store.insert(0, model );
         RowEditing.startEdit(0, 0);
     },
@@ -62,15 +64,17 @@ Ext.define('helloext.controller.MyToolBar', {
     onTanggalChanges: function (component, value){
         var store = this.getDaily_outputsStore();
         var tanggal = component.rawValue;
-        console.log(tanggal)
+        // console.log(tanggal)
         store.proxy.setExtraParam('tanggal', tanggal);
         store.load({
-            callback: function (){
+            scope: this,
+            callback: function (records, operation, success){
                 
                 if (store.totalCount == 0){
                     //console.log('data empty');
 
-                    var a =[{id:1, name: '06-07'},
+                    var a =[
+                        {id:1, name: '06-07'},
                         {id:2, name: '07-08'},
                         {id:3, name: '08-09'},
                         {id:4, name: '09-10'},
@@ -92,26 +96,28 @@ Ext.define('helloext.controller.MyToolBar', {
                         {id:17, name: '23-24'}
                     ];
 
-                    comboShift = component.next('combo')
-                    
-
-                    //var store = this.getDaily_outputsStore();   
+                    comboShift = component.next('combo') //get comboShift
+                    store.loadData([],false); //empty the local store without firing API  
+                    var Array_model = [];
                     if(comboShift.value == 'A'){
-                        var counter = 0;
-                        for (var i = (a.length-1) ; i >= 0; i--) {
-                            //console.log(value, tanggal)
+                        for (var i = 0; i < a.length; i++) {
+                            
                             var model = new helloext.model.Daily_output({time: a[i].name, shift: 'A', tanggal: tanggal});
-                            store.insert(0,model);
+                            //console.log(model.data)
+                            Array_model.push(model);
+                            // store.insert(0,model);
                         }
 
                     }else{
-                        for (var i = (b.length-1); i >= 0; i--) {
+                        for (var i = 0; i < b.length; i++) {
                             var model = new helloext.model.Daily_output({time: b[i].name, shift: 'B', tanggal: tanggal});
-                            store.insert(0,model);
+                            //store.insert(0,model);
+                            Array_model.push(model);
                         }
                     }
 
-                    RowEditing.startEdit(0, 0);
+                    store.add(Array_model);
+                    //RowEditing.startEdit(0, 0);
 
                     
                 } 
@@ -121,6 +127,66 @@ Ext.define('helloext.controller.MyToolBar', {
     },
 
     onComboShiftChange: function (component, value){
-        console.log({component, value})
+        /*deklarasi variable*/
+        var store = this.getDaily_outputsStore();
+        var tanggal = component.prev('datefield').rawValue ;
+        var shift = value;
+
+        /*set store parameter*/
+        store.proxy.setExtraParam('tanggal', tanggal);
+        store.proxy.setExtraParam('shift', shift);
+        
+        // reload store
+        store.load(function (records, operation, success){
+            // console.log({records, operation, success})
+            if (store.totalCount == 0){
+                    //console.log('data empty');
+
+                    var a =[
+                        {id:1, name: '06-07'},
+                        {id:2, name: '07-08'},
+                        {id:3, name: '08-09'},
+                        {id:4, name: '09-10'},
+                        {id:5, name: '10-11'},
+                        {id:6, name: '11-12'},
+                        {id:7, name: '12-13'},
+                        {id:8, name: '13-14'},
+                        {id:9, name: '14-15'},
+                        {id:10, name: '15-16'}
+                    ];
+
+                    var b = [
+                        {id:11, name: '16-17'},
+                        {id:12, name: '18-19'},
+                        {id:13, name: '19-20'},
+                        {id:14, name: '20-21'},
+                        {id:15, name: '21-22'},
+                        {id:16, name: '22-23'},
+                        {id:17, name: '23-24'}
+                    ];
+
+                    store.loadData([],false); //empty the local store without firing API  
+                    var Array_model = [];
+                    if(shift == 'A'){
+                        for (var i = 0; i < a.length; i++) {
+                            var model = new helloext.model.Daily_output({time: a[i].name, shift: 'A', tanggal: tanggal});
+                            Array_model.push(model);
+                        }
+
+                    }else{
+                        for (var i = 0; i < b.length; i++) {
+                            var model = new helloext.model.Daily_output({time: b[i].name, shift: 'B', tanggal: tanggal});
+                            Array_model.push(model);
+                        }
+                    }
+                    store.add(Array_model);                    
+                } 
+        });
+
+    },
+
+    onBtnTestOnClick: function (){
+        //var store = this.getDaily_outputsStore();
+        
     }
 });

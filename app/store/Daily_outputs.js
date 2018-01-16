@@ -3,19 +3,34 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
     model: 'helloext.model.Daily_output',
     autoLoad:true,
     autoSync: true,
-    pageSize: 7,
+    // pageSize: 7,
     remoteSort: true,
-
+    
     proxy: {
         type: 'rest',
         enablePaging:true,
-        //extraParams: {tanggal: new Date() },  
+        extraParams: {
+            tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
+            shift: 'A'
+          },  
         url: 'http://localhost/daily_output/public/api/daily_outputs',
         reader:{
             root: 'data',
             type: 'json',
             totalProperty: 'total'
-            // totalProperty: '_meta.count'
         }
-    }
+    },
+
+    onCreateRecords: function(records, operation, success) {
+        // console.log({records, operation, success});
+    },
+
+    onUpdateRecords: function(records, operation, success) {
+        // console.log({records, operation, success});
+    },
+
+    onDestroyRecords: function(records, operation, success) {
+        // console.log({records, operation, success});
+    },
+
 });
