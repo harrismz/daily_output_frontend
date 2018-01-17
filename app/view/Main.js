@@ -15,21 +15,16 @@ Ext.define('helloext.view.Main', {
         type: 'vbox',
         align: 'center',
         pack: 'center'
-        // margin: '20'
     },
-
-
 
     items: [
         {
             xtype:'form',
             cls:'myform',
-            // frame:true,
             bodyPadding: 10,
             bodyBorder: true,
-            width: 400,
+            width: 350,
             split:true,
-            // margin: '30% 20% 30% 30% ',
             
             defaults: {
                 anchor: '100%',
@@ -43,7 +38,7 @@ Ext.define('helloext.view.Main', {
             items:[
                 {
                     xtype: 'textfield',
-                    name: 'username',
+                    name: 'name',
                     fieldLabel: 'User Name',
                     allowBlank: false,
                     minLength: 5
@@ -70,21 +65,50 @@ Ext.define('helloext.view.Main', {
                     handler: function() {
                         var form = this.up('form').getForm();
 
-                        /*if (form.isValid()) {
-                            var out = [];
+                        if (form.isValid()) {
+                            var paramater = {};
                             Ext.Object.each(form.getValues(), function(key, value){
-                                out.push(key + '=' + value);
+                                // out.push(key + '=' + value);
+                                paramater[key] = value;
                             });
-                            Ext.Msg.alert('Submitted Values', out.join('<br />'));
-                        }*/
 
-                        console.log(form)
+
+                            Ext.Ajax.request({
+                                url: 'http://localhost/daily_output/public/api/auth/login',
+                                method: 'POST',
+                                withCredentials:true,
+                                dataType: 'json',
+                                contentType: 'application/json',
+                                cors: true,
+                                useDefaultXhrHeader : false,
+                                params: paramater,
+                                success: function (form, action){
+                                    var returnValue = JSON.parse(form.responseText)
+                                    // console.log(returnValue)
+                                    localStorage.setItem("token", returnValue.token);                                    
+                                    window.location.reload();
+                                },
+                                failure: function (form, action){
+                                    console.log({form, action})
+                                    Ext.Msg.show({
+                                        title       :'Failed!',
+                                        icon        : Ext.Msg.ERROR,
+                                        msg         : "Username Or Password is wrong!",
+                                        buttons     : Ext.Msg.OK
+                                    });
+                                } 
+                             });
+                            
+                        }
                     }
                 },
                 {
                     xtype:'button',
                     text: 'Register',
-                    align: 'left'
+                    align: 'left',
+                    handler: function (){
+                        
+                    }
                 }
             ]
         }

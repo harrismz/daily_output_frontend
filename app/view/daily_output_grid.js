@@ -70,7 +70,7 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'minute',
             dataIndex: 'minute' ,
-            field: {xtype: 'numberfield', id:'edtMinute' },
+            field: {xtype: 'numberfield', id:'edtMinute', maxValue:60 },
             summaryType: 'sum',
             dock:'bottom',
             summaryRenderer: function (value){
@@ -143,10 +143,10 @@ Ext.define('helloext.view.daily_output_grid', {
                 id: 'edtPlusMinus', 
             },
             summaryRenderer: function (value){
-            if (value === null || value === "") {
-                value = 0;
-            }                
-            return value;
+                if (value === null || value === "") {
+                    value = 0;
+                }                
+                return value;
             }   
         },
 

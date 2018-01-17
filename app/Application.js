@@ -48,37 +48,74 @@ Ext.define('helloext.Application', {
         'timeCombo'
     ],
 
+    getCurrentUser: function (token){
+       Ext.Ajax.request({
+            url: 'http://localhost/daily_output/public/api/auth/me',
+            method: 'GET',
+            params: {token: token},
+            success: function (form, action){
+                // console.log({form: form, action: action})
+                // var user = JSON.parse(form.responseText )
+                localStorage.setItem('user', form.responseText )
+            },
+
+            failure: function (form, action){
+                console.log({form: form, action: action})
+            }
+        }) 
+    },
+
     launch: function() {
         
-        /*Ext.create('Ext.container.Container', {
-            items: [
-                {   
-                    xtype:'daily_output_grid',
+        //ambil token dari localStorage
+        var token = localStorage.getItem('token')
+        var self = this;
+        //cek apa token tsb msh aktif atau engga,
+        Ext.Ajax.request({
+            url: 'http://localhost/daily_output/public/api/protected',
+            method: 'GET',
+            params: {token: token},
+            success: function (form, action){
+                //kalau aktif, masuk/
+                self.getCurrentUser(token); //untuk get current user
 
-                    title: 'Daily output controll',
-                    
-                    tbar:{
-                        xtype: 'MyToolBar'
-                    },
+                Ext.create('Ext.container.Container', {
+                    items: [
+                        {   
+                            xtype:'daily_output_grid',
 
-                    bbar: {
-                        xtype: 'pagingtoolbar',
-                        pageSize: 50,
-                        store: 'Daily_outputs',
-                        emptyMsg: 'Sorry, No Records Are Available At The Moment.',   
-                        displayInfo: true,
-                        plugins: new Ext.ux.ProgressBarPager()
-                    },
-                    
-                    height: 500,
-                }
-            ],
-            renderTo: "mainPanel"
-            // renderTo: Ext.getBody()
-        });*/
-        Ext.create('helloext.view.Viewport', {
-            id: 'viewport'
-        });
+                            title: 'Daily output controll',
+                            
+                            tbar:[{
+                                xtype: 'MyToolBar'
+                            }],
+
+                            bbar: {
+                                xtype: 'pagingtoolbar',
+                                pageSize: 50,
+                                store: 'Daily_outputs',
+                                emptyMsg: 'Sorry, No Records Are Available At The Moment.',   
+                                displayInfo: true,
+                                plugins: new Ext.ux.ProgressBarPager()
+                            },
+                            
+                            height: 500,
+                        }
+                    ],
+                    renderTo: "mainPanel"
+                    // renderTo: Ext.getBody()
+                });
+            },
+
+            failure: function (form, action){
+                //kalau engga, masuk login
+                Ext.create('helloext.view.Viewport', {
+                    id: 'viewport'
+                });
+            }
+        })
+
+        
     }
 
 });

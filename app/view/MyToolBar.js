@@ -16,6 +16,8 @@ Ext.define("helloext.view.MyToolBar", {
         {
             xtype: 'datefield',
             id: 'tanggal',
+            labelPad: 15,
+            labelWidth:40,
             format: 'Y-m-d',          
             allowBlank: true,
             emptyText:'yyyy-mm-dd',
@@ -28,6 +30,7 @@ Ext.define("helloext.view.MyToolBar", {
             xtype: 'combo',
             fieldLabel:'Shift',
             labelPad: 15,
+            labelWidth:20,
             store: 'comboShifts',
             emptyText : 'Shift',
             id: 'comboShift',
@@ -41,6 +44,8 @@ Ext.define("helloext.view.MyToolBar", {
             text: 'Line',
             xtype: 'combo',
             fieldLabel:'Line',
+            labelPad: 15,
+            labelWidth:20,
             store: 'lines',
             emptyText : 'lines',
             id: 'comboLine',
@@ -49,7 +54,16 @@ Ext.define("helloext.view.MyToolBar", {
             queryMode: 'local',
             forceSelection: true,
             value:'1'
-            
+        },
+
+        {
+            xtype:'button',
+            id: 'btnLogout',
+            text: 'Log Out',
+            handler: function (){
+                localStorage.clear();
+                window.location.reload();
+            }
         }
 
     ]
