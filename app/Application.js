@@ -14,7 +14,8 @@ Ext.define('helloext.Application', {
         'Ext.grid.plugin.RowEditing',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
-        'Ext.grid.feature.Summary'
+        'Ext.grid.feature.Summary',
+        'helloext.view.Viewport'
         // 'KitchenSink.model.Company'
      ],
 
@@ -75,7 +76,9 @@ Ext.define('helloext.Application', {
             renderTo: "mainPanel"
             // renderTo: Ext.getBody()
         });*/
-        Ext.create('helloext.view.Viewport', {id: 'viewport'});
+        Ext.create('helloext.view.Viewport', {
+            id: 'viewport'
+        });
     }
 
 });
