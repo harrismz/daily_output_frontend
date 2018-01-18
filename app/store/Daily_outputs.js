@@ -20,12 +20,17 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
         reader:{
             root: 'data',
             type: 'json',
-            totalProperty: 'total'
+            totalProperty: 'total',
+            idProperty: 'id'
         }
     },
 
     onCreateRecords: function(records, operation, success) {
         // console.log({records, operation, success});
+        if(success){
+            this.load()
+        }
+
     },
 
     onUpdateRecords: function(records, operation, success) {

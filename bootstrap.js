@@ -861,16 +861,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
   "helloext.model.Daily_output": [],
-  "helloext.model.User": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
-  "helloext.store.Users": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.view.Create": [],
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
+  "helloext.view.RegisterUser": [],
   "helloext.view.Viewport": [],
   "helloext.view.daily_output_grid": []
 });
@@ -1892,10 +1891,8 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
   "helloext.model.Daily_output": [],
-  "helloext.model.User": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
-  "helloext.store.Users": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
@@ -1908,6 +1905,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.MyToolBar": [
     "widget.MyToolBar",
     "widget.basic-toolbar"
+  ],
+  "helloext.view.RegisterUser": [
+    "widget.registerUser"
   ],
   "helloext.view.Viewport": [],
   "helloext.view.daily_output_grid": [

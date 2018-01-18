@@ -6,32 +6,22 @@ Ext.define("helloext.view.RegisterUser", {
     layout: 'fit',
     autoShow: true,
 
-    initComponent: function() {
-        /*this.items = [
-            
-        ];*/
-
-        /*this.buttons = [
-            
-        ];*/
+    /*initComponent: function() {
 
         this.callParent(arguments);
-    },
+    },*/
 
-    items:[{
+    items:[
+    {
         xtype: 'form',
         padding:10,
-        // draggable:false,
-        default:{
-        	anchor: '100%',
-        },
+        /**/
         items: [
             {
                 xtype: 'textfield',
                 name : 'name',
                 fieldLabel: 'Username',
                 allowBlank: false,
-            	// minLength: 5
             },
             {
                 xtype: 'textfield',
@@ -71,43 +61,41 @@ Ext.define("helloext.view.RegisterUser", {
                         });
                         //jika password tidak identical
                         if (paramater.password != paramater.retype_password) {
-                        	Ext.Msg.show({
+                        	
+                            Ext.Msg.show({
                                 title       :'Failed!',
                                 icon        : Ext.Msg.ERROR,
                                 msg         : "your password is not same!",
                                 buttons     : Ext.Msg.OK
                             });
-                            return false;
                         }
-
-                        //console.log(MySharedData.hostname)
-                        Ext.Ajax.request({
-                        	url: 'http://'+hostname+'/daily_output/public/api/auth/signup',
-                        	method: 'POST',
-                        	contentType: 'application/json',
-                            cors: true,
-                            useDefaultXhrHeader : false,
-                            params: paramater,
-                            success: function (form, action){
-                            	Ext.Msg.show({
-                            		title: 'Success',
-                            		msg: 'Data Saved!',
-                            		buttons: Ext.Msg.OK
-                            	});
-                            	self.close
-                            },
-                            failure: function (form, action){
-                            	Ext.Msg.show({
-	                                title       :'Failed!',
-	                                icon        : Ext.Msg.ERROR,
-	                                msg         : "sorry, something went wrong!",
-	                                buttons     : Ext.Msg.OK
-	                            });
-
-                            }
-                        });
+                        else{
+                            Ext.Ajax.request({
+                                url: 'http://'+hostname+'/daily_output/public/api/auth/signup',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                cors: true,
+                                useDefaultXhrHeader : false,
+                                params: paramater,
+                                success: function (form, action){
+                                    Ext.Msg.show({
+                                        title: 'Success',
+                                        msg: 'Data Saved!',
+                                        buttons: Ext.Msg.OK
+                                    });
+                                    self.close
+                                },
+                                failure: function (form, action){
+                                    Ext.Msg.show({
+                                        title       :'Failed!',
+                                        icon        : Ext.Msg.ERROR,
+                                        msg         : "sorry, something went wrong!",
+                                        buttons     : Ext.Msg.OK
+                                    });
+                                }
+                            });
+                        }
 	            	}
-	            	
 	            }                
 	        },
 	        {
@@ -115,7 +103,8 @@ Ext.define("helloext.view.RegisterUser", {
 	            scope: this,
 	            handler: this.close
 	        }
-	    ]
-    }],
+	    ],
+    }
+    ]
 
 });

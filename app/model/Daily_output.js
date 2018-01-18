@@ -1,6 +1,7 @@
 Ext.define('helloext.model.Daily_output', {
     extend: 'Ext.data.Model',
-    fields: [ 'id',
+    fields: [ 
+     'id',
      'line_name',
      'time',
      'minute',

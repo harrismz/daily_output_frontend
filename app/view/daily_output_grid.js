@@ -86,7 +86,41 @@ Ext.define('helloext.view.daily_output_grid', {
             dataIndex: 'target_sop',
             summaryType: 'sum',
             dock:'bottom',
-            field: {xtype: 'numberfield', id:'edtTargetSop' },
+            field: {
+                xtype: 'numberfield',
+                id:'edtTargetSop',
+                listeners:{
+                    change: function (editor, value){
+                        
+                        myGrid = this.up('grid'); //ambil ke atas.
+                        
+                        //var selectedModel = this.up('grid').getSelectionModel().getSelection()[0];
+                        console.log(value)
+                        if(value != ""){
+                            //get edtPlusMinus
+                            edtMinute = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=minute]');
+                            edtOscOutput = myGrid.getPlugin('RowEditing').editor.down('numberfield#edtOscOutput');
+                            edtPlusMinus = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=plus_minus]');
+                            edtLostHour = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=lost_hour]');
+
+                            if(edtOscOutput.value == "" || edtMinute.value == ""){
+                                return false;
+                            }
+
+
+
+                            hasilPlusMinus = (value - ( ( edtMinute.value / 60) * value ) );
+                            lostHour = (hasilPlusMinus / value );
+
+                            edtPlusMinus.setValue(hasilPlusMinus);
+                            edtLostHour.setValue(lostHour);
+
+                            // console.log({edtMinute: edtMinute.value, edtTargetSop: edtTargetSop.value,edtPlusMinus: edtPlusMinus.value, hasil})
+                        }
+
+                    }
+                } 
+            },
             summaryRenderer: function (value){
                 if (value === null || value === "") {
                      value = 0;
@@ -139,7 +173,8 @@ Ext.define('helloext.view.daily_output_grid', {
             summaryType: 'sum',
             dock:'bottom',
             field: {
-                xtype: 'textfield',
+                xtype: 'numberfield',
+                decimalPrecision: 2,
                 id: 'edtPlusMinus', 
             },
             summaryRenderer: function (value){
@@ -155,7 +190,7 @@ Ext.define('helloext.view.daily_output_grid', {
             dataIndex: 'lost_hour', 
             summaryType: 'sum',
             dock:'bottom',
-            field: {xtype: 'textfield', /*disabled:true*/}
+            field: {xtype: 'numberfield', decimalPrecision: 2}
         },
 
         {
@@ -172,11 +207,11 @@ Ext.define('helloext.view.daily_output_grid', {
               ]
         },
         
-        {text: 'problem',editor: 'textarea', dataIndex: 'problem',field: {xtype: 'textfield'}},
+        {text: 'problem',editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textfield'}},
 
         {text: 'dic', dataIndex: 'dic',field: {xtype: 'textfield'}},
 
-        {text: 'action',editor: 'textarea', dataIndex: 'action',field: {xtype: 'textfield'}},
+        {text: 'action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textfield'}},
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 

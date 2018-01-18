@@ -30,9 +30,23 @@ Ext.define('helloext.controller.MyToolBar', {
     	
     },
 
-    btnAddOnClick: function(){
+    btnAddOnClick: function(component, value){
 
         var store = this.getDaily_outputsStore();
+        var tanggal = component.next('datefield#tanggal');
+        var shift = component.next('combo#comboShift').value;
+        var line_name = component.next('combo#comboLine').value;
+        var users_id = MySharedData.getUser() || null ;
+
+        var parameter = {
+            tanggal: tanggal.rawValue,
+            shift: shift,
+            line_name:line_name,
+            users_id: users_id
+        }
+
+
+        //parameter didn't pass to avoid ajax post
         var model = new helloext.model.Daily_output();
         store.insert(0, model );
         RowEditing.startEdit(0, 0);

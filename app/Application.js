@@ -101,7 +101,7 @@ Ext.define('helloext.Application', {
                                 plugins: new Ext.ux.ProgressBarPager()
                             },
                             
-                            height: 500,
+                            height: 600,
                         }
                     ],
                     renderTo: "mainPanel"
