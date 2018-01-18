@@ -394,6 +394,16 @@
         "fields": "id:int:null,name:auto:null",
         "modelFileName": "timeCombo"
       }
+    },
+    "app/view/RegisterUser.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "RegisterUser",
+        "viewFileName": "RegisterUser",
+        "appName": "helloext",
+        "name": "RegisterUser"
+      }
     }
   }
 }

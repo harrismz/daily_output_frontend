@@ -178,17 +178,17 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {text: 'action',editor: 'textarea', dataIndex: 'action',field: {xtype: 'textfield'}},
 
-        {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
+        // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
-        {text: 'shift', dataIndex: 'shift', field: {xtype: 'textfield', disabled:true}},
+        // {text: 'shift', dataIndex: 'shift', field: {xtype: 'textfield', disabled:true}},
 
-        {text: 'tanggal', dataIndex: 'tanggal', field: {
+        /*{text: 'tanggal', dataIndex: 'tanggal', field: {
             xtype: 'datefield',
             format: 'Y-m-d',          
             allowBlank: true,
             emptyText:'yyyy-mm-dd',
             disabled: true
-        }}
+        }}*/
 
     ]
 

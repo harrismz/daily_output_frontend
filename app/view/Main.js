@@ -41,7 +41,7 @@ Ext.define('helloext.view.Main', {
                     name: 'name',
                     fieldLabel: 'User Name',
                     allowBlank: false,
-                    minLength: 5
+                    minLength: 1
                 },
                 {
                     xtype: 'textfield',
@@ -64,6 +64,7 @@ Ext.define('helloext.view.Main', {
                     // width: 140,
                     handler: function() {
                         var form = this.up('form').getForm();
+                        var hostname= MySharedData.hostname; //global variable di app.js
 
                         if (form.isValid()) {
                             var paramater = {};
@@ -74,7 +75,7 @@ Ext.define('helloext.view.Main', {
 
 
                             Ext.Ajax.request({
-                                url: 'http://localhost/daily_output/public/api/auth/login',
+                                url: 'http://'+hostname+'/daily_output/public/api/auth/login',
                                 method: 'POST',
                                 withCredentials:true,
                                 dataType: 'json',
@@ -89,7 +90,7 @@ Ext.define('helloext.view.Main', {
                                     window.location.reload();
                                 },
                                 failure: function (form, action){
-                                    console.log({form, action})
+                                    // console.log({form, action})
                                     Ext.Msg.show({
                                         title       :'Failed!',
                                         icon        : Ext.Msg.ERROR,
@@ -97,8 +98,7 @@ Ext.define('helloext.view.Main', {
                                         buttons     : Ext.Msg.OK
                                     });
                                 } 
-                             });
-                            
+                            });
                         }
                     }
                 },
@@ -107,7 +107,7 @@ Ext.define('helloext.view.Main', {
                     text: 'Register',
                     align: 'left',
                     handler: function (){
-                        
+                        Ext.widget('registerUser');
                     }
                 }
             ]

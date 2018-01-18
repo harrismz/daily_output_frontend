@@ -11,3 +11,18 @@ Ext.application({
     
     //autoCreateViewport: true
 });
+
+/*Ext.define('MySharedData', { 
+    singleton: true,
+    hostname: this.hostname
+});  */
+var MySharedData = {
+	hostname: 'localhost',
+	getUser: function (){
+        if (localStorage.getItem('user') != null){
+           return  JSON.parse( localStorage.getItem('user')).id
+        }else{
+            return null
+        }
+    },
+}

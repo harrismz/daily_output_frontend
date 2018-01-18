@@ -9,19 +9,14 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
     proxy: {
         type: 'rest',
         enablePaging:true,
+        
         extraParams: {
             tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
             shift: 'A',
             line_name: 1,
-            username: function (){
-                if (localStorage.getItem('user') != null){
-                   return  JSON.parse( localStorage.getItem('user')).id
-                }else{
-                    return null
-                }
-            }
-          },  
-        url: 'http://localhost/daily_output/public/api/daily_outputs',
+            username: MySharedData.getUser()
+        },  
+        url: 'http://'+MySharedData.hostname+'/daily_output/public/api/daily_outputs',
         reader:{
             root: 'data',
             type: 'json',

@@ -18,7 +18,9 @@ Ext.define('helloext.store.timeCombos', { //parameter pertama harus sesuai filep
     	{id:14, name: '20-21'},
     	{id:15, name: '21-22'},
     	{id:16, name: '22-23'},
-    	{id:17, name: '23-24'}
+    	{id:17, name: '23-24'},
+        {id:18, name: '00-01'},
+        {id:19, name: '01-02'}
     ]
 
 });

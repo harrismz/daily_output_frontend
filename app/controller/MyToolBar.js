@@ -64,6 +64,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.rawValue;
         var shift = component.next('combo').value;
         var line_name = component.next('combo#comboLine').value;
+        var users_id = MySharedData.getUser() || null ;
 
         /*console.log({tanggal, shift, line_name})
         return false;*/
@@ -98,7 +99,10 @@ Ext.define('helloext.controller.MyToolBar', {
                         {id:14, name: '20-21'},
                         {id:15, name: '21-22'},
                         {id:16, name: '22-23'},
-                        {id:17, name: '23-24'}
+                        {id:17, name: '23-24'},
+                        {id:17, name: '00-01'},
+                        {id:17, name: '01-02'}
+
                     ];
 
                     store.loadData([],false); //empty the local store without firing API  
@@ -109,7 +113,8 @@ Ext.define('helloext.controller.MyToolBar', {
                                 time: a[i].name,
                                 shift: 'A',
                                 tanggal: tanggal,
-                                line_name: line_name
+                                line_name: line_name,
+                                users_id: users_id
                             });
                             Array_model.push(model);
                         }
@@ -138,6 +143,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = value;
         var line_name = component.next('combo').value;
+        var users_id = MySharedData.getUser() || null ;
 
         /**/
         /*set store parameter*/
@@ -171,7 +177,9 @@ Ext.define('helloext.controller.MyToolBar', {
                         {id:14, name: '20-21'},
                         {id:15, name: '21-22'},
                         {id:16, name: '22-23'},
-                        {id:17, name: '23-24'}
+                        {id:17, name: '23-24'},
+                        {id:17, name: '00-01'},
+                        {id:17, name: '01-02'}
                     ];
 
                     store.loadData([],false); //empty the local store without firing API  
@@ -182,7 +190,8 @@ Ext.define('helloext.controller.MyToolBar', {
                                 time: a[i].name,
                                 shift: 'A',
                                 tanggal: tanggal,
-                                line_name:line_name
+                                line_name:line_name,
+                                users_id:users_id
                             });
                             Array_model.push(model);
                         }
@@ -193,7 +202,8 @@ Ext.define('helloext.controller.MyToolBar', {
                                 time: b[i].name,
                                 shift: 'B',
                                 tanggal: tanggal,
-                                line_name:line_name
+                                line_name:line_name,
+                                users_id:users_id
                             });
                             Array_model.push(model);
                         }
@@ -211,6 +221,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = component.prev('combo').value;
         var line_name = value;
+        var users_id = MySharedData.getUser() || null ;
 
         /**/
         /*set store parameter*/
@@ -243,7 +254,9 @@ Ext.define('helloext.controller.MyToolBar', {
                         {id:14, name: '20-21'},
                         {id:15, name: '21-22'},
                         {id:16, name: '22-23'},
-                        {id:17, name: '23-24'}
+                        {id:17, name: '23-24'},
+                        {id:17, name: '00-01'},
+                        {id:17, name: '01-02'}
                     ];
 
                     store.loadData([],false); //empty the local store without firing API  
@@ -254,7 +267,8 @@ Ext.define('helloext.controller.MyToolBar', {
                                 time: a[i].name,
                                 shift: 'A',
                                 tanggal: tanggal,
-                                line_name: line_name
+                                line_name: line_name,
+                                users_id:users_id
                             });
                             Array_model.push(model);
                         }
@@ -265,7 +279,8 @@ Ext.define('helloext.controller.MyToolBar', {
                                 time: b[i].name,
                                 shift: 'B',
                                 tanggal: tanggal,
-                                line_name:line_name
+                                line_name:line_name,
+                                users_id:users_id
                             });
                             Array_model.push(model);
                         }

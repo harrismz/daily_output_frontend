@@ -24,6 +24,7 @@ Ext.define('helloext.Application', {
         /*'user.ActionPanel',*/
         'Create',
         'daily_output_grid',
+        'RegisterUser',
         'MyToolBar'
     ],
 
@@ -48,6 +49,8 @@ Ext.define('helloext.Application', {
         'timeCombo'
     ],
 
+    hostname: 'localhost',
+
     getCurrentUser: function (token){
        Ext.Ajax.request({
             url: 'http://localhost/daily_output/public/api/auth/me',
@@ -66,7 +69,6 @@ Ext.define('helloext.Application', {
     },
 
     launch: function() {
-        
         //ambil token dari localStorage
         var token = localStorage.getItem('token')
         var self = this;
@@ -87,7 +89,7 @@ Ext.define('helloext.Application', {
                             title: 'Daily output controll',
                             
                             tbar:[{
-                                xtype: 'MyToolBar'
+                                xtype: 'MyToolBar'  
                             }],
 
                             bbar: {
@@ -113,9 +115,7 @@ Ext.define('helloext.Application', {
                     id: 'viewport'
                 });
             }
-        })
-
-        
+        })   
     }
 
 });
