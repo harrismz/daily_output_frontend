@@ -95,7 +95,7 @@ Ext.define('helloext.view.daily_output_grid', {
                         myGrid = this.up('grid'); //ambil ke atas.
                         
                         //var selectedModel = this.up('grid').getSelectionModel().getSelection()[0];
-                        console.log(value)
+                        // console.log(value)
                         if(value != ""){
                             //get edtPlusMinus
                             edtMinute = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=minute]');
@@ -103,14 +103,25 @@ Ext.define('helloext.view.daily_output_grid', {
                             edtPlusMinus = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=plus_minus]');
                             edtLostHour = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=lost_hour]');
 
+                            
+
                             if(edtOscOutput.value == "" || edtMinute.value == ""){
+                                console.log('false')
                                 return false;
                             }
 
-
-
-                            hasilPlusMinus = (value - ( ( edtMinute.value / 60) * value ) );
+                            hasilPlusMinus = (edtOscOutput.value - ( ( edtMinute.value / 60) * value ) );
                             lostHour = (hasilPlusMinus / value );
+
+                            /*console.log({
+                                edtMinute : edtMinute.value,
+                                edtOscOutput : edtOscOutput.value,
+                                edtPlusMinus : edtPlusMinus.value,
+                                edtLostHour: edtLostHour.value,
+                                hasilPlusMinus: hasilPlusMinus,
+                                lostHour: lostHour,
+                                value: value
+                            })*/
 
                             edtPlusMinus.setValue(hasilPlusMinus);
                             edtLostHour.setValue(lostHour);
