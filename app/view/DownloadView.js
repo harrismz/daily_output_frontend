@@ -17,13 +17,17 @@ Ext.define("helloext.view.DownloadView", {
 	            {
 	                xtype: 'datefield',
 	                name : 'start_date',
+	                format: 'Y-m-d',
 	                fieldLabel: 'Start Date',
+	                emptyText:'yyyy-mm-dd',
 	                allowBlank: true,
 	            },
 	            {
 	                xtype: 'datefield',
 	                name : 'end_date',
+	                format: 'Y-m-d',
 	                fieldLabel: 'End Date',
+	                emptyText:'yyyy-mm-dd',
 	                allowBlank: true,
 	            },
 	            {
