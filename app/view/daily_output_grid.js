@@ -70,7 +70,48 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'minute',
             dataIndex: 'minute' ,
-            field: {xtype: 'numberfield', id:'edtMinute', maxValue:60 },
+            field: {
+                xtype: 'numberfield',
+                id:'edtMinute',
+                maxValue:60,
+                listeners:{
+                    change: function (editor, value){
+                        
+                        myGrid = this.up('grid'); //ambil ke atas.
+                        if(value != ""){
+                            //get edtPlusMinus
+                            edtMinute = value;//myGrid.getPlugin('RowEditing').editor.down('numberfield[name=minute]');
+                            edtTargetSop = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=target_sop]');
+                            edtOscOutput = myGrid.getPlugin('RowEditing').editor.down('numberfield#edtOscOutput');
+                            edtPlusMinus = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=plus_minus]');
+                            edtLostHour = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=lost_hour]');
+
+                            if(edtOscOutput.value == "" || edtOscOutput.value == null || edtTargetSop.value == "" || edtTargetSop.value == null ){
+                                // console.log('false')
+                                return false;
+                            }
+
+                            hasilPlusMinus = (edtOscOutput.value - ( ( edtMinute / 60) * edtTargetSop.value ) );
+                            lostHour = ( hasilPlusMinus / edtTargetSop.value );
+
+                            /*console.log({
+                                edtMinute:edtMinute,
+                                edtTargetSop:edtTargetSop.value,
+                                edtOscOutput:edtOscOutput.value,
+                                edtPlusMinus:edtPlusMinus.value,
+                                edtLostHour:edtLostHour.value,
+                                hasilPlusMinus: hasilPlusMinus,
+                                lostHour: lostHour
+                            })*/
+
+                            edtPlusMinus.setValue(hasilPlusMinus);
+                            edtLostHour.setValue(lostHour);
+
+                            // console.log({edtMinute: edtMinute.value, edtTargetSop: edtTargetSop.value,edtPlusMinus: edtPlusMinus.value, hasil})
+                        }
+                    }
+                } 
+            },
             summaryType: 'sum',
             dock:'bottom',
             summaryRenderer: function (value){
@@ -78,7 +119,8 @@ Ext.define('helloext.view.daily_output_grid', {
                      value = 0;
                    }                
                 return value;
-            }
+            },
+            
         },
 
         {   
@@ -106,7 +148,12 @@ Ext.define('helloext.view.daily_output_grid', {
                             
 
                             if(edtOscOutput.value == "" || edtMinute.value == ""){
-                                console.log('false')
+                                // console.log('false')
+                                return false;
+                            }
+
+                            if(edtOscOutput.value == null || edtMinute.value == null){
+                                // console.log('false')
                                 return false;
                             }
 

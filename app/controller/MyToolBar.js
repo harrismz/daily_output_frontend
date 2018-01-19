@@ -30,6 +30,43 @@ Ext.define('helloext.controller.MyToolBar', {
     	
     },
 
+    getShift(param){
+
+        var a = [
+            {id:1, name: '06-07'},
+            {id:2, name: '07-08'},
+            {id:3, name: '08-09'},
+            {id:4, name: '09-10'},
+            {id:5, name: '10-11'},
+            {id:6, name: '11-12'},
+            {id:7, name: '12-13'},
+            {id:8, name: '13-14'},
+            {id:9, name: '14-15'},
+            {id:10, name: '15-16'}
+        ];
+
+        var b =[
+            {id:11, name: '16-17'},
+            {id:12, name: '17-18'},
+            {id:13, name: '18-19'},
+            {id:14, name: '19-20'},
+            {id:15, name: '20-21'},
+            {id:16, name: '21-22'},
+            {id:17, name: '22-23'},
+            {id:18, name: '23-24'},
+            {id:19, name: '00-01'},
+            {id:20, name: '01-02'}
+        ];
+
+        if(param == 'a'){
+            return a;
+        }else{
+            return b;
+        }
+
+    },
+
+    
     btnAddOnClick: function(component, value){
 
         var store = this.getDaily_outputsStore();
@@ -79,7 +116,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var shift = component.next('combo').value;
         var line_name = component.next('combo#comboLine').value;
         var users_id = MySharedData.getUser() || null ;
-
+        var self = this;
         /*console.log({tanggal, shift, line_name})
         return false;*/
 
@@ -91,38 +128,13 @@ Ext.define('helloext.controller.MyToolBar', {
         store.load(function (records, operation, success){
             // console.log({records, operation, success})
             if (store.totalCount == 0){
-                    //console.log('data empty');
-
-                    var a =[
-                        {id:1, name: '06-07'},
-                        {id:2, name: '07-08'},
-                        {id:3, name: '08-09'},
-                        {id:4, name: '09-10'},
-                        {id:5, name: '10-11'},
-                        {id:6, name: '11-12'},
-                        {id:7, name: '12-13'},
-                        {id:8, name: '13-14'},
-                        {id:9, name: '14-15'},
-                        {id:10, name: '15-16'}
-                    ];
-
-                    var b = [
-                        {id:11, name: '16-17'},
-                        {id:12, name: '18-19'},
-                        {id:13, name: '19-20'},
-                        {id:14, name: '20-21'},
-                        {id:15, name: '21-22'},
-                        {id:16, name: '22-23'},
-                        {id:17, name: '23-24'},
-                        {id:17, name: '00-01'},
-                        {id:17, name: '01-02'}
-
-                    ];
+                    var a = self.getShift('a');
+                    var b = self.getShift('b');
 
                     store.loadData([],false); //empty the local store without firing API  
                     var Array_model = [];
                     if(shift == 'A'){
-                        for (var i = 0; i < a.length; i++) {
+                        for (var i = 0; i < self.getShift('a').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: a[i].name,
                                 shift: 'A',
@@ -134,7 +146,7 @@ Ext.define('helloext.controller.MyToolBar', {
                         }
 
                     }else{
-                        for (var i = 0; i < b.length; i++) {
+                        for (var i = 0; i < self.getShift('b').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: b[i].name,
                                 shift: 'B',
@@ -147,8 +159,7 @@ Ext.define('helloext.controller.MyToolBar', {
                     
                     store.add(Array_model);                    
                 } 
-        }); 
-        
+        });   
     },
 
     onComboShiftChange: function (component, value){
@@ -158,7 +169,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var shift = value;
         var line_name = component.next('combo').value;
         var users_id = MySharedData.getUser() || null ;
-
+        var self = this;
         /**/
         /*set store parameter*/
         store.proxy.setExtraParam('tanggal', tanggal);
@@ -169,37 +180,15 @@ Ext.define('helloext.controller.MyToolBar', {
         store.load(function (records, operation, success){
             // console.log({records, operation, success})
             if (store.totalCount == 0){
-                    //console.log('data empty');
 
-                    var a =[
-                        {id:1, name: '06-07'},
-                        {id:2, name: '07-08'},
-                        {id:3, name: '08-09'},
-                        {id:4, name: '09-10'},
-                        {id:5, name: '10-11'},
-                        {id:6, name: '11-12'},
-                        {id:7, name: '12-13'},
-                        {id:8, name: '13-14'},
-                        {id:9, name: '14-15'},
-                        {id:10, name: '15-16'}
-                    ];
-
-                    var b = [
-                        {id:11, name: '16-17'},
-                        {id:12, name: '18-19'},
-                        {id:13, name: '19-20'},
-                        {id:14, name: '20-21'},
-                        {id:15, name: '21-22'},
-                        {id:16, name: '22-23'},
-                        {id:17, name: '23-24'},
-                        {id:17, name: '00-01'},
-                        {id:17, name: '01-02'}
-                    ];
+                    // console.log( self.getShift('a') )
+                    var a = self.getShift('a');
+                    var b = self.getShift('b');
 
                     store.loadData([],false); //empty the local store without firing API  
                     var Array_model = [];
                     if(shift == 'A'){
-                        for (var i = 0; i < a.length; i++) {
+                        for (var i = 0; i < self.getShift('a').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: a[i].name,
                                 shift: 'A',
@@ -211,7 +200,7 @@ Ext.define('helloext.controller.MyToolBar', {
                         }
 
                     }else{
-                        for (var i = 0; i < b.length; i++) {
+                        for (var i = 0; i < self.getShift('b').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: b[i].name,
                                 shift: 'B',
@@ -236,7 +225,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var shift = component.prev('combo').value;
         var line_name = value;
         var users_id = MySharedData.getUser() || null ;
-
+        var self = this;
         /**/
         /*set store parameter*/
         store.proxy.setExtraParam('tanggal', tanggal);
@@ -247,36 +236,13 @@ Ext.define('helloext.controller.MyToolBar', {
             // console.log({records, operation, success})
             if (store.totalCount == 0){
                     //console.log('data empty');
-
-                    var a =[
-                        {id:1, name: '06-07'},
-                        {id:2, name: '07-08'},
-                        {id:3, name: '08-09'},
-                        {id:4, name: '09-10'},
-                        {id:5, name: '10-11'},
-                        {id:6, name: '11-12'},
-                        {id:7, name: '12-13'},
-                        {id:8, name: '13-14'},
-                        {id:9, name: '14-15'},
-                        {id:10, name: '15-16'}
-                    ];
-
-                    var b = [
-                        {id:11, name: '16-17'},
-                        {id:12, name: '18-19'},
-                        {id:13, name: '19-20'},
-                        {id:14, name: '20-21'},
-                        {id:15, name: '21-22'},
-                        {id:16, name: '22-23'},
-                        {id:17, name: '23-24'},
-                        {id:17, name: '00-01'},
-                        {id:17, name: '01-02'}
-                    ];
+                    var a = self.getShift('a');
+                    var b = self.getShift('b');
 
                     store.loadData([],false); //empty the local store without firing API  
                     var Array_model = [];
                     if(shift == 'A'){
-                        for (var i = 0; i < a.length; i++) {
+                        for (var i = 0; i < self.getShift('a').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: a[i].name,
                                 shift: 'A',
@@ -288,7 +254,7 @@ Ext.define('helloext.controller.MyToolBar', {
                         }
 
                     }else{
-                        for (var i = 0; i < b.length; i++) {
+                        for (var i = 0; i < self.getShift('b').length; i++) {
                             var model = new helloext.model.Daily_output({
                                 time: b[i].name,
                                 shift: 'B',
