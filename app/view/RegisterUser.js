@@ -10,7 +10,6 @@ Ext.define("helloext.view.RegisterUser", {
 
         this.callParent(arguments);
     },*/
-
     items:[
     {
         xtype: 'form',
@@ -101,7 +100,7 @@ Ext.define("helloext.view.RegisterUser", {
 	        {
 	            text: 'Cancel',
 	            scope: this,
-	            handler: this.close
+	            handler: this.close    
 	        }
 	    ],
     }

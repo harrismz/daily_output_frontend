@@ -5,7 +5,6 @@ Ext.define('helloext.controller.MyToolBar', {
     views:['daily_output_grid'],
     init : function (){
     	//console.log('init MyToolBar controller ')
-
     	this.control({
     		'MyToolBar button#btnAdd':{
     			click: this.btnAddOnClick
@@ -13,6 +12,10 @@ Ext.define('helloext.controller.MyToolBar', {
 
             'MyToolBar button#btnDelete':{
                 click: this.btnDeleteOnClick
+            },
+
+            'MyToolBar button#btnDownload':{
+                click: this.btnDownloadOnClick
             },
 
             'MyToolBar #tanggal':{
@@ -269,5 +272,12 @@ Ext.define('helloext.controller.MyToolBar', {
                     store.add(Array_model);                    
                 } 
         });
+    },
+
+    btnDownloadOnClick: function(component, value){
+        /*var url = 'http://localhost/daily_output/public/api/daily_outputs/download';
+        var win = window.open(url, '_blank');
+        win.focus();*/
+        Ext.widget('downloadView'); //instantiate DownloadView class
     }
 });

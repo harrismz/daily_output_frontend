@@ -59,19 +59,19 @@ Ext.define("helloext.view.MyToolBar", {
             text: 'Download',
             xtype: 'button',
             id:'btnDownload',
-            handler: function (){
+            /*handler: function (){
              var url = 'http://localhost/daily_output/public/api/daily_outputs/download';
              var win = window.open(url, '_blank');
              win.focus();   
-            }
+            }*/
         },
         {
             xtype:'button',
             id: 'btnLogout',
             text: 'Log Out',
             handler: function (){
-                localStorage.clear();
-                window.location.reload();
+                localStorage.clear(); //hapus localStorage
+                window.location.reload(); //refresh page
             }
         },
         

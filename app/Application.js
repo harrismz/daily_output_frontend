@@ -25,13 +25,15 @@ Ext.define('helloext.Application', {
         'Create',
         'daily_output_grid',
         'RegisterUser',
-        'MyToolBar'
+        'MyToolBar',
+        'DownloadView'
     ],
 
     controllers: [
         'Main',
         'Daily_outputs',
-        'MyToolBar'
+        'MyToolBar',
+        'DownloadViewController',
     ],
 
     //Collection
