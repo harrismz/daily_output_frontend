@@ -55,7 +55,7 @@ Ext.define('helloext.Application', {
 
     getCurrentUser: function (token){
        Ext.Ajax.request({
-            url: 'http://localhost/daily_output/public/api/auth/me',
+            url: 'http://'+MySharedData.hostname+'/daily_output/public/api/auth/me',
             method: 'GET',
             params: {token: token},
             success: function (form, action){
@@ -76,7 +76,7 @@ Ext.define('helloext.Application', {
         var self = this;
         //cek apa token tsb msh aktif atau engga,
         Ext.Ajax.request({
-            url: 'http://localhost/daily_output/public/api/protected',
+            url: 'http://'+MySharedData.hostname+'/daily_output/public/api/protected',
             method: 'GET',
             params: {token: token},
             success: function (form, action){
