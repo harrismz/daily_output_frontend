@@ -10,7 +10,7 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
         type: 'rest',
         enablePaging:true,
         headers: {
-            Authorization : 'Bearer ' + MySharedData.getToken()  //setting token
+            Authorization : 'Bearer ' + MySharedData.getToken()  //setting token, ambil dari localStorage
         },
         extraParams: {
             tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
