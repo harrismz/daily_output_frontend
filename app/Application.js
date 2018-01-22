@@ -72,7 +72,7 @@ Ext.define('helloext.Application', {
 
     launch: function() {
         //ambil token dari localStorage
-        var token = localStorage.getItem('token')
+        var token = MySharedData.getToken(); //ambil token dari global variable
         var self = this;
         //cek apa token tsb msh aktif atau engga,
         Ext.Ajax.request({
