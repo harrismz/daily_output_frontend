@@ -17,7 +17,7 @@ Ext.application({
     hostname: this.hostname
 });  */
 var MySharedData = {
-	hostname: 'localhost',
+	hostname: '136.198.117.75/t_web',
 	getUser: function (){
         if (localStorage.getItem('user') != null){
            return  JSON.parse( localStorage.getItem('user')).id
