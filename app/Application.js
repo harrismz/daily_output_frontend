@@ -15,7 +15,9 @@ Ext.define('helloext.Application', {
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.grid.feature.Summary',
-        'helloext.view.Viewport'
+        'helloext.view.Viewport',
+        'Ext.chart.axis.Category',
+        
         // 'KitchenSink.model.Company'
      ],
 
@@ -26,7 +28,8 @@ Ext.define('helloext.Application', {
         'daily_output_grid',
         'RegisterUser',
         'MyToolBar',
-        'DownloadView'
+        'DownloadView',
+        'chart.delay_type'
     ],
 
     controllers: [
@@ -71,6 +74,7 @@ Ext.define('helloext.Application', {
     },
 
     launch: function() {
+
         //ambil token dari localStorage
         var token = MySharedData.getToken(); //ambil token dari global variable
         var self = this;
