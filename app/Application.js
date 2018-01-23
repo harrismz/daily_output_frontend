@@ -18,19 +18,22 @@ Ext.define('helloext.Application', {
         'Ext.grid.feature.Summary',
         'helloext.view.Viewport',
         'Ext.chart.axis.Category',
-        
-        
+        'Ext.chart.series.Line',
+        'Ext.chart.axis.Numeric',
+
      ],
 
     views: [
         // TODO: add views here
         /*'user.ActionPanel',*/
+        'loginView',
         'Create',
         'daily_output_grid',
         'RegisterUser',
         'MyToolBar',
         'DownloadView',
-        'chart.delay_type'
+        'chart.delay_type',
+        'chart.target_output',
     ],
 
     controllers: [

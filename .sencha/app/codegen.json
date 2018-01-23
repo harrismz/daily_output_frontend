@@ -425,6 +425,26 @@
         "controllerNamespace": "helloext.controller",
         "controllerFileName": "DownloadViewController"
       }
+    },
+    "app/view/chart/target_output.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "chart.target_output",
+        "viewFileName": "chart/target_output",
+        "appName": "helloext",
+        "name": "chart.target_output"
+      }
+    },
+    "app/view/loginView.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "loginView",
+        "viewFileName": "loginView",
+        "appName": "helloext",
+        "name": "loginView"
+      }
     }
   }
 }
