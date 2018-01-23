@@ -54,7 +54,7 @@ Ext.define('helloext.view.daily_output_grid', {
     store:  'Daily_outputs', //store = colletion
 
     columns : [
-        { text: 'id',  dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
+        { text: 'ID',  dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
 
         {text: 'line_name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
 
@@ -68,7 +68,7 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {
-            text: 'minute',
+            text: 'Minute',
             dataIndex: 'minute' ,
             field: {
                 xtype: 'numberfield',
@@ -124,7 +124,7 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {   
-            text: 'target_sop',
+            text: 'Target Sop',
             dataIndex: 'target_sop',
             summaryType: 'sum',
             dock:'bottom',
@@ -187,7 +187,7 @@ Ext.define('helloext.view.daily_output_grid', {
             }
         },
 
-        {text: 'osc_output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
+        {text: 'Osc Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
             field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
@@ -244,7 +244,7 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {
-            text: 'lost_hour', 
+            text: 'Lost Hours', 
             dataIndex: 'lost_hour', 
             summaryType: 'sum',
             dock:'bottom',
@@ -254,14 +254,14 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'DELAY TYPE',
               columns:[
-                {text: 'BOARD DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'PART DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'EQP TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'QUALITY PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
-                {text: 'BAL. PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'BOARD <br> DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'PART <br> DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'EQP <br> TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'QUALITY <br> PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
+                {text: 'BAL. <br> PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'CHANGE MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
               ]
         },
         
