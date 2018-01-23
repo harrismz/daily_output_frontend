@@ -4,6 +4,7 @@ Ext.define('helloext.Application', {
     extend: 'Ext.app.Application',
     
     requires: [
+        'helloext.util.Config',
         'Ext.container.Viewport',
         'Ext.form.Panel',
         'Ext.data.proxy.Rest',
@@ -15,7 +16,8 @@ Ext.define('helloext.Application', {
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.grid.feature.Summary',
-        'helloext.view.Viewport'
+        'helloext.view.Viewport',
+
         // 'KitchenSink.model.Company'
      ],
 

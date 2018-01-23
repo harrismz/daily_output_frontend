@@ -12,7 +12,7 @@ Ext.application({
     //autoCreateViewport: true
 });
 
-var MySharedData = {
+/*var MySharedData = {
     hostname: '136.198.117.75/t_web',
     getUser: function (){
         if (localStorage.getItem('user') != null){
@@ -34,5 +34,5 @@ var MySharedData = {
 //automaticly setting hostname between development and deployment
 if ( window.location.hostname == 'localhost'){
     MySharedData.hostname = 'localhost';
-}
+}*/
 

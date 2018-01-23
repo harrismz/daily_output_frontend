@@ -1,0 +1,36 @@
+Ext.define('helloext.util.Config', {
+	singleton : true,
+
+    config : {
+        debug : true
+    },
+
+    constructor : function(config) {
+        this.initConfig(config);
+        this.callParent([config]);
+    },
+
+    hostname: function(){
+    	if ( window.location.hostname == 'localhost'){
+		    return 'localhost';
+		}
+		
+    	return '136.198.117.75/t_web'
+ 	},
+    getUser: function (){
+        if (localStorage.getItem('user') != null){
+           return  JSON.parse( localStorage.getItem('user')).id
+        }else{
+            return null
+        }
+    },
+    getToken : function(){
+        // return localStorage.getItem('token');
+        if (localStorage.getItem('token') != null){
+           return localStorage.getItem('token') ;
+        }else{
+            return null
+        }  
+    }
+
+});
