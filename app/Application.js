@@ -4,6 +4,7 @@ Ext.define('helloext.Application', {
     extend: 'Ext.app.Application',
     
     requires: [
+        'helloext.util.Config',
         'Ext.container.Viewport',
         'Ext.form.Panel',
         'Ext.data.proxy.Rest',
@@ -18,7 +19,7 @@ Ext.define('helloext.Application', {
         'helloext.view.Viewport',
         'Ext.chart.axis.Category',
         
-        // 'KitchenSink.model.Company'
+        
      ],
 
     views: [
@@ -54,11 +55,9 @@ Ext.define('helloext.Application', {
         'timeCombo'
     ],
 
-    hostname: 'localhost',
-
     getCurrentUser: function (token){
        Ext.Ajax.request({
-            url: 'http://'+MySharedData.hostname+'/daily_output/public/api/auth/me',
+            url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/auth/me',
             method: 'GET',
             params: {token: token},
             success: function (form, action){
@@ -76,11 +75,11 @@ Ext.define('helloext.Application', {
     launch: function() {
 
         //ambil token dari localStorage
-        var token = MySharedData.getToken(); //ambil token dari global variable
+        var token = helloext.util.Config.getToken(); //ambil token dari global variable
         var self = this;
         //cek apa token tsb msh aktif atau engga,
         Ext.Ajax.request({
-            url: 'http://'+MySharedData.hostname+'/daily_output/public/api/protected',
+            url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/protected',
             method: 'GET',
             params: {token: token},
             success: function (form, action){

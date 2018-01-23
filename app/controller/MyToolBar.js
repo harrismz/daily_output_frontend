@@ -33,7 +33,7 @@ Ext.define('helloext.controller.MyToolBar', {
     	
     },
 
-    getShift(param){
+    getShift : function (param){
 
         var a = [
             {id:1, name: '06-07'},
@@ -76,7 +76,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.next('datefield#tanggal');
         var shift = component.next('combo#comboShift').value;
         var line_name = component.next('combo#comboLine').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
 
         var parameter = {
             tanggal: tanggal.rawValue,
@@ -87,8 +87,9 @@ Ext.define('helloext.controller.MyToolBar', {
 
 
         //parameter didn't pass to avoid ajax post
-        var model = new helloext.model.Daily_output();
+        var model = new helloext.model.Daily_output(parameter);
         store.insert(0, model );
+        // console.log(model)
         RowEditing.startEdit(0, 0);
     },
 
@@ -118,7 +119,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.rawValue;
         var shift = component.next('combo').value;
         var line_name = component.next('combo#comboLine').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /*console.log({tanggal, shift, line_name})
         return false;*/
@@ -171,7 +172,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = value;
         var line_name = component.next('combo').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /**/
         /*set store parameter*/
@@ -227,7 +228,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = component.prev('combo').value;
         var line_name = value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /**/
         /*set store parameter*/

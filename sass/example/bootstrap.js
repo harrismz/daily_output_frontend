@@ -857,6 +857,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
   "helloext.controller.Daily_outputs": [],
+  "helloext.controller.DownloadViewController": [],
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
@@ -866,7 +867,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
+  "helloext.util.Config": [],
   "helloext.view.Create": [],
+  "helloext.view.DownloadView": [],
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
   "helloext.view.RegisterUser": [],
@@ -1887,6 +1890,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
   "helloext.controller.Daily_outputs": [],
+  "helloext.controller.DownloadViewController": [],
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
@@ -1896,8 +1900,12 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
+  "helloext.util.Config": [],
   "helloext.view.Create": [
     "widget.booksform"
+  ],
+  "helloext.view.DownloadView": [
+    "widget.downloadView"
   ],
   "helloext.view.Main": [
     "widget.app-main"
