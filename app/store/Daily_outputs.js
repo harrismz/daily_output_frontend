@@ -29,9 +29,9 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
 
     onCreateRecords: function(records, operation, success) {
         // console.log({records, operation, success});
-        if(success){
+        /*if(success){
             this.load()
-        }
+        }*/
 
     },
 
