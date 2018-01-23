@@ -87,8 +87,9 @@ Ext.define('helloext.controller.MyToolBar', {
 
 
         //parameter didn't pass to avoid ajax post
-        var model = new helloext.model.Daily_output();
+        var model = new helloext.model.Daily_output(parameter);
         store.insert(0, model );
+        console.log(model)
         RowEditing.startEdit(0, 0);
     },
 
