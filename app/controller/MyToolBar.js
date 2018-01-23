@@ -76,7 +76,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.next('datefield#tanggal');
         var shift = component.next('combo#comboShift').value;
         var line_name = component.next('combo#comboLine').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
 
         var parameter = {
             tanggal: tanggal.rawValue,
@@ -119,7 +119,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.rawValue;
         var shift = component.next('combo').value;
         var line_name = component.next('combo#comboLine').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /*console.log({tanggal, shift, line_name})
         return false;*/
@@ -172,7 +172,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = value;
         var line_name = component.next('combo').value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /**/
         /*set store parameter*/
@@ -228,7 +228,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var tanggal = component.prev('datefield').rawValue ;
         var shift = component.prev('combo').value;
         var line_name = value;
-        var users_id = MySharedData.getUser() || null ;
+        var users_id = helloext.util.Config.getUser() || null ;
         var self = this;
         /**/
         /*set store parameter*/

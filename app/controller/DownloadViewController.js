@@ -11,7 +11,7 @@ Ext.define('helloext.controller.DownloadViewController', {
 
     btnDownloadOnClick: function(component, value){
     	var form = component.up('form').getForm();
-    	var hostname = MySharedData.hostname; //ini global variable di app.js
+    	var hostname = helloext.util.Config.hostname(); //ini global variable di app.js
     	// console.log({form, hostname})
     	if (form.isValid()) {        		
     		var data = {};

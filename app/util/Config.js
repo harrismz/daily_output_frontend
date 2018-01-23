@@ -13,9 +13,10 @@ Ext.define('helloext.util.Config', {
     hostname: function(){
     	if ( window.location.hostname == 'localhost'){
 		    return 'localhost';
-		}
-		
-    	return '136.198.117.75/t_web'
+		}else{
+            return '136.198.117.75/t_web';
+        }
+                
  	},
     getUser: function (){
         if (localStorage.getItem('user') != null){
