@@ -33,7 +33,7 @@ Ext.define('helloext.controller.MyToolBar', {
     	
     },
 
-    getShift(param){
+    getShift : function (param){
 
         var a = [
             {id:1, name: '06-07'},
@@ -89,7 +89,7 @@ Ext.define('helloext.controller.MyToolBar', {
         //parameter didn't pass to avoid ajax post
         var model = new helloext.model.Daily_output(parameter);
         store.insert(0, model );
-        console.log(model)
+        // console.log(model)
         RowEditing.startEdit(0, 0);
     },
 

@@ -12,7 +12,7 @@ Ext.define('helloext.controller.DownloadViewController', {
     btnDownloadOnClick: function(component, value){
     	var form = component.up('form').getForm();
     	var hostname = MySharedData.hostname; //ini global variable di app.js
-    	console.log({form, hostname})
+    	// console.log({form, hostname})
     	if (form.isValid()) {        		
     		var data = {};
             Ext.Object.each(form.getValues(), function(key, value){
@@ -27,7 +27,7 @@ Ext.define('helloext.controller.DownloadViewController', {
 
             var baseurl = 'http://'+hostname+'/daily_output/public/api/daily_outputs/download';
 			var download_url = baseurl +'?'+ url;
-			console.log(download_url);
+			// console.log(download_url);
 			
 			var win = window.open(download_url, '_blank');
         	win.focus();
