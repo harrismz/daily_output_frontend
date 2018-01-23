@@ -50,7 +50,7 @@ Ext.define("helloext.view.RegisterUser", {
 	            handler: function (){
 	            	var form = this.up('form').getForm();
 	            	var self = this;
-	            	var hostname = MySharedData.hostname; //ini global variable di app.js
+	            	var hostname = helloext.util.Config.hostname(); //ini global variable di app.js
 
 	            	if (form.isValid()) {
 	            		
