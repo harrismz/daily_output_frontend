@@ -35,6 +35,8 @@ Ext.define('helloext.Application', {
         'chart.delay_type',
         'chart.target_output',
         'indexToolbarView',
+        'TargetView',
+        'StdManPowerView'
         
     ],
 
@@ -118,10 +120,14 @@ Ext.define('helloext.Application', {
                             height: 550,
                         },
                         {
-                            title: 'TARGET'
+                            title: 'TARGET',
+                            xtype: 'target_view',
+                            height: 550
                         },
                         {
-                            title: 'Std Man Power'
+                            title: 'Std Man Power',
+                            xtype: 'std_man_power',
+                            height: 550
                         }
                     ],
                     renderTo: "mainPanel"

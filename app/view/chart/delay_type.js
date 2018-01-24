@@ -5,7 +5,8 @@ Ext.define("helloext.view.chart.delay_type", {
     margin: '10 10 10 10',
     padding: '10 0 0 0',
     style: {
-        'background' : '#fff'
+        'background' : '#fff',
+        'border-radius' : '5px',
     },
     animate: true,
     shadow: false,

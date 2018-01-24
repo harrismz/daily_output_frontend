@@ -476,6 +476,26 @@
         "appName": "helloext",
         "name": "Home"
       }
+    },
+    "app/view/TargetView.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "TargetView",
+        "viewFileName": "TargetView",
+        "appName": "helloext",
+        "name": "TargetView"
+      }
+    },
+    "app/view/StdManPowerView.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "StdManPowerView",
+        "viewFileName": "StdManPowerView",
+        "appName": "helloext",
+        "name": "StdManPowerView"
+      }
     }
   }
 }

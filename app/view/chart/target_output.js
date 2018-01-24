@@ -5,7 +5,10 @@ Ext.define("helloext.view.chart.target_output", {
     padding: '10 0 0 0',
     animate: true,
     shadow: false,
-    style: 'background: #fff;',
+    style: {
+    	'background': '#fff',
+    	'border-radius' : '5px'
+    },
     legend: {
         position: 'right',
         boxStrokeWidth: 0,
