@@ -97,11 +97,11 @@ Ext.define("helloext.view.RegisterUser", {
 	            	}
 	            }                
 	        },
-	        {
+	        /*{
 	            text: 'Cancel',
 	            scope: this,
 	            handler: this.close    
-	        }
+	        }*/
 	    ],
     }
     ]

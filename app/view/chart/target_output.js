@@ -22,12 +22,6 @@ Ext.define("helloext.view.chart.target_output", {
 	        height: 30,
 	        x : 40, //the sprite x position
 	        y : 12  //the sprite y position
-	    }, {
-	        type: 'text',
-	        text: 'Data: Comparation between target and actual output',
-	        font: '10px Helvetica',
-	        x: 12,
-	        y: 380
 	    }, 
     ],
     axes: [
@@ -37,6 +31,7 @@ Ext.define("helloext.view.chart.target_output", {
 	        position: 'left',
 	        grid: true,
 	        minimum: 0,
+	        maximum: 120,
 	        label: {
 	            renderer: function(v) { return v + ' Pcs'; }
 	        }

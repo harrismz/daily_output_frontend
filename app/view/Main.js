@@ -20,17 +20,36 @@ Ext.define('helloext.view.Main', {
             region: 'north',
             // layout : 'border',
             items:[
-                {
+                /*{
                     xtype: 'login_view',
                     // region : 'east',
                     height: '50%',
                     width: '30%'
+                },*/
+                {
+                    xtype: 'panel',
+                    html: '<h1 > DAILY OUTPUT CONTROL </h1>',
+                        /*layout: { 
+                            type: 'vbox',
+                            align: 'center'
+                        },*/
+                    region: 'north',
+                    flex: 1,
+                    split :true,
+                    bodyPadding : '10',
+                    height: 55,
+                    frame: false,
+                    border: false,
+                    bodyStyle: {
+                        "background-image" : "url(resources/img.jpg) !important",
+                        'color' : 'white',
+                        'align' : 'center'
+                    }
                 },
                 {
-                    xtype : 'basic-toolbar',
+                    xtype : 'indexToolbar',
                     region: 'center',
                     margin: '10 10 10 10',
-                    // width: '70%'
                 }
             ]
         },
@@ -42,7 +61,8 @@ Ext.define('helloext.view.Main', {
 
         {
             xtype: 'chart_target_output',
-            region: 'east'
+            region: 'east',
+            width: '60%'
         }
     ]
 });

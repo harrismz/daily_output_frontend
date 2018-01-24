@@ -34,6 +34,7 @@ Ext.define('helloext.Application', {
         'DownloadView',
         'chart.delay_type',
         'chart.target_output',
+        'indexToolbarView'
     ],
 
     controllers: [
@@ -41,6 +42,7 @@ Ext.define('helloext.Application', {
         'Daily_outputs',
         'MyToolBar',
         'DownloadViewController',
+        'indexToolbarController'
     ],
 
     //Collection
