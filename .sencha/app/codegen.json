@@ -466,6 +466,16 @@
         "controllerNamespace": "helloext.controller",
         "controllerFileName": "indexToolbarController"
       }
+    },
+    "app/view/Home.js": {
+      "source": "{viewFileName}.js.tpl.merge",
+      "version": "acde5ea901286ca2f976bcddea23e159dbaa0e6f",
+      "parameters": {
+        "viewName": "Home",
+        "viewFileName": "Home",
+        "appName": "helloext",
+        "name": "Home"
+      }
     }
   }
 }

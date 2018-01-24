@@ -34,7 +34,8 @@ Ext.define('helloext.Application', {
         'DownloadView',
         'chart.delay_type',
         'chart.target_output',
-        'indexToolbarView'
+        'indexToolbarView',
+        
     ],
 
     controllers: [
@@ -91,12 +92,15 @@ Ext.define('helloext.Application', {
                 //kalau aktif, masuk/
                 self.getCurrentUser(token); //untuk get current user
 
-                Ext.create('Ext.container.Container', {
+                Ext.create('Ext.tab.Panel', {
+                    title: 'DAILY OUTPUT CONTROL',
+                    // titleAlign: 'center',
+                    // bodyPadding : 10,
                     items: [
                         {   
-                            xtype:'daily_output_grid',
+                            title: 'Home',
 
-                            title: 'Daily output controll',
+                            xtype:'daily_output_grid',
                             
                             tbar:[{
                                 xtype: 'MyToolBar'  
@@ -111,11 +115,16 @@ Ext.define('helloext.Application', {
                                 plugins: new Ext.ux.ProgressBarPager()
                             },
                             
-                            height: 600,
+                            height: 550,
+                        },
+                        {
+                            title: 'TARGET'
+                        },
+                        {
+                            title: 'Std Man Power'
                         }
                     ],
                     renderTo: "mainPanel"
-                    // renderTo: Ext.getBody()
                 });
             },
 
