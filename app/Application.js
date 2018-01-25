@@ -96,12 +96,11 @@ Ext.define('helloext.Application', {
 
                 Ext.create('Ext.tab.Panel', {
                     title: 'DAILY OUTPUT CONTROL',
-                    // titleAlign: 'center',
-                    // bodyPadding : 10,
+                    
                     items: [
                         {   
                             title: 'Home',
-
+                            bodyPadding : 10,
                             xtype:'daily_output_grid',
                             
                             tbar:[{
