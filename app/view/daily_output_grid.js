@@ -209,8 +209,6 @@ Ext.define('helloext.view.daily_output_grid', {
 
                             edtPlusMinus.setValue(hasilPlusMinus);
                             edtLostHour.setValue(lostHour);
-
-                            // console.log({edtMinute: edtMinute.value, edtTargetSop: edtTargetSop.value,edtPlusMinus: edtPlusMinus.value, hasil})
                         }
 
                     }
