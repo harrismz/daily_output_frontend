@@ -496,6 +496,17 @@
         "appName": "helloext",
         "name": "StdManPowerView"
       }
+    },
+    "app/controller/GridController.js": {
+      "source": "{controllerFileName}.js.tpl.merge",
+      "version": "b092f4aad11d2f7eaab5ce3e2dcc2fc3134f3188",
+      "parameters": {
+        "appName": "helloext",
+        "controllerName": "GridController",
+        "name": "GridController",
+        "controllerNamespace": "helloext.controller",
+        "controllerFileName": "GridController"
+      }
     }
   }
 }

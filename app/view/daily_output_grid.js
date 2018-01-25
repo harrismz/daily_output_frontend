@@ -92,17 +92,6 @@ Ext.define('helloext.view.daily_output_grid', {
 
                             hasilPlusMinus = (edtOscOutput.value - ( ( edtMinute / 60) * edtTargetSop.value ) );
                             lostHour = ( hasilPlusMinus / edtTargetSop.value );
-
-                            /*console.log({
-                                edtMinute:edtMinute,
-                                edtTargetSop:edtTargetSop.value,
-                                edtOscOutput:edtOscOutput.value,
-                                edtPlusMinus:edtPlusMinus.value,
-                                edtLostHour:edtLostHour.value,
-                                hasilPlusMinus: hasilPlusMinus,
-                                lostHour: lostHour
-                            })*/
-
                             edtPlusMinus.setValue(hasilPlusMinus);
                             edtLostHour.setValue(lostHour);
 
@@ -135,8 +124,6 @@ Ext.define('helloext.view.daily_output_grid', {
                         
                         myGrid = this.up('grid'); //ambil ke atas.
                         
-                        //var selectedModel = this.up('grid').getSelectionModel().getSelection()[0];
-                        // console.log(value)
                         if(value != ""){
                             //get edtPlusMinus
                             edtMinute = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=minute]');
@@ -158,16 +145,6 @@ Ext.define('helloext.view.daily_output_grid', {
 
                             hasilPlusMinus = (edtOscOutput.value - ( ( edtMinute.value / 60) * value ) );
                             lostHour = (hasilPlusMinus / value );
-
-                            /*console.log({
-                                edtMinute : edtMinute.value,
-                                edtOscOutput : edtOscOutput.value,
-                                edtPlusMinus : edtPlusMinus.value,
-                                edtLostHour: edtLostHour.value,
-                                hasilPlusMinus: hasilPlusMinus,
-                                lostHour: lostHour,
-                                value: value
-                            })*/
 
                             edtPlusMinus.setValue(hasilPlusMinus);
                             edtLostHour.setValue(lostHour);

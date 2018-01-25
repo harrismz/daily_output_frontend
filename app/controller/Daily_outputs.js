@@ -12,24 +12,28 @@ Ext.define('helloext.controller.Daily_outputs', {
     	// console.log('hai im helloext')
     	this.control({
     		
-           'daily_output_grid': {
-                edit: this.onEditItem,
+           /*'daily_output_grid': {
+                edit: this.onEditItem
+           }, */
 
-                beforesync: this.onBeforeSync
+           '#edtTargetSop':{
+                click : function(){
+                    console.log('change', this.getReference() )
+                }
            }
  
     	});
 
     },
 
-    onEditItem: function (grid, e){
-        // console.log({grid, e});
-        /*e.record.commit();*/
-
+    onEditItem:  function () {
+        console.log( this.getReference() )
     },
 
-    onBeforeSync: function (options, eOpts){
-        // console.log({options, eOpts});
+    getReference : function () {
+        return {
+            edtTargetSop : Ext.getCmp('edtTargetSop').getValue()
+        }
     }
 
 });
