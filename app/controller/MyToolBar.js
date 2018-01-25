@@ -120,7 +120,7 @@ Ext.define('helloext.controller.MyToolBar', {
         var self = this;
         var users_id = helloext.util.Config.getUser() || null ;
 
-        console.log(param)
+        // console.log(param)
         
         store.proxy.setExtraParam('tanggal', param.tanggal);
         store.proxy.setExtraParam('shift', param.shift);
@@ -140,14 +140,11 @@ Ext.define('helloext.controller.MyToolBar', {
                         
                         if ( !param.isFriday() ){ //jika bkn jumat
                             var minute = a[i].durasi;
-                            console.log('bukan jumat', param )
-
+                            // console.log('bukan jumat', param )
                         }else{
                             var minute = a[i].jumat;
-                            console.log('jumat', param )
+                            // console.log('jumat', param )
                         }
-
-
 
                         var model = new helloext.model.Daily_output({
                             time: a[i].name,
