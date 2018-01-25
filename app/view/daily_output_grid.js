@@ -1,6 +1,5 @@
 var CellEditing = Ext.create('Ext.grid.plugin.CellEditing', {
-        clicksToEdit: 2,
-
+        clicksToEdit: 2
     });
 
 var RowEditing = Ext.create('Ext.grid.plugin.RowEditing',{
@@ -119,7 +118,7 @@ Ext.define('helloext.view.daily_output_grid', {
                      value = 0;
                    }                
                 return value;
-            },
+            }
             
         },
 
@@ -233,7 +232,7 @@ Ext.define('helloext.view.daily_output_grid', {
             field: {
                 xtype: 'numberfield',
                 decimalPrecision: 2,
-                id: 'edtPlusMinus', 
+                id: 'edtPlusMinus'
             },
             summaryRenderer: function (value){
                 if (value === null || value === "") {
@@ -253,7 +252,7 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {
             text: 'DELAY TYPE',
-              columns:[
+            columns:[
                 {text: 'BOARD <br> DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'PART <br> DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'EQP <br> TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
@@ -261,15 +260,15 @@ Ext.define('helloext.view.daily_output_grid', {
                 {text: 'BAL. <br> PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-              ]
+                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
+            ]
         },
         
         {text: 'problem',editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textfield'}},
 
         {text: 'dic', dataIndex: 'dic',field: {xtype: 'textfield'}},
 
-        {text: 'action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textfield'}},
+        {text: 'action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textfield'}}
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 

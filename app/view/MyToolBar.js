@@ -58,7 +58,7 @@ Ext.define("helloext.view.MyToolBar", {
         {
             text: 'Download',
             xtype: 'button',
-            id:'btnDownload',
+            id:'btnDownload'
             /*handler: function (){
              var url = 'http://localhost/daily_output/public/api/daily_outputs/download';
              var win = window.open(url, '_blank');
@@ -73,8 +73,6 @@ Ext.define("helloext.view.MyToolBar", {
                 localStorage.clear(); //hapus localStorage
                 window.location.reload(); //refresh page
             }
-        },
-        
-
+        }      
     ]
 });

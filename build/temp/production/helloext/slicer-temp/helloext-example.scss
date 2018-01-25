@@ -567,6 +567,7 @@ $include-helloext-controller-downloadviewcontroller: true;
 $include-helloext-controller-main: true;
 $include-helloext-controller-mytoolbar: true;
 $include-helloext-controller-users: true;
+$include-helloext-controller-indextoolbarcontroller: true;
 $include-helloext-model-daily_output: true;
 $include-helloext-model-timecombo: true;
 $include-helloext-store-daily_outputs: true;
@@ -579,8 +580,14 @@ $include-helloext-view-downloadview: true;
 $include-helloext-view-main: true;
 $include-helloext-view-mytoolbar: true;
 $include-helloext-view-registeruser: true;
+$include-helloext-view-stdmanpowerview: true;
+$include-helloext-view-targetview: true;
 $include-helloext-view-viewport: true;
+$include-helloext-view-chart-delay_type: true;
+$include-helloext-view-chart-target_output: true;
 $include-helloext-view-daily_output_grid: true;
+$include-helloext-view-indextoolbarview: true;
+$include-helloext-view-loginview: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */

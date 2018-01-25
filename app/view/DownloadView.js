@@ -20,7 +20,7 @@ Ext.define("helloext.view.DownloadView", {
 	                format: 'Y-m-d',
 	                fieldLabel: 'Start Date',
 	                emptyText:'yyyy-mm-dd',
-	                allowBlank: true,
+	                allowBlank: true
 	            },
 	            {
 	                xtype: 'datefield',
@@ -28,7 +28,7 @@ Ext.define("helloext.view.DownloadView", {
 	                format: 'Y-m-d',
 	                fieldLabel: 'End Date',
 	                emptyText:'yyyy-mm-dd',
-	                allowBlank: true,
+	                allowBlank: true
 	            },
 	            {
 	                text: 'comboShift',
@@ -40,7 +40,7 @@ Ext.define("helloext.view.DownloadView", {
 		            id: 'comboShiftDownload',
 		            displayField:'name',
 		            valueField:'name',
-		            queryMode: 'local',
+		            queryMode: 'local'
 	            },
 	            {
 		            text: 'Line',
@@ -66,9 +66,9 @@ Ext.define("helloext.view.DownloadView", {
 		            name: 'btnStartDownload',
 		            action: 'download',
 		            id: 'btnStartDownload',
-		            formBind: true,               
+		            formBind: true               
 		        }
-		    ],
+		    ]
 	    }
     ]
 });

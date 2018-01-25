@@ -4,7 +4,7 @@ Ext.define("helloext.view.TargetView", {
     layout: 'fit',
     // margin : '10 10 10 10',
     style: {
-    	"background-image" : "url(resources/under-construction.png) !important",
+    	"background-image" : "url(resources/under-construction.png) !important"
     }
     
 });

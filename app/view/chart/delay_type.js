@@ -6,7 +6,7 @@ Ext.define("helloext.view.chart.delay_type", {
     padding: '10 0 0 0',
     style: {
         'background' : '#fff',
-        'border-radius' : '5px',
+        'border-radius' : '5px'
     },
     animate: true,
     shadow: false,
@@ -21,7 +21,7 @@ Ext.define("helloext.view.chart.delay_type", {
             height: 20,
             x : 40, //the sprite x position
             y : 12  //the sprite y position
-        }, 
+        }
     ],
     axes: [
         {
@@ -31,7 +31,7 @@ Ext.define("helloext.view.chart.delay_type", {
             position: 'left',
             grid: true,
             minimum: -1,
-            maximum: 1,
+            maximum: 1
         }, {
         	// title: 'Time',
             type: 'category',

@@ -861,6 +861,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
+  "helloext.controller.indexToolbarController": [],
   "helloext.model.Daily_output": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
@@ -873,8 +874,14 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
   "helloext.view.RegisterUser": [],
+  "helloext.view.StdManPowerView": [],
+  "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
-  "helloext.view.daily_output_grid": []
+  "helloext.view.chart.delay_type": [],
+  "helloext.view.chart.target_output": [],
+  "helloext.view.daily_output_grid": [],
+  "helloext.view.indexToolbarView": [],
+  "helloext.view.loginView": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1894,6 +1901,7 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
+  "helloext.controller.indexToolbarController": [],
   "helloext.model.Daily_output": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
@@ -1917,10 +1925,28 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.RegisterUser": [
     "widget.registerUser"
   ],
+  "helloext.view.StdManPowerView": [
+    "widget.std_man_power"
+  ],
+  "helloext.view.TargetView": [
+    "widget.target_view"
+  ],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.delay_type": [
+    "widget.chart_delay_type"
+  ],
+  "helloext.view.chart.target_output": [
+    "widget.chart_target_output"
+  ],
   "helloext.view.daily_output_grid": [
     "widget.daily_output_grid",
     "widget.locking-grid"
+  ],
+  "helloext.view.indexToolbarView": [
+    "widget.indexToolbar"
+  ],
+  "helloext.view.loginView": [
+    "widget.login_view"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");

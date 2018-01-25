@@ -2,7 +2,7 @@ Ext.define("helloext.view.indexToolbarView", {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.indexToolbar',
     style:{
-    	'border-radius' : '5px',
+    	'border-radius' : '5px'
     },
     items: [
         
@@ -56,8 +56,8 @@ Ext.define("helloext.view.indexToolbarView", {
         {
             xtype:'button',
             id: 'btnLogIn',
-            text: 'Log In',
-        },
+            text: 'Log In'
+        }
         
 
     ]

@@ -19,7 +19,7 @@ Ext.define('helloext.Application', {
         'helloext.view.Viewport',
         'Ext.chart.axis.Category',
         'Ext.chart.series.Line',
-        'Ext.chart.axis.Numeric',
+        'Ext.chart.axis.Numeric'
 
      ],
 
@@ -117,7 +117,7 @@ Ext.define('helloext.Application', {
                                 plugins: new Ext.ux.ProgressBarPager()
                             },
                             
-                            height: 550,
+                            height: 550
                         },
                         {
                             title: 'TARGET',

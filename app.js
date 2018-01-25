@@ -7,7 +7,7 @@
 Ext.application({
     name: 'helloext',
 
-    extend: 'helloext.Application',
+    extend: 'helloext.Application'	
 
 });
 

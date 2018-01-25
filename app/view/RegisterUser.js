@@ -20,7 +20,7 @@ Ext.define("helloext.view.RegisterUser", {
                 xtype: 'textfield',
                 name : 'name',
                 fieldLabel: 'Username',
-                allowBlank: false,
+                allowBlank: false
             },
             {
                 xtype: 'textfield',
@@ -96,13 +96,13 @@ Ext.define("helloext.view.RegisterUser", {
                         }
 	            	}
 	            }                
-	        },
+	        }
 	        /*{
 	            text: 'Cancel',
 	            scope: this,
 	            handler: this.close    
 	        }*/
-	    ],
+	    ]
     }
     ]
 

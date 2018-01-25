@@ -2,14 +2,22 @@ Ext.define('helloext.view.Main', {
     extend: 'Ext.container.Container',
     requires:[
         'Ext.tab.Panel',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'Ext.chart.axis.Category',
+        'Ext.chart.series.Line',
+        'Ext.chart.axis.Numeric'
     ],
+
+    xtype: 'app-main',
+
     style: { 
-        "background-image" : "url(resources/img.jpg) !important",
+        "background-image" : "url(resources/img.jpg) !important"
     },
+
     layout: {
-        type: 'border',
-        /*align: 'center',
+        type: 'border'
+        /*,
+        align: 'center',
         pack: 'center'*/
     },
 
@@ -49,14 +57,14 @@ Ext.define('helloext.view.Main', {
                 {
                     xtype : 'indexToolbar',
                     region: 'center',
-                    margin: '10 10 10 10',
+                    margin: '10 10 10 10'
                 }
             ]
         },
 
         {
             xtype: 'chart_delay_type',
-            region: 'center',
+            region: 'center'
         },
 
         {

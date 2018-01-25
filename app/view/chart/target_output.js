@@ -25,7 +25,7 @@ Ext.define("helloext.view.chart.target_output", {
 	        height: 30,
 	        x : 40, //the sprite x position
 	        y : 12  //the sprite y position
-	    }, 
+	    }
     ],
     axes: [
 	    {
@@ -107,7 +107,7 @@ Ext.define("helloext.view.chart.target_output", {
 	                this.setTitle(title + ' for ' + storeItem.get('time') + ': ' + storeItem.get(item.series.yField) + ' Pcs');
 	            }
 	        }
-	    },
+	    }
 	    
    ]
 });

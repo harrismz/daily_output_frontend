@@ -41,6 +41,6 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
 
     onDestroyRecords: function(records, operation, success) {
         // console.log({records, operation, success});
-    },
+    }
 
 });
