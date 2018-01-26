@@ -229,14 +229,14 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'DELAY TYPE',
             columns:[
-                {text: 'BOARD <br> DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'PART <br> DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'EQP <br> TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'QUALITY <br> PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
-                {text: 'BAL. <br> PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
+                {text: 'BOARD <br> DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'PART <br> DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'EQP <br> TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'QUALITY <br> PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
+                {text: 'BAL. <br> PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
             ]
         },
         
