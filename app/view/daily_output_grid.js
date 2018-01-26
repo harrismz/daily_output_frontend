@@ -240,11 +240,11 @@ Ext.define('helloext.view.daily_output_grid', {
             ]
         },
         
-        {text: 'problem',editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textfield'}},
+        {text: 'problem',editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea', height: 25/*, resizable:true*/}},
 
         {text: 'dic', dataIndex: 'dic',field: {xtype: 'textfield'}},
 
-        {text: 'action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textfield'}}
+        {text: 'action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea' , height: 25}}
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
