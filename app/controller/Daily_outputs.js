@@ -12,15 +12,7 @@ Ext.define('helloext.controller.Daily_outputs', {
     	// console.log('hai im helloext')
     	this.control({
     		
-           /*'daily_output_grid': {
-                edit: this.onEditItem
-           }, */
-
-           '#edtTargetSop':{
-                click : function(){
-                    console.log('change', this.getReference() )
-                }
-           }
+           
  
     	});
 

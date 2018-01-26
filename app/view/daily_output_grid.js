@@ -57,12 +57,15 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {text: 'line_name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
 
-        {text: 'time', field: {
-            xtype: 'combobox', 
-            store: 'timeCombos',
-            displayField:'name',
-            valueField:'name',
-            queryMode: 'local' }, 
+        {
+            text: 'time',
+            field: {
+                xtype: 'combobox', 
+                store: 'timeCombos',
+                displayField:'name',
+                valueField:'name',
+                queryMode: 'local' 
+            }, 
             dataIndex: 'time'
         },
 
@@ -123,7 +126,7 @@ Ext.define('helloext.view.daily_output_grid', {
                     change: function (editor, value){
                         
                         myGrid = this.up('grid'); //ambil ke atas.
-                        
+                        // console.log('value')
                         if(value != ""){
                             //get edtPlusMinus
                             edtMinute = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=minute]');
@@ -131,17 +134,15 @@ Ext.define('helloext.view.daily_output_grid', {
                             edtPlusMinus = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=plus_minus]');
                             edtLostHour = myGrid.getPlugin('RowEditing').editor.down('numberfield[name=lost_hour]');
 
-                            
-
-                            if(edtOscOutput.value == "" || edtMinute.value == ""){
-                                // console.log('false')
+                            /*if(edtOscOutput.value == "" || edtMinute.value == ""){
+                                console.log('false')
                                 return false;
                             }
 
                             if(edtOscOutput.value == null || edtMinute.value == null){
-                                // console.log('false')
+                                console.log('false')
                                 return false;
-                            }
+                            }*/
 
                             hasilPlusMinus = (edtOscOutput.value - ( ( edtMinute.value / 60) * value ) );
                             lostHour = (hasilPlusMinus / value );
