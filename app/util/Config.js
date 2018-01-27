@@ -20,7 +20,7 @@ Ext.define('helloext.util.Config', {
  	},
     getUser: function (){
         if (localStorage.getItem('user') != null){
-           return  JSON.parse( localStorage.getItem('user')).id
+           return  JSON.parse( localStorage.getItem('user') ).id
         }else{
             return null
         }

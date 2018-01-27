@@ -16,7 +16,8 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
             tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
             shift: 'A',
             line_name: 1,
-            username: helloext.util.Config.getUser()
+            users_id: helloext.util.Config.getUser(),
+            token : helloext.util.Config.getToken()
         },  
         url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/daily_outputs',
         reader:{

@@ -222,6 +222,7 @@ Ext.define('helloext.view.daily_output_grid', {
             text: 'Lost Hours', 
             dataIndex: 'lost_hour', 
             summaryType: 'sum',
+            decimalPrecision: 2,
             dock:'bottom',
             field: {xtype: 'numberfield', decimalPrecision: 2}
         },
