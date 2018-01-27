@@ -117,7 +117,7 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        },
+                        }/*,
                         {
                             title: 'TARGET',
                             xtype: 'target_view',
@@ -127,7 +127,7 @@ Ext.define('helloext.Application', {
                             title: 'Std Man Power',
                             xtype: 'std_man_power',
                             height: 550
-                        }
+                        }*/
                     ],
                     renderTo: "mainPanel"
                 });
