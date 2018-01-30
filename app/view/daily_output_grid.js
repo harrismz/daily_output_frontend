@@ -30,6 +30,8 @@ Ext.define('helloext.view.daily_output_grid', {
     selType: 'rowmodel',
 
     layout: 'fit',
+    
+    loadMask    : true,
 
     plugins: [ /*CellEditing,*/ RowEditing ],
 
