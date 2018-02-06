@@ -13,7 +13,7 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
             Authorization : 'Bearer ' + helloext.util.Config.getToken()  //setting token, ambil dari localStorage
         },
         extraParams: {
-            tanggal: new Date().getFullYear() + "-" + new Date().getMonth() + 1 + "-" + new Date().getDate(),
+            tanggal: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
             shift: 'A',
             line_name: 1,
             users_id: helloext.util.Config.getUser(),
