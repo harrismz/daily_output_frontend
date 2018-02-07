@@ -3,7 +3,7 @@ Ext.define("helloext.view.MyToolBar", {
     alias: 'widget.MyToolBar',
     xtype: 'basic-toolbar',
     items: [
-        {
+        /*{
             xtype:'button',
             id: 'btnAdd',
             text: 'Add' 
@@ -12,7 +12,7 @@ Ext.define("helloext.view.MyToolBar", {
             xtype:'button',
             id:'btnDelete',
             text: 'Delete'
-        }, '-',
+        }, '-',*/
         {
             xtype: 'datefield',
             id: 'tanggal',
