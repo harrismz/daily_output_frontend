@@ -166,7 +166,7 @@ Ext.define('helloext.view.daily_output_grid', {
             }
         },
 
-        {text: 'Osc Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
+        {text: 'OCS Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
             field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
