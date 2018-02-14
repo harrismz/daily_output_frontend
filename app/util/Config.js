@@ -12,9 +12,10 @@ Ext.define('helloext.util.Config', {
 
     hostname: function(){
     	if ( window.location.hostname == 'localhost'){
+            // console.log(window.location.hostname, "aku window location")
 		    return 'localhost';
 		}else{
-            return '10.230.38.10/t_web';
+            return window.location.hostname + '/t_web';
         }
                 
  	},
