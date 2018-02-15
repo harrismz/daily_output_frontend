@@ -36,7 +36,8 @@ Ext.define('helloext.Application', {
         'chart.target_output',
         'indexToolbarView',
         'TargetView',
-        'StdManPowerView'
+        'StdManPowerView',
+        'daily_lost_time.grid'
         
     ],
 
@@ -117,12 +118,12 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        }/*,
-                        {
-                            title: 'TARGET',
-                            xtype: 'target_view',
-                            height: 550
                         },
+                        {
+                            title: 'DAILY LOST TIME',
+                            xtype: 'daily_lost_time_grid',
+                            height: 550
+                        }/*,
                         {
                             title: 'Std Man Power',
                             xtype: 'std_man_power',
