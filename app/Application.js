@@ -35,8 +35,8 @@ Ext.define('helloext.Application', {
         'chart.delay_type',
         'chart.target_output',
         'indexToolbarView',
-        'TargetView',
-        'StdManPowerView'
+        'daily_lost_time.grid',
+        'daily_lost_time.toolbar'
         
     ],
 
@@ -45,7 +45,8 @@ Ext.define('helloext.Application', {
         'Daily_outputs',
         'MyToolBar',
         'DownloadViewController',
-        'indexToolbarController'
+        'indexToolbarController',
+        'Daily_lost_time_toolbar'
     ],
 
     //Collection
@@ -53,13 +54,15 @@ Ext.define('helloext.Application', {
         'Daily_outputs',
         'timeCombos', //untuk combobox time 06-07 dll
         'comboShifts', //untuk combobox shift
-        'lines' //untuk combobox lines
+        'lines', //untuk combobox lines
+        'Lost_times'
     ],
 
     //model
     models:[
         /*'User'*/
         'Daily_output',
+        'Lost_time',
         'timeCombo'
     ],
 
@@ -117,12 +120,13 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        }/*,
-                        {
-                            title: 'TARGET',
-                            xtype: 'target_view',
-                            height: 550
                         },
+                        {
+                            title: 'DAILY LOST TIME',
+                            bodyPadding : 10,
+                            xtype: 'daily_lost_time_grid',
+                            height: 550
+                        }/*,
                         {
                             title: 'Std Man Power',
                             xtype: 'std_man_power',

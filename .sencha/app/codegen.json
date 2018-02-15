@@ -507,6 +507,17 @@
         "controllerNamespace": "helloext.controller",
         "controllerFileName": "GridController"
       }
+    },
+    "app/controller/daily_lost_time_toolbar.js": {
+      "source": "{controllerFileName}.js.tpl.merge",
+      "version": "b092f4aad11d2f7eaab5ce3e2dcc2fc3134f3188",
+      "parameters": {
+        "appName": "helloext",
+        "controllerName": "Daily_lost_time_toolbar",
+        "name": "Daily_lost_time_toolbar",
+        "controllerNamespace": "helloext.controller",
+        "controllerFileName": "Daily_lost_time_toolbar"
+      }
     }
   }
 }
