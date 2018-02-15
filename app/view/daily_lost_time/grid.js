@@ -53,10 +53,11 @@ Ext.define("helloext.view.daily_lost_time.grid", {
     store:  'Lost_times', //store = colletion
 
     columns :[
-        { text: 'ID', width:30, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
-        {text: 'line_name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
+        { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
+        {text: 'Line <br> Name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
         {
             text: 'time',
+            flex:1,
             field: {
                 xtype: 'combobox', 
                 store: 'timeCombos',
@@ -66,11 +67,18 @@ Ext.define("helloext.view.daily_lost_time.grid", {
             }, 
             dataIndex: 'time'
         },
-        {text: 'Problem', width:300, editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},
-        {text: 'Lost Time <br> ( Minute )', dataIndex:'lost_time', editor: 'numberfield'},
-        {text: 'cause', width:250, dataIndex: 'cause',field: {xtype: 'textareafield', emptyText:'Penyebab', height: 25 }},
-        {text: 'Action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25}},
-        {text: 'Followed By', dataIndex:'followed_by', editor: 'textfield'}
+        {text: 'Problem', flex:4,/*width:300,*/ editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},
+        {text: 'Lost Time <br> ( Minute )', dataIndex:'lost_time', editor: 'numberfield',
+            summaryType : 'sum', 
+            summaryRenderer: function (value,b,c)
+            {
+                // console.log('summaryRenderer', {value,b,c}) 
+                return value
+            }
+        },
+        {text: 'cause', flex:4,/*width:250,*/ dataIndex: 'cause',field: {xtype: 'textareafield', emptyText:'Penyebab', height: 25 }},
+        {text: 'Action', flex:4, editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25}},
+        {text: 'Followed By', flex:2, dataIndex:'followed_by', editor: 'textfield'}
     ],
 
     bbar: {

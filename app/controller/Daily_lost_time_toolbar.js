@@ -47,59 +47,7 @@ Ext.define('helloext.controller.Daily_lost_time_toolbar', {
         store.loadData([],false);
 
         store.load(function (records, operation, success){
-            /*if (success && store.totalCount == 0 ){
-                var a = self.getShift('a');
-                var b = self.getShift('b');
-
-                store.loadData([],false); //empty the local store without firing API  
-                var Array_model = [];
-                if(param.shift == 'A'){
-                    for (var i = 0; i < self.getShift('a').length; i++) {
-                        
-                        if ( !param.isFriday() ){ //jika bkn jumat
-                            var minute = a[i].durasi;
-                            // console.log('bukan jumat', param )
-                        }else{
-                            var minute = a[i].jumat;
-                            // console.log('jumat', param )
-                        }
-
-                        var model = new helloext.model.Daily_output({
-                            time: a[i].name,
-                            shift: 'A',
-                            tanggal: param.tanggal,
-                            line_name: param.line_name,
-                            minute: minute,
-                            users_id: users_id
-                        });
-
-                        Array_model.push(model);
-                    }
-
-                }else{
-                    for (var i = 0; i < self.getShift('b').length; i++) {
-                        
-                        if ( !param.isFriday() ){ //jika bkn jumat
-                            var minute = b[i].jumat;
-                        }else{
-                            var minute = b[i].durasi;
-                        }
-
-                        var model = new helloext.model.Daily_output({
-                            time: b[i].name,
-                            shift: 'B',
-                            tanggal: param.tanggal,
-                            minute: minute,
-                            line_name: param.line_name,
-                            users_id: users_id
-                        });
-                        Array_model.push(model);
-                    }
-                }
-                
-                store.add(Array_model); 
-            }*/
-            console.log({records, operation, success})         
+            console.log('OK')       
         });
     }
 

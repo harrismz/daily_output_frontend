@@ -101,7 +101,7 @@ Ext.define('helloext.Application', {
                     title: 'DAILY OUTPUT CONTROL',
                     
                     items: [
-                        /*{   
+                        {   
                             title: 'Home',
                             bodyPadding : 10,
                             xtype:'daily_output_grid',
@@ -120,7 +120,7 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        },*/
+                        },
                         {
                             title: 'DAILY LOST TIME',
                             bodyPadding : 10,
