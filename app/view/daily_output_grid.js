@@ -55,12 +55,13 @@ Ext.define('helloext.view.daily_output_grid', {
     store:  'Daily_outputs', //store = colletion
 
     columns : [
-        { text: 'ID',  dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
+        { text: 'ID',  dataIndex: 'id', width:55, locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
 
-        {text: 'line_name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
+        {text: 'Line <br> Name', flex:1,  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
 
         {
-            text: 'time',
+            text: 'Time',
+            flex : 2,
             field: {
                 xtype: 'combobox', 
                 store: 'timeCombos',
@@ -74,6 +75,7 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'Minute',
             dataIndex: 'minute' ,
+            flex : 2,
             field: {
                 xtype: 'numberfield',
                 id:'edtMinute',
@@ -117,10 +119,11 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {   
-            text: 'Target Sop',
+            text: 'Target <br> Sop',
             dataIndex: 'target_sop',
             summaryType: 'sum',
             dock:'bottom',
+            flex : 2,
             field: {
                 xtype: 'numberfield',
                 id:'edtTargetSop',
@@ -166,7 +169,7 @@ Ext.define('helloext.view.daily_output_grid', {
             }
         },
 
-        {text: 'OCS Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
+        {text: 'OCS <br> Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', flex : 2,
             field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
@@ -207,6 +210,7 @@ Ext.define('helloext.view.daily_output_grid', {
             dataIndex: 'plus_minus',
             summaryType: 'sum',
             dock:'bottom',
+            flex : 2,
             field: {
                 xtype: 'numberfield',
                 decimalPrecision: 2,
@@ -225,29 +229,31 @@ Ext.define('helloext.view.daily_output_grid', {
             dataIndex: 'lost_hour', 
             summaryType: 'sum',
             decimalPrecision: 2,
+            flex : 2,
             dock:'bottom',
             field: {xtype: 'numberfield', decimalPrecision: 2}
         },
 
         {
             text: 'DELAY TYPE',
+             
             columns:[
-                {text: 'BOARD <br> DELAY', dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'PART <br> DELAY', dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'EQP <br> TROUBLE', dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'QUALITY <br> PROB', dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
-                {text: 'BAL. <br> PROB', dataIndex: 'bal_problem', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'OTHERS', dataIndex: 'others' , field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'SUPPORT', dataIndex: 'support', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'CHANGE <br> MODEL', dataIndex: 'change_model', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
+                {text: 'BOARD <br> DELAY', flex : 2, dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'PART <br> DELAY', flex : 2, dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'EQP <br> TROUBLE', flex : 2, dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'QUALITY <br> PROB', flex : 2, dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
+                {text: 'BAL. <br> PROB', flex : 2, dataIndex: 'bal_problem', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'OTHERS', flex : 2, dataIndex: 'others' , field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'SUPPORT', flex : 2, dataIndex: 'support', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'CHANGE <br> MODEL', flex : 2, dataIndex: 'change_model', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
             ]
         },
         
-        {text: 'Problem',editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},
+        {text: 'Problem', flex : 2, editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},
 
-        {text: 'DIC', dataIndex: 'dic',field: {xtype: 'textfield', emptyText:'Department In Charge' }},
+        {text: 'DIC', flex : 2, dataIndex: 'dic',field: {xtype: 'textfield', emptyText:'Department In Charge' }},
 
-        {text: 'Action',editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25}}
+        {text: 'Action', flex : 2, editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25}}
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
