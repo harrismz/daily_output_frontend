@@ -11,9 +11,9 @@ Ext.define('helloext.store.Lost_times', { //parameter pertama harus sesuai filep
             Authorization : 'Bearer ' + helloext.util.Config.getToken()  //setting token, ambil dari localStorage
         },
         extraParams: {
-            // tanggal: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
-            // shift: 'A',
-            // line_name: 1,
+            tanggal: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
+            shift: 'A',
+            line_name: 1,
             users_id: helloext.util.Config.getUser(),
             token : helloext.util.Config.getToken()
         },  

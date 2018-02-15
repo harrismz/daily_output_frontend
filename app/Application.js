@@ -35,8 +35,6 @@ Ext.define('helloext.Application', {
         'chart.delay_type',
         'chart.target_output',
         'indexToolbarView',
-        'TargetView',
-        'StdManPowerView',
         'daily_lost_time.grid',
         'daily_lost_time.toolbar'
         
@@ -47,7 +45,8 @@ Ext.define('helloext.Application', {
         'Daily_outputs',
         'MyToolBar',
         'DownloadViewController',
-        'indexToolbarController'
+        'indexToolbarController',
+        'Daily_lost_time_toolbar'
     ],
 
     //Collection
@@ -102,7 +101,7 @@ Ext.define('helloext.Application', {
                     title: 'DAILY OUTPUT CONTROL',
                     
                     items: [
-                        {   
+                        /*{   
                             title: 'Home',
                             bodyPadding : 10,
                             xtype:'daily_output_grid',
@@ -121,7 +120,7 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        },
+                        },*/
                         {
                             title: 'DAILY LOST TIME',
                             bodyPadding : 10,

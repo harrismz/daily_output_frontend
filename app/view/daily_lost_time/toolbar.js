@@ -5,7 +5,7 @@ Ext.define("helloext.view.daily_lost_time.toolbar", {
     items: [
         {
             xtype: 'datefield',
-            //id: 'tanggal',
+            id: 'tanggalLostTime',
             labelPad: 15,
             labelWidth:40,
             format: 'Y-m-d',          
@@ -22,7 +22,7 @@ Ext.define("helloext.view.daily_lost_time.toolbar", {
             labelWidth:20,
             store: 'comboShifts',
             emptyText : 'Shift',
-            // id: 'comboShift',
+            id: 'comboShiftLostTime',
             displayField:'name',
             valueField:'name',
             queryMode: 'local',
@@ -37,23 +37,18 @@ Ext.define("helloext.view.daily_lost_time.toolbar", {
             labelWidth:20,
             store: 'lines',
             emptyText : 'lines',
-            // id: 'comboLine',
+            id: 'comboLineLostTime',
             displayField:'name',
             valueField:'name',
             queryMode: 'local',
             forceSelection: true,
             value:'1'
         },
-        {
-            text: 'Download',
-            xtype: 'button',
-            // id:'btnDownload'
-            /*handler: function (){
-             var url = 'http://localhost/daily_output/public/api/daily_outputs/download';
-             var win = window.open(url, '_blank');
-             win.focus();   
-            }*/
-        },
+        // {
+        //     text: 'Download',
+        //     xtype: 'button',
+        //     id:'btnDownloadLostTime'
+        // },
         {
             xtype:'button',
             text: 'Log Out',
