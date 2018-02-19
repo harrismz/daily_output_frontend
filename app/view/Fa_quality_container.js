@@ -10,7 +10,7 @@ Ext.define('helloext.view.Fa_quality_container', {
     },
 
     items: [
-        {
+        /*{
             xtype: 'basic-toolbar',
             region : 'north',
             alias : 'widget.chart_div_responsibilities_toolbar',
@@ -77,6 +77,10 @@ Ext.define('helloext.view.Fa_quality_container', {
                     }
                 }      
             ]
+        }*/
+        {
+            xtype : 'fa_quality_toolbar',
+            region : 'north'
         },
         {
             xtype: 'chart_div_responsibilities',

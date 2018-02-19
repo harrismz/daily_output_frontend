@@ -880,6 +880,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.Create": [],
   "helloext.view.DownloadView": [],
   "helloext.view.Fa_quality_container": [],
+  "helloext.view.Fa_quality_toolbar": [],
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
   "helloext.view.RegisterUser": [],
@@ -1937,6 +1938,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.Fa_quality_container": [
     "widget.fa_quality"
+  ],
+  "helloext.view.Fa_quality_toolbar": [
+    "widget.fa_quality_toolbar"
   ],
   "helloext.view.Main": [
     "widget.app-main"

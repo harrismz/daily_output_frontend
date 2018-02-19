@@ -8,11 +8,7 @@ Ext.define('helloext.controller.MyToolBar', {
     	this.control({
     		'MyToolBar button#btnAdd':{
     			click: this.onRefresh
-    		},
-
-            'MyToolBar button#btnRefresh':{
-                click: this.onRefresh
-            },            
+    		},           
 
             'MyToolBar button#btnDelete':{
                 click: this.btnDeleteOnClick

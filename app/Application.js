@@ -39,7 +39,8 @@ Ext.define('helloext.Application', {
         'daily_lost_time.grid',
         'daily_lost_time.toolbar',
         'chart.div_responsibilities',
-        'Fa_quality_container'
+        'Fa_quality_container',
+        'Fa_quality_toolbar'        
         
     ],
 
@@ -49,7 +50,8 @@ Ext.define('helloext.Application', {
         'MyToolBar',
         'DownloadViewController',
         'indexToolbarController',
-        'Daily_lost_time_toolbar'
+        'Daily_lost_time_toolbar',
+        'Fa_qualityController'
     ],
 
     //Collection
