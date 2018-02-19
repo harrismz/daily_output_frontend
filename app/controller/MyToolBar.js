@@ -1,14 +1,18 @@
 Ext.define('helloext.controller.MyToolBar', {
     extend: 'Ext.app.Controller',
     models:[ 'Daily_output' ],
-    stores:[ 'Daily_outputs' ],
+    stores:[ 'Daily_outputs', 'Qualities', 'Dics' ],
     views:['daily_output_grid'],
     init : function (){
     	//console.log('init MyToolBar controller ')
     	this.control({
     		'MyToolBar button#btnAdd':{
-    			click: this.btnAddOnClick
+    			click: this.onRefresh
     		},
+
+            'MyToolBar button#btnRefresh':{
+                click: this.onRefresh
+            },            
 
             'MyToolBar button#btnDelete':{
                 click: this.btnDeleteOnClick
@@ -31,6 +35,12 @@ Ext.define('helloext.controller.MyToolBar', {
             }            
     	});
     	
+    },
+
+    onRefresh : function (){
+        var store = this.getDicsStore();
+        console.log('onRefresh', store)
+        store.load()
     },
 
     getShift : function (param){

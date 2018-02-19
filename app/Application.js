@@ -19,7 +19,8 @@ Ext.define('helloext.Application', {
         'helloext.view.Viewport',
         'Ext.chart.axis.Category',
         'Ext.chart.series.Line',
-        'Ext.chart.axis.Numeric'
+        'Ext.chart.axis.Numeric',
+        'Ext.chart.series.Pie'
 
      ],
 
@@ -36,7 +37,9 @@ Ext.define('helloext.Application', {
         'chart.target_output',
         'indexToolbarView',
         'daily_lost_time.grid',
-        'daily_lost_time.toolbar'
+        'daily_lost_time.toolbar',
+        'chart.div_responsibilities',
+        'Fa_quality_container'
         
     ],
 
@@ -55,7 +58,9 @@ Ext.define('helloext.Application', {
         'timeCombos', //untuk combobox time 06-07 dll
         'comboShifts', //untuk combobox shift
         'lines', //untuk combobox lines
-        'Lost_times'
+        'Lost_times',
+        'Qualities',
+        'Dics'
     ],
 
     //model
@@ -63,7 +68,9 @@ Ext.define('helloext.Application', {
         /*'User'*/
         'Daily_output',
         'Lost_time',
-        'timeCombo'
+        'timeCombo',
+        'Quality',
+        'Dic'
     ],
 
     getCurrentUser: function (token){
@@ -126,12 +133,13 @@ Ext.define('helloext.Application', {
                             bodyPadding : 10,
                             xtype: 'daily_lost_time_grid',
                             height: 550
-                        }/*,
+                        },
                         {
-                            title: 'Std Man Power',
-                            xtype: 'std_man_power',
-                            height: 550
-                        }*/
+                            title: 'FA QUALITY',
+                            xtype: 'fa_quality',
+
+                            height: 550,
+                        }
                     ],
                     renderTo: "mainPanel"
                 });
