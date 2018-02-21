@@ -859,21 +859,28 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
+  "helloext.controller.Fa_qualityController": [],
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
   "helloext.controller.indexToolbarController": [],
   "helloext.model.Daily_output": [],
+  "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
+  "helloext.model.Quality": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
+  "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
+  "helloext.store.Qualities": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
   "helloext.view.Create": [],
   "helloext.view.DownloadView": [],
+  "helloext.view.Fa_quality_container": [],
+  "helloext.view.Fa_quality_toolbar": [],
   "helloext.view.Main": [],
   "helloext.view.MyToolBar": [],
   "helloext.view.RegisterUser": [],
@@ -881,6 +888,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
   "helloext.view.chart.delay_type": [],
+  "helloext.view.chart.div_responsibilities": [],
   "helloext.view.chart.target_output": [],
   "helloext.view.daily_lost_time.grid": [],
   "helloext.view.daily_lost_time.toolbar": [],
@@ -1904,15 +1912,20 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
+  "helloext.controller.Fa_qualityController": [],
   "helloext.controller.Main": [],
   "helloext.controller.MyToolBar": [],
   "helloext.controller.Users": [],
   "helloext.controller.indexToolbarController": [],
   "helloext.model.Daily_output": [],
+  "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
+  "helloext.model.Quality": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
+  "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
+  "helloext.store.Qualities": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
@@ -1922,6 +1935,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.DownloadView": [
     "widget.downloadView"
+  ],
+  "helloext.view.Fa_quality_container": [
+    "widget.fa_quality"
+  ],
+  "helloext.view.Fa_quality_toolbar": [
+    "widget.fa_quality_toolbar"
   ],
   "helloext.view.Main": [
     "widget.app-main"
@@ -1942,6 +1961,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.Viewport": [],
   "helloext.view.chart.delay_type": [
     "widget.chart_delay_type"
+  ],
+  "helloext.view.chart.div_responsibilities": [
+    "widget.chart_div_responsibilities"
   ],
   "helloext.view.chart.target_output": [
     "widget.chart_target_output"
