@@ -17,7 +17,7 @@ Ext.define('helloext.store.Dics', { //parameter pertama harus sesuai filepath
             users_id: helloext.util.Config.getUser(),
             token : helloext.util.Config.getToken()
         },*/  
-        url: 'http://'+helloext.util.Config.hostname()+'/fa_quality/public/api/qualities/dic',
+        url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/qualities/dic',
         reader:{
             root: 'data',
             type: 'json',

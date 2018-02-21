@@ -1,12 +1,12 @@
-Ext.define('helloext.store.Qualities', { //parameter pertama harus sesuai filepath
+Ext.define('helloext.store.Repairs', { //parameter pertama harus sesuai filepath
     extend: 'Ext.data.Store',
-    model: 'helloext.model.Quality',
-    // autoLoad:true,   
-    // autoSync: true,
-    // remoteSort: true,
+    model: 'helloext.model.Repair',
+    autoLoad:true,   
+    autoSync: true,
+    remoteSort: true,
     proxy: {
         type: 'rest',
-        // enablePaging:true,
+        enablePaging:true,
         headers: {
             Authorization : 'Bearer ' + helloext.util.Config.getToken()  //setting token, ambil dari localStorage
         },
@@ -17,12 +17,12 @@ Ext.define('helloext.store.Qualities', { //parameter pertama harus sesuai filepa
             users_id: helloext.util.Config.getUser(),
             token : helloext.util.Config.getToken()
         },*/  
-        url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/qualities/dic',
+        url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/daily_repairs',
         reader:{
             root: 'data',
             type: 'json',
-            //totalProperty: 'total',
-            //idProperty: 'id'
+            totalProperty: 'total',
+            idProperty: 'id'
         }
     }
 

@@ -62,7 +62,8 @@ Ext.define('helloext.Application', {
         'lines', //untuk combobox lines
         'Lost_times',
         'Qualities',
-        'Dics'
+        'Dics',
+        'Repairs'
     ],
 
     //model
@@ -72,7 +73,8 @@ Ext.define('helloext.Application', {
         'Lost_time',
         'timeCombo',
         'Quality',
-        'Dic'
+        'Dic',
+        'Repair'
     ],
 
     getCurrentUser: function (token){
