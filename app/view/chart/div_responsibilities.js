@@ -21,6 +21,7 @@ Ext.define("helloext.view.chart.div_responsibilities", {
             type: 'pie',
             field: 'total',
             showInLegend: true,
+            animate :true,
             tips: {
                 trackMouse: true,
                 renderer: function(storeItem, item) {
@@ -31,7 +32,7 @@ Ext.define("helloext.view.chart.div_responsibilities", {
                     store1.each(function(rec) {
                         total += rec.get('total');
                     });
-                    this.setTitle(storeItem.get('name') + ': ' + Math.round(storeItem.get('total') / total * 100) + '%');
+                    this.setTitle(storeItem.get('name') + ': ' + Math.round(storeItem.get('total') / total * 100) + '% or ' + storeItem.get('total') +'/'+ total );
                 }
             },
             highlight: {

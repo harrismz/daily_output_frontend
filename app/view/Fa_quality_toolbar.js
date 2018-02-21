@@ -53,11 +53,6 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             value:'1'
         },
         {
-            text: 'Download',
-            xtype: 'button',
-            
-        },
-        {
             xtype:'button',
             // id: 'btnLogout',
             text: 'Log Out',
