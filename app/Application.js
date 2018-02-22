@@ -20,7 +20,8 @@ Ext.define('helloext.Application', {
         'Ext.chart.axis.Category',
         'Ext.chart.series.Line',
         'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Pie'
+        'Ext.chart.series.Pie',
+        'Ext.chart.series.Column'
 
      ],
 
@@ -43,7 +44,8 @@ Ext.define('helloext.Application', {
         'Fa_quality_toolbar',
         'Daily_repair_container',
         'daily_repair.Grid',
-        'daily_repair.Toolbar'        
+        'daily_repair.Toolbar',
+        'chart.Daily_rejection_by_line'        
         
     ],
 

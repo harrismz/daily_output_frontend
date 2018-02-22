@@ -56,7 +56,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
             flex:2,
             dataIndex: 'shift'
         },
-        {text: 'SMT', flex:2, dataIndex: 'SMT'
+        {text: 'SMT', flex:2, dataIndex: 'SMT', summaryType : 'sum'
             // ,field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25 }, editor: 'textareafield'
         },
         {text: 'PCB', dataIndex:'PCB_CODE', flex: 2,
@@ -68,18 +68,18 @@ Ext.define("helloext.view.daily_repair.Grid", {
                 return value
             }
         },
-        {text: 'DESIGN', flex:2, dataIndex: 'DESIGN_CODE',/*field: {xtype: 'textareafield', emptyText:'Penyebab', height: 25 }*/},
-        {text: 'MECHANISM', flex:2, dataIndex: 'MECHANISM_CODE'
+        {text: 'DESIGN', flex:2, dataIndex: 'DESIGN_CODE', summaryType : 'sum'/*field: {xtype: 'textareafield', emptyText:'Penyebab', height: 25 }*/},
+        {text: 'MECHANISM', flex:2, dataIndex: 'MECHANISM_CODE', summaryType : 'sum'
             // ,field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25} , editor: 'textareafield'
         },
-        {text: 'ELECTRICAL', flex:2, dataIndex:'ELECTRICAL_CODE'/*, editor: 'textfield'*/},
-        {text: 'MECHANICAL', flex:2, dataIndex:'MECHANICAL_CODE'/*, editor: 'textfield'*/},
-        {text: 'FINAL_ASSY', flex:2, dataIndex:'FINAL_ASSY_CODE'/*, editor: 'textfield'*/},
-        {text: 'OTHERS', flex:2, dataIndex:'OTHERS_CODE'/*, editor: 'textfield'*/},
-        {text: 'AFTER<br>REPAIR<br>QTY', flex:2, dataIndex:'AFTER_REPAIR_QTY', field:{xtype: 'numberfield', id: 'after_repair_qty_column'} },
+        {text: 'ELECTRICAL', flex:2, dataIndex:'ELECTRICAL_CODE' , summaryType : 'sum'/*, editor: 'textfield'*/},
+        {text: 'MECHANICAL', flex:2, dataIndex:'MECHANICAL_CODE', summaryType : 'sum'/*, editor: 'textfield'*/},
+        {text: 'FINAL_ASSY', flex:2, dataIndex:'FINAL_ASSY_CODE' , summaryType : 'sum'/*, editor: 'textfield'*/},
+        {text: 'OTHERS', flex:2, dataIndex:'OTHERS_CODE' , summaryType : 'sum'/*, editor: 'textfield'*/},
+        {text: 'AFTER<br>REPAIR<br>QTY', flex:2, dataIndex:'AFTER_REPAIR_QTY' , summaryType : 'sum', field:{xtype: 'numberfield', id: 'after_repair_qty_column'} },
         {text: 'Balance <br> Repair <br> Quantity',
             columns:[
-                {text: 'MA', flex:2, dataIndex:'MA', 
+                {text: 'MA', flex:2, dataIndex:'MA' , summaryType : 'sum' , 
                     field: {
                         xtype: 'numberfield',
                         id : 'MAColumn',
@@ -101,7 +101,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
                         } 
                     }
                 },
-                {text: 'PCB', flex:2, dataIndex:'PCB', field: {
+                {text: 'PCB', flex:2, dataIndex:'PCB', summaryType : 'sum' , field: {
                     xtype: 'numberfield',
                     id: 'PCBColumn',
                     listeners:{
@@ -125,8 +125,8 @@ Ext.define("helloext.view.daily_repair.Grid", {
             ]
         },
         
-        {text: 'TOTAL <br> REPAIR <br> QTY', flex:2, dataIndex:'TOTAL_REPAIR_QTY', field:{xtype:'numberfield', id: 'total'} },
-        {text: 'Major <br> Problem', flex:4, dataIndex:'major_problem', editor: 'textareafield'}
+        {text: 'TOTAL <br> REPAIR <br> QTY', flex:2, dataIndex:'TOTAL_REPAIR_QTY', summaryType : 'sum' , field:{xtype:'numberfield', id: 'total'} },
+        {text: 'Major <br> Problem', flex:4, dataIndex:'major_problem' , editor: 'textareafield'}
 
     ],
 

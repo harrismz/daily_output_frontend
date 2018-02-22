@@ -13,9 +13,9 @@ Ext.define("helloext.view.chart.div_responsibilities", {
     store: 'Dics',
     insetPadding: 40,
     theme: 'Base:gradients',
-    legend: {
+    /*legend: {
         position: 'right'
-    },
+    },*/
     series: [
         {
             type: 'pie',

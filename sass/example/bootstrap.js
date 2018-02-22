@@ -856,6 +856,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
@@ -890,6 +891,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.StdManPowerView": [],
   "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_rejection_by_line": [],
   "helloext.view.chart.delay_type": [],
   "helloext.view.chart.div_responsibilities": [],
   "helloext.view.chart.target_output": [],
@@ -1914,6 +1916,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
@@ -1969,6 +1972,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.target_view"
   ],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_rejection_by_line": [
+    "widget.chart_daily_rejection_by_line"
+  ],
   "helloext.view.chart.delay_type": [
     "widget.chart_delay_type"
   ],

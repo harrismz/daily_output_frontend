@@ -15,8 +15,13 @@ Ext.define('helloext.view.Fa_quality_container', {
             region : 'north'
         },
         {
+            xtype : 'chart_daily_rejection_by_line',
+            region : 'center'
+        },
+        {
             xtype: 'chart_div_responsibilities',
-            region: 'center'
+            region: 'east',
+            width : '50%'
         }
     ]
 });
