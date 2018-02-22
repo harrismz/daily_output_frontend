@@ -40,7 +40,9 @@ Ext.define('helloext.Application', {
         'daily_lost_time.toolbar',
         'chart.div_responsibilities',
         'Fa_quality_container',
-        'Fa_quality_toolbar'        
+        'Fa_quality_toolbar',
+        'Daily_repair_container',
+        'daily_repair.Grid'        
         
     ],
 
@@ -143,7 +145,13 @@ Ext.define('helloext.Application', {
                             xtype: 'fa_quality',
 
                             height: 550,
+                        },
+                        {
+                            title: 'DAILY REPAIRS',
+                            xtype: 'daily_repair',
+                            height: 550,
                         }
+
                     ],
                     renderTo: "mainPanel"
                 });

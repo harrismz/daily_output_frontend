@@ -1,6 +1,6 @@
-Ext.define('helloext.view.Fa_quality_container', {
+Ext.define('helloext.view.Daily_repair_container', {
     extend: 'Ext.container.Container',
-    xtype: 'fa_quality',
+    xtype: 'daily_repair',
     style: { 
         "background-image" : "url(resources/img.jpg) !important"
     },
@@ -10,12 +10,12 @@ Ext.define('helloext.view.Fa_quality_container', {
     },
 
     items: [
-        {
+        /*{
             xtype : 'fa_quality_toolbar',
             region : 'north'
-        },
+        },*/
         {
-            xtype: 'chart_div_responsibilities',
+            xtype: 'daily_repair_grid',
             region: 'center'
         }
     ]

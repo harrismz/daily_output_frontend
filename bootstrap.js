@@ -868,11 +868,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
   "helloext.model.Quality": [],
+  "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Qualities": [],
+  "helloext.store.Repairs": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
@@ -893,6 +895,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.daily_lost_time.grid": [],
   "helloext.view.daily_lost_time.toolbar": [],
   "helloext.view.daily_output_grid": [],
+  "helloext.view.daily_repair.Grid": [],
   "helloext.view.indexToolbarView": [],
   "helloext.view.loginView": []
 });
@@ -1921,11 +1924,13 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
   "helloext.model.Quality": [],
+  "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Qualities": [],
+  "helloext.store.Repairs": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
@@ -1977,6 +1982,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.daily_output_grid": [
     "widget.daily_output_grid",
     "widget.locking-grid"
+  ],
+  "helloext.view.daily_repair.Grid": [
+    "widget.daily_lost_time_grid"
   ],
   "helloext.view.indexToolbarView": [
     "widget.indexToolbar"
