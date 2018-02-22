@@ -42,7 +42,8 @@ Ext.define('helloext.Application', {
         'Fa_quality_container',
         'Fa_quality_toolbar',
         'Daily_repair_container',
-        'daily_repair.Grid'        
+        'daily_repair.Grid',
+        'daily_repair.Toolbar'        
         
     ],
 
@@ -53,7 +54,8 @@ Ext.define('helloext.Application', {
         'DownloadViewController',
         'indexToolbarController',
         'Daily_lost_time_toolbar',
-        'Fa_qualityController'
+        'Fa_qualityController',
+        'DailyRepairToolbarController'
     ],
 
     //Collection
@@ -116,7 +118,7 @@ Ext.define('helloext.Application', {
                     items: [
                         {   
                             title: 'Home',
-                            bodyPadding : 10,
+                            // bodyPadding : 10,
                             xtype:'daily_output_grid',
                             
                             tbar:[{
@@ -149,6 +151,7 @@ Ext.define('helloext.Application', {
                         {
                             title: 'DAILY REPAIRS',
                             xtype: 'daily_repair',
+                            bodyPadding : 10,
                             height: 550,
                         }
 

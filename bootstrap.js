@@ -880,6 +880,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
   "helloext.view.Create": [],
+  "helloext.view.Daily_repair_container": [],
   "helloext.view.DownloadView": [],
   "helloext.view.Fa_quality_container": [],
   "helloext.view.Fa_quality_toolbar": [],
@@ -896,6 +897,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.daily_lost_time.toolbar": [],
   "helloext.view.daily_output_grid": [],
   "helloext.view.daily_repair.Grid": [],
+  "helloext.view.daily_repair.Toolbar": [],
   "helloext.view.indexToolbarView": [],
   "helloext.view.loginView": []
 });
@@ -1938,6 +1940,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.Create": [
     "widget.booksform"
   ],
+  "helloext.view.Daily_repair_container": [
+    "widget.daily_repair"
+  ],
   "helloext.view.DownloadView": [
     "widget.downloadView"
   ],
@@ -1984,7 +1989,10 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.locking-grid"
   ],
   "helloext.view.daily_repair.Grid": [
-    "widget.daily_lost_time_grid"
+    "widget.daily_repair_grid"
+  ],
+  "helloext.view.daily_repair.Toolbar": [
+    "widget.daily_repair_toolbar"
   ],
   "helloext.view.indexToolbarView": [
     "widget.indexToolbar"

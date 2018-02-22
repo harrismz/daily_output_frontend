@@ -10,10 +10,10 @@ Ext.define('helloext.view.Daily_repair_container', {
     },
 
     items: [
-        /*{
-            xtype : 'fa_quality_toolbar',
+        {
+            xtype : 'daily_repair_toolbar',
             region : 'north'
-        },*/
+        },
         {
             xtype: 'daily_repair_grid',
             region: 'center'

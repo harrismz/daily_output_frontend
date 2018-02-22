@@ -53,8 +53,8 @@ Ext.define("helloext.view.daily_lost_time.grid", {
     store:  'Lost_times', //store = colletion
 
     columns :[
-        { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
-        {text: 'Line <br> Name',  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
+        // { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
+        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
         {
             text: 'time',
             flex:1,
