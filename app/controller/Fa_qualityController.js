@@ -50,7 +50,7 @@ Ext.define('helloext.controller.Fa_qualityController', {
     reload : function (store, param){
         store.proxy.setExtraParam('tanggal', param.tanggal);
         // store.proxy.setExtraParam('shift', param.shift);
-        store.proxy.setExtraParam('line_name', param.line_name);
+        // store.proxy.setExtraParam('line_name', param.line_name);
         // reload store
         store.loadData([],false);
 
