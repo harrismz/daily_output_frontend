@@ -1,10 +1,10 @@
 Ext.define('helloext.controller.Fa_qualityController', {
     extend: 'Ext.app.Controller',
     stores:[
-        'Dics'
+        'Dics', 'Qualities'
     ],
     models:[
-        'Dic'
+        'Dic' , 'Quality'
     ],
     init :  function(){
     	// console.log('hai im helloext')
@@ -38,11 +38,16 @@ Ext.define('helloext.controller.Fa_qualityController', {
         
         var param = this.getReference();
         var store = this.getDicsStore();
-        
+        var Qualities = this.getQualitiesStore();
         // console.log(param, store);
         
         // return false;
+        this.reload(store, param);
+        this.reload(Qualities, param);
+        
+    },
 
+    reload : function (store, param){
         store.proxy.setExtraParam('tanggal', param.tanggal);
         // store.proxy.setExtraParam('shift', param.shift);
         store.proxy.setExtraParam('line_name', param.line_name);

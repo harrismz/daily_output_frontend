@@ -11,6 +11,12 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
     	'background': '#fff',
     	'border-radius' : '5px'
     },
+
+    legend: {
+        position: 'top',
+        boxStrokeWidth: 0,
+        labelFont: '12px Helvetica'
+    },
     
     store: 'Qualities',
 
@@ -59,7 +65,7 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
               width: 140,
               height: 28,
               renderer: function(storeItem, item) {
-                this.setTitle(storeItem.get('line_name') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
+                this.setTitle('Line : '+storeItem.get('line_name') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
               }
             },
             label: {
@@ -71,30 +77,7 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
                 color: '#333'
             },
             xField: 'line_name',
-            yField: 'TOTAL_REPAIR_QTY'
-        },
-        {
-            type: 'column',
-            axis: 'left',
-            highlight: true,
-            tips: {
-              trackMouse: true,
-              width: 140,
-              height: 28,
-              renderer: function(storeItem, item) {
-                this.setTitle(storeItem.get('line_name') + ': ' + storeItem.get('AFTER_REPAIR_QTY') + ' Pcs');
-              }
-            },
-            label: {
-              display: 'insideEnd',
-              'text-anchor': 'middle',
-                field: 'AFTER_REPAIR_QTY',
-                renderer: Ext.util.Format.numberRenderer('0'),
-                orientation: 'vertical',
-                color: '#333'
-            },
-            xField: 'line_name',
-            yField: 'AFTER_REPAIR_QTY'
+            yField: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ]
         }
 	    
    ]
