@@ -50,7 +50,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
 
     columns :[
         // { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
-        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name', /*editor: 'textfield' , field: {xtype: 'textfield'}*/ },
+        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name'/*, editor: 'textfield' , field: {xtype: 'textfield'}*/ },
         {
             text: 'shift',
             flex:2,

@@ -12,7 +12,20 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
     	'border-radius' : '5px'
     },
     
-    store: 'Repairs',
+    store: 'Qualities',
+
+    items :[
+    	{
+          type  : 'text',
+          text  : 'DAILY REJECTION BY LINE',
+          font  : '14px Arial',
+          width : 100,
+          height: 30,
+          x : 50, //the sprite x position
+          y : 10  //the sprite y position
+       }
+    ],
+
     axes: [
 	    {
 	        type: 'numeric',
@@ -59,6 +72,29 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
             },
             xField: 'line_name',
             yField: 'TOTAL_REPAIR_QTY'
+        },
+        {
+            type: 'column',
+            axis: 'left',
+            highlight: true,
+            tips: {
+              trackMouse: true,
+              width: 140,
+              height: 28,
+              renderer: function(storeItem, item) {
+                this.setTitle(storeItem.get('line_name') + ': ' + storeItem.get('AFTER_REPAIR_QTY') + ' Pcs');
+              }
+            },
+            label: {
+              display: 'insideEnd',
+              'text-anchor': 'middle',
+                field: 'AFTER_REPAIR_QTY',
+                renderer: Ext.util.Format.numberRenderer('0'),
+                orientation: 'vertical',
+                color: '#333'
+            },
+            xField: 'line_name',
+            yField: 'AFTER_REPAIR_QTY'
         }
 	    
    ]

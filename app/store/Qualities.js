@@ -1,7 +1,7 @@
 Ext.define('helloext.store.Qualities', { //parameter pertama harus sesuai filepath
     extend: 'Ext.data.Store',
     model: 'helloext.model.Quality',
-    // autoLoad:true,   
+    autoLoad:true,   
     // autoSync: true,
     // remoteSort: true,
     proxy: {
@@ -17,11 +17,11 @@ Ext.define('helloext.store.Qualities', { //parameter pertama harus sesuai filepa
             users_id: helloext.util.Config.getUser(),
             token : helloext.util.Config.getToken()
         },*/  
-        url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/qualities/dic',
+        url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/daily_repairs/perline',
         reader:{
             root: 'data',
-            type: 'json',
-            //totalProperty: 'total',
+            type: 'json'
+            // totalProperty: 'total',
             //idProperty: 'id'
         }
     }

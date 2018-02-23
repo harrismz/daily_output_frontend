@@ -148,13 +148,13 @@ Ext.define('helloext.Application', {
                             title: 'FA QUALITY',
                             xtype: 'fa_quality',
 
-                            height: 550,
+                            height: 550
                         },
                         {
                             title: 'DAILY REPAIRS',
                             xtype: 'daily_repair',
                             bodyPadding : 10,
-                            height: 550,
+                            height: 550
                         }
 
                     ],
