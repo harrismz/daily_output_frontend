@@ -20,7 +20,8 @@ Ext.define('helloext.Application', {
         'Ext.chart.axis.Category',
         'Ext.chart.series.Line',
         'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Pie'
+        'Ext.chart.series.Pie',
+        'Ext.chart.series.Column'
 
      ],
 
@@ -40,7 +41,11 @@ Ext.define('helloext.Application', {
         'daily_lost_time.toolbar',
         'chart.div_responsibilities',
         'Fa_quality_container',
-        'Fa_quality_toolbar'        
+        'Fa_quality_toolbar',
+        'Daily_repair_container',
+        'daily_repair.Grid',
+        'daily_repair.Toolbar',
+        'chart.Daily_rejection_by_line'        
         
     ],
 
@@ -51,7 +56,8 @@ Ext.define('helloext.Application', {
         'DownloadViewController',
         'indexToolbarController',
         'Daily_lost_time_toolbar',
-        'Fa_qualityController'
+        'Fa_qualityController',
+        'DailyRepairToolbarController'
     ],
 
     //Collection
@@ -114,7 +120,7 @@ Ext.define('helloext.Application', {
                     items: [
                         {   
                             title: 'Home',
-                            bodyPadding : 10,
+                            // bodyPadding : 10,
                             xtype:'daily_output_grid',
                             
                             tbar:[{
@@ -142,8 +148,15 @@ Ext.define('helloext.Application', {
                             title: 'FA QUALITY',
                             xtype: 'fa_quality',
 
-                            height: 550,
+                            height: 550
+                        },
+                        {
+                            title: 'DAILY REPAIRS',
+                            xtype: 'daily_repair',
+                            bodyPadding : 10,
+                            height: 550
                         }
+
                     ],
                     renderTo: "mainPanel"
                 });

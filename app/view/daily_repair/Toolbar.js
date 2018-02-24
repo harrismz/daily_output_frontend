@@ -1,18 +1,10 @@
-Ext.define("helloext.view.Fa_quality_toolbar", {
+Ext.define("helloext.view.daily_repair.Toolbar", {
     extend: 'Ext.toolbar.Toolbar',
-    style:{
-    	'border-radius' : '5px'
-    },
-    alias : 'widget.fa_quality_toolbar',
+    alias: 'widget.daily_repair_toolbar',
     items: [
         {
-            xtype:'button',
-            id: 'btnRefresh',
-            text: 'Refresh' 
-        }, '-',
-        {
             xtype: 'datefield',
-            id: 'tanggal_fa_quality_toolbar',
+            id: 'tanggal_daily_repair_toolbar',
             labelPad: 15,
             labelWidth:40,
             format: 'Y-m-d',          
@@ -20,7 +12,6 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             emptyText:'yyyy-mm-dd',
             value: new Date(),
             fieldLabel:'Tanggal'
-            //renderer: formatDate
         }, '-',
         /*{   
             text: 'comboShift',
@@ -30,31 +21,15 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             labelWidth:20,
             store: 'comboShifts',
             emptyText : 'Shift',
-            id: 'comboShift_fa_quality_toolbar',
+            id: 'comboShift_daily_repair_toolbar',
             displayField:'name',
             valueField:'name',
             queryMode: 'local',
             forceSelection: true,
             value:'A'
-        },
-        {
-            text: 'Line',
-            xtype: 'combo',
-            fieldLabel:'Line',
-            labelPad: 15,
-            labelWidth:20,
-            store: 'lines',
-            emptyText : 'lines',
-            id: 'comboLine_fa_quality_toolbar',
-            displayField:'name',
-            valueField:'name',
-            queryMode: 'local',
-            forceSelection: true,
-            value:'1'
         },*/
         {
             xtype:'button',
-            // id: 'btnLogout',
             text: 'Log Out',
             handler: function (){
                 localStorage.clear(); //hapus localStorage
@@ -62,5 +37,4 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             }
         }      
     ]
-        
 });

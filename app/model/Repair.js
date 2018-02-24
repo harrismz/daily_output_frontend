@@ -9,7 +9,7 @@ Ext.define('helloext.model.Repair', {
      'SMT',
      'PCB_CODE',
      'DESIGN_CODE',
-     'DESIGN_CODE',
+     'MECHANISM_CODE',
      'ELECTRICAL_CODE',
      'MECHANICAL_CODE',
      'FINAL_ASSY_CODE',

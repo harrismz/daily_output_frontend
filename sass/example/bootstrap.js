@@ -856,6 +856,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
@@ -868,16 +869,19 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
   "helloext.model.Quality": [],
+  "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Qualities": [],
+  "helloext.store.Repairs": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
   "helloext.view.Create": [],
+  "helloext.view.Daily_repair_container": [],
   "helloext.view.DownloadView": [],
   "helloext.view.Fa_quality_container": [],
   "helloext.view.Fa_quality_toolbar": [],
@@ -887,12 +891,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.StdManPowerView": [],
   "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_rejection_by_line": [],
   "helloext.view.chart.delay_type": [],
   "helloext.view.chart.div_responsibilities": [],
   "helloext.view.chart.target_output": [],
   "helloext.view.daily_lost_time.grid": [],
   "helloext.view.daily_lost_time.toolbar": [],
   "helloext.view.daily_output_grid": [],
+  "helloext.view.daily_repair.Grid": [],
+  "helloext.view.daily_repair.Toolbar": [],
   "helloext.view.indexToolbarView": [],
   "helloext.view.loginView": []
 });
@@ -1909,6 +1916,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
@@ -1921,17 +1929,22 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
   "helloext.model.Quality": [],
+  "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Qualities": [],
+  "helloext.store.Repairs": [],
   "helloext.store.comboShifts": [],
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
   "helloext.view.Create": [
     "widget.booksform"
+  ],
+  "helloext.view.Daily_repair_container": [
+    "widget.daily_repair"
   ],
   "helloext.view.DownloadView": [
     "widget.downloadView"
@@ -1959,6 +1972,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.target_view"
   ],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_rejection_by_line": [
+    "widget.chart_daily_rejection_by_line"
+  ],
   "helloext.view.chart.delay_type": [
     "widget.chart_delay_type"
   ],
@@ -1977,6 +1993,12 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.daily_output_grid": [
     "widget.daily_output_grid",
     "widget.locking-grid"
+  ],
+  "helloext.view.daily_repair.Grid": [
+    "widget.daily_repair_grid"
+  ],
+  "helloext.view.daily_repair.Toolbar": [
+    "widget.daily_repair_toolbar"
   ],
   "helloext.view.indexToolbarView": [
     "widget.indexToolbar"

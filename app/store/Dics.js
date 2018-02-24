@@ -20,7 +20,7 @@ Ext.define('helloext.store.Dics', { //parameter pertama harus sesuai filepath
         url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/qualities/dic',
         reader:{
             root: 'data',
-            type: 'json',
+            type: 'json'
             //totalProperty: 'total',
             //idProperty: 'id'
         }

@@ -13,9 +13,20 @@ Ext.define("helloext.view.chart.div_responsibilities", {
     store: 'Dics',
     insetPadding: 40,
     theme: 'Base:gradients',
-    legend: {
+    /*legend: {
         position: 'right'
-    },
+    },*/
+    items :[
+        {
+          type  : 'text',
+          text  : 'DIV. RESPONSIBILITY',
+          font  : '14px Arial',
+          width : 100,
+          height: 30,
+          x : 50, //the sprite x position
+          y : 10  //the sprite y position
+       }
+    ],
     series: [
         {
             type: 'pie',
@@ -44,7 +55,7 @@ Ext.define("helloext.view.chart.div_responsibilities", {
                 field: 'name',
                 display: 'rotate',
                 contrast: true,
-                font: '16px Arial'
+                font: '12px Arial'
             }
         }
     ]
