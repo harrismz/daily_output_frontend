@@ -17,10 +17,6 @@ Ext.define("helloext.view.daily_repair.Grid", {
 
 	alias:'widget.daily_repair_grid',
 
-    // tbar: {xtype: 'daily_lost_time_toolbar'},
-
-    //id: 'LTGrid',
-
     selType: 'rowmodel',
 
     layout: 'fit',
@@ -50,7 +46,13 @@ Ext.define("helloext.view.daily_repair.Grid", {
 
     columns :[
         // { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
-        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name'/*, editor: 'textfield' , field: {xtype: 'textfield'}*/ },
+        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name',
+            items: [{ 
+                xtype: 'textfield',
+                flex : 1,
+                margin: '1 2 0 2'
+            }]
+        },
         {
             text: 'shift',
             flex:2,
