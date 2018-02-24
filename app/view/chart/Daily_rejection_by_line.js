@@ -65,16 +65,16 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
               width: 140,
               height: 28,
               renderer: function(storeItem, item) {
-                this.setTitle('Line : '+storeItem.get('line_name') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
+                this.setTitle('Line '+storeItem.get('line_name') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
               }
             },
             label: {
               display: 'insideEnd',
               'text-anchor': 'middle',
-                field: 'TOTAL_REPAIR_QTY',
-                renderer: Ext.util.Format.numberRenderer('0'),
-                orientation: 'vertical',
-                color: '#333'
+              field: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ],
+              renderer: Ext.util.Format.numberRenderer('0'),
+              orientation: 'vertical',
+              color: '#000000'
             },
             xField: 'line_name',
             yField: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ]

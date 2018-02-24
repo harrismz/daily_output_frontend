@@ -55,7 +55,7 @@ Ext.define("helloext.view.chart.div_responsibilities", {
                 field: 'name',
                 display: 'rotate',
                 contrast: true,
-                font: '16px Arial'
+                font: '12px Arial'
             }
         }
     ]

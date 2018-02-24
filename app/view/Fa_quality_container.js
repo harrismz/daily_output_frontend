@@ -21,7 +21,7 @@ Ext.define('helloext.view.Fa_quality_container', {
         {
             xtype: 'chart_div_responsibilities',
             region: 'east',
-            width : '50%'
+            width : '30%'
         }
     ]
 });

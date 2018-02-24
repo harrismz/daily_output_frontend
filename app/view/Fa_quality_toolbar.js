@@ -22,7 +22,7 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             fieldLabel:'Tanggal'
             //renderer: formatDate
         }, '-',
-        {   
+        /*{   
             text: 'comboShift',
             xtype: 'combo',
             fieldLabel:'Shift',
@@ -51,7 +51,7 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             queryMode: 'local',
             forceSelection: true,
             value:'1'
-        },
+        },*/
         {
             xtype:'button',
             // id: 'btnLogout',
