@@ -856,6 +856,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.Chart_permonth_toolbarController": [],
   "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
@@ -882,6 +883,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
+  "helloext.view.Chart_month_container": [],
   "helloext.view.Create": [],
   "helloext.view.Daily_repair_container": [],
   "helloext.view.DownloadView": [],
@@ -894,6 +896,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
   "helloext.view.chart.Daily_rejection_by_line": [],
+  "helloext.view.chart.Daily_rejection_per_month": [],
   "helloext.view.chart.delay_type": [],
   "helloext.view.chart.div_responsibilities": [],
   "helloext.view.chart.target_output": [],
@@ -903,7 +906,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.daily_repair.Grid": [],
   "helloext.view.daily_repair.Toolbar": [],
   "helloext.view.indexToolbarView": [],
-  "helloext.view.loginView": []
+  "helloext.view.loginView": [],
+  "helloext.view.toolbar.Chart_permonth": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1918,6 +1922,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Paging": [],
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "helloext.Application": [],
+  "helloext.controller.Chart_permonth_toolbarController": [],
   "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
   "helloext.controller.Daily_outputs": [],
@@ -1944,6 +1949,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.store.lines": [],
   "helloext.store.timeCombos": [],
   "helloext.util.Config": [],
+  "helloext.view.Chart_month_container": [
+    "widget.chart_month_container"
+  ],
   "helloext.view.Create": [
     "widget.booksform"
   ],
@@ -1979,6 +1987,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.chart.Daily_rejection_by_line": [
     "widget.chart_daily_rejection_by_line"
   ],
+  "helloext.view.chart.Daily_rejection_per_month": [
+    "widget.chart_daily_rejection_per_month"
+  ],
   "helloext.view.chart.delay_type": [
     "widget.chart_delay_type"
   ],
@@ -2009,6 +2020,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.loginView": [
     "widget.login_view"
+  ],
+  "helloext.view.toolbar.Chart_permonth": [
+    "widget.chart_permonth"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");

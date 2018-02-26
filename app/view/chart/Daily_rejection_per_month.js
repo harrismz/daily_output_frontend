@@ -1,7 +1,7 @@
-Ext.define("helloext.view.chart.Daily_rejection_by_line", {
+Ext.define("helloext.view.chart.Daily_rejection_per_month", {
     extend: 'Ext.chart.Chart',
     margin : '10 10 10 10',
-    alias: 'widget.chart_daily_rejection_by_line',
+    alias: 'widget.chart_daily_rejection_per_month',
     padding: '10 0 0 0',
     animate: true,
     shadow: false,
@@ -15,12 +15,12 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
         boxStrokeWidth: 0,
         labelFont: '12px Helvetica'
     },
-    store: 'Qualities',
-    
+    store: 'Permonths',
+
     items :[
     	{
           type  : 'text',
-          text  : 'DAILY REJECTION BY LINE',
+          text  : 'DAILY REJECTION PER MONTH',
           font  : '14px Arial',
           width : 100,
           height: 30,
@@ -31,18 +31,19 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
 
     axes: [
 	    {
-	        type: 'numeric',
-	        fields: 'TOTAL_REPAIR_QTY',
-	        position: 'left',
+	        type: 'Numeric',
+          position: 'left',
+	        fields: 'TOTAL_REPAIR_QTY',//['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ],
 	        grid: true,
+          title:'sample value',
 	        minimum: 0,
-	        maximum: 60,
+	        maximum: 300,
 	        label: {
 	            renderer: function(v) { return v + ' Pcs'; }
 	        }
 	    }, {
 	        type: 'category',
-	        fields: 'line_name',
+	        fields: 'tanggal',
 	        position: 'bottom',
 	        grid: true,
 	        label: {
@@ -52,18 +53,23 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
 	        }
 	    }
     ],
-    
     series: [
 	    {
-            type: 'column',
+            type: 'line',
             axis: 'left',
+            style: {
+                'stroke-width': 6
+            },
+            markerConfig: {
+                radius: 4
+            },
             highlight: true,
             tips: {
               trackMouse: true,
-              width: 140,
+              width: 200,
               height: 28,
               renderer: function(storeItem, item) {
-                this.setTitle('Line '+storeItem.get('line_name') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
+                this.setTitle('Line '+storeItem.get('tanggal') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
               }
             },
             label: {
@@ -74,9 +80,9 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
               orientation: 'vertical',
               color: '#000000'
             },
-            xField: 'line_name',
+            xField: 'tanggal',
             yField: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ]
         }
-  	    
-    ]
+	    
+   ]
 });
