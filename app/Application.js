@@ -69,7 +69,8 @@ Ext.define('helloext.Application', {
         'Lost_times',
         'Qualities',
         'Dics',
-        'Repairs'
+        'Repairs',
+        'Permonths'
     ],
 
     //model
@@ -80,7 +81,8 @@ Ext.define('helloext.Application', {
         'timeCombo',
         'Quality',
         'Dic',
-        'Repair'
+        'Repair',
+        'Permonth'
     ],
 
     getCurrentUser: function (token){
