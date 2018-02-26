@@ -26,7 +26,13 @@ Ext.define('helloext.controller.Fa_qualityController', {
 
     onRefresh : function (){
         var store = this.getDicsStore();
+        var store2 = this.getQualitiesStore();
         // console.log('onRefresh', store)
+        this.refresh(store);
+        this.refresh(store2);
+    },
+
+    refresh : function (store){
         store.load()
     },
 
