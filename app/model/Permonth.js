@@ -3,6 +3,7 @@ Ext.define('helloext.model.Permonth', {
     fields: [ 
      'TOTAL_REPAIR_QTY',
      'tanggal',
-     'AFTER_REPAIR_QTY'
+     'AFTER_REPAIR_QTY',
+     'name'
     ]
 });

@@ -4,8 +4,8 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
     alias: 'widget.chart_daily_rejection_per_month',
     padding: '10 0 0 0',
     animate: true,
-    shadow: false,
-    insetPadding: 40,
+    // shadow: false,
+    // insetPadding: 40,
     style: {
     	'background': '#fff',
     	'border-radius' : '5px'
@@ -31,58 +31,83 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
 
     axes: [
 	    {
-	        type: 'Numeric',
+          type: 'numeric',
+          fields: ['AFTER_REPAIR_QTY', 'TOTAL_REPAIR_QTY' ],
           position: 'left',
-	        fields: 'TOTAL_REPAIR_QTY',//['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ],
-	        grid: true,
-          title:'sample value',
-	        minimum: 0,
-	        maximum: 300,
-	        label: {
-	            renderer: function(v) { return v + ' Pcs'; }
-	        }
-	    }, {
-	        type: 'category',
-	        fields: 'tanggal',
-	        position: 'bottom',
-	        grid: true,
-	        label: {
-	            rotate: {
-	                degrees: -45
-	            }
-	        }
-	    }
+          // grid: true,
+          // minimum: 0,
+          // maximum: 250,
+          label: {
+              renderer: function(v) { return v + ' Pcs'; }
+          }
+      }, {
+          type: 'Category',
+          fields: 'tanggal',
+          position: 'bottom',
+          // grid: true,
+          label: {
+              rotate: {
+                  degrees: -45
+              }
+          }
+      }
     ],
     series: [
 	    {
-            type: 'line',
-            axis: 'left',
-            style: {
-                'stroke-width': 6
-            },
-            markerConfig: {
-                radius: 4
-            },
-            highlight: true,
-            tips: {
+          type: 'line',
+          axis: 'left',
+          xField: 'tanggal',
+          yField: 'AFTER_REPAIR_QTY',
+          style: {
+              'stroke-width': 4
+          },
+          markerConfig: {
+              radius: 4
+          },
+          highlight: {
+              fill: '#000',
+              radius: 5,
+              'stroke-width': 2,
+              stroke: '#fff'
+          },
+          tips: {
               trackMouse: true,
-              width: 200,
-              height: 28,
+              style: 'background: #FFF',
+              height: 20,
               renderer: function(storeItem, item) {
-                this.setTitle('Line '+storeItem.get('tanggal') + ': ' + storeItem.get('TOTAL_REPAIR_QTY') + ' Pcs');
+                  var title = item.series.title;
+                  this.setTitle(title + ' for ' + storeItem.get('tanggal') + ': ' + storeItem.get(item.series.yField) + ' Pcs');
               }
-            },
-            label: {
-              display: 'insideEnd',
-              'text-anchor': 'middle',
-              field: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ],
-              renderer: Ext.util.Format.numberRenderer('0'),
-              orientation: 'vertical',
-              color: '#000000'
-            },
-            xField: 'tanggal',
-            yField: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ]
-        }
-	    
+          }
+      },
+      {
+          type: 'line',
+          axis: 'left',
+          title: 'TOTAL_REPAIR_QTY',
+          xField: 'tanggal',
+          yField: 'TOTAL_REPAIR_QTY',
+          style: {
+              'stroke-width': 4
+          },
+          markerConfig: {
+              radius: 4
+          },
+          highlight: {
+              fill: '#000',
+              radius: 5,
+              'stroke-width': 2,
+              stroke: '#fff'
+          },
+          tips: {
+              trackMouse: true,
+              style: 'background: #FFF',
+              height: 20,
+              renderer: function(storeItem, item) {
+                  var title = item.series.title;
+                  this.setTitle(title + ' for ' + storeItem.get('tanggal') + ': ' + storeItem.get(item.series.yField) + ' Pcs');
+              }
+          }
+      }, 
+
    ]
 });
