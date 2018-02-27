@@ -13,6 +13,12 @@ Ext.define("helloext.view.daily_repair.Toolbar", {
             value: new Date(),
             fieldLabel:'Tanggal'
         }, '-',
+
+        {
+            xtype:'button',
+            id: 'btnRefresh_daily_repair_toolbar',
+            text: 'Refresh' 
+        }, '-',
         /*{   
             text: 'comboShift',
             xtype: 'combo',

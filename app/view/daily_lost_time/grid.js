@@ -54,17 +54,17 @@ Ext.define("helloext.view.daily_lost_time.grid", {
 
     columns :[
         // { text: 'ID', width:55, dataIndex: 'id', locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
-        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
+        {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name' },
         {
             text: 'time',
             flex:1,
-            field: {
+            /*field: {
                 xtype: 'combobox', 
                 store: 'timeCombos',
                 displayField:'name',
                 valueField:'name',
                 queryMode: 'local' 
-            }, 
+            }, */
             dataIndex: 'time'
         },
         {text: 'Problem', flex:4,/*width:300,*/ editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},

@@ -125,7 +125,7 @@ Ext.define('helloext.Application', {
                     
                     items: [
                         {   
-                            title: 'Home',
+                            title: 'DAILY OUTPUT CONTROL',
                             // bodyPadding : 10,
                             xtype:'daily_output_grid',
                             
@@ -157,13 +157,13 @@ Ext.define('helloext.Application', {
                             height: 550
                         },
                         {
-                            title: 'FA QUALITY CHART',
+                            title: 'QUALITY CHART',
                             xtype: 'fa_quality',
                             // bodyPadding : 10,
                             height: 550
                         },
                         {
-                            title : 'Per Month',
+                            title : 'QUALITY CHART PER MONTH',
                             xtype: 'chart_month_container',
                             // region: 'south',
                             height : 550

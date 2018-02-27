@@ -70,9 +70,7 @@ Ext.define('helloext.controller.Fa_qualityController', {
 
     getReference : function (){
         return {
-            tanggal: Ext.ComponentQuery.query('#tanggal_fa_quality_toolbar')[0].rawValue,
-            //shift: Ext.ComponentQuery.query('combo#comboShift_fa_quality_toolbar')[0].value,
-            //line_name: Ext.ComponentQuery.query('combo#comboLine_fa_quality_toolbar')[0].value
+            tanggal: Ext.ComponentQuery.query('#tanggal_fa_quality_toolbar')[0].rawValue
         }
     } 
 

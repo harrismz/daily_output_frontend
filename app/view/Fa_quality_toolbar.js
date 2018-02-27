@@ -5,11 +5,7 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
     },
     alias : 'widget.fa_quality_toolbar',
     items: [
-        {
-            xtype:'button',
-            id: 'btnRefresh',
-            text: 'Refresh' 
-        }, '-',
+        
         {
             xtype: 'datefield',
             id: 'tanggal_fa_quality_toolbar',
@@ -21,6 +17,11 @@ Ext.define("helloext.view.Fa_quality_toolbar", {
             value: new Date(),
             fieldLabel:'Tanggal'
             //renderer: formatDate
+        }, '-',
+        {
+            xtype:'button',
+            id: 'btnRefresh',
+            text: 'Refresh' 
         }, '-',
         /*{   
             text: 'comboShift',

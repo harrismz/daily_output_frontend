@@ -3,7 +3,7 @@ Ext.define('helloext.store.Repairs', { //parameter pertama harus sesuai filepath
     model: 'helloext.model.Repair',
     autoLoad:true,   
     autoSync: true,
-    remoteSort: true,
+    // remoteSort: true,
     proxy: {
         type: 'rest',
         enablePaging:true,

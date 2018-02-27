@@ -107,7 +107,7 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
                   this.setTitle(title + ' for ' + storeItem.get('tanggal') + ': ' + storeItem.get(item.series.yField) + ' Pcs');
               }
           }
-      }, 
+      } 
 
    ]
 });

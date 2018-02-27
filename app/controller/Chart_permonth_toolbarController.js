@@ -37,6 +37,13 @@ Ext.define('helloext.controller.Chart_permonth_toolbarController', {
     valueOnChange : function (component, value){
         
         var param = this.getReference();
+
+        var tmp = param.tanggal.split("-");
+        param.month = tmp[1];
+        param.year = tmp[0];
+
+        // console.log(param);
+
         var store = this.getPermonthsStore();
         // console.log(param, store);
         
@@ -46,15 +53,15 @@ Ext.define('helloext.controller.Chart_permonth_toolbarController', {
     },
 
     reload : function (store, param){
-        store.proxy.setExtraParam('tanggal', param.tanggal);
-        // store.proxy.setExtraParam('shift', param.shift);
-        // store.proxy.setExtraParam('line_name', param.line_name);
+        // store.proxy.setExtraParam('tanggal', param.tanggal);
+        store.proxy.setExtraParam('month', param.month);
+        store.proxy.setExtraParam('year', param.year);
         // reload store
         store.loadData([],false);
 
         store.load(function (records, operation, success){
             if (success && store.totalCount == 0 ){
-                var message = 'Tanggal : '+ param.tanggal+ '<br> shift : ' + param.shift+ '<br> line : ' + param.line_name+ ' <br> ';
+                var message = 'month : '+ param.month+ '<br> year : ' + param.year+' <br> ';
                 Ext.Msg.alert('Info', message + 'Data Kosong!');
             }           
         });
@@ -62,9 +69,7 @@ Ext.define('helloext.controller.Chart_permonth_toolbarController', {
 
     getReference : function (){
         return {
-            tanggal: Ext.ComponentQuery.query('#tanggal_Chart_permonth')[0].rawValue,
-            //shift: Ext.ComponentQuery.query('combo#comboShift_fa_quality_toolbar')[0].value,
-            //line_name: Ext.ComponentQuery.query('combo#comboLine_fa_quality_toolbar')[0].value
+            tanggal: Ext.ComponentQuery.query('#tanggal_Chart_permonth')[0].rawValue
         }
     } 
 

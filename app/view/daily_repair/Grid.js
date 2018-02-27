@@ -53,11 +53,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
                 flex : 1,
                 margin: '1 2 0 2',
                 enableKeyEvents: true,
-                emptyText : 'Type and Enter',
-                buffer : 500,
-                listeners :{
-                    buffer : 500
-                }
+                emptyText : 'Type and Enter'
             }]
         },
         {
@@ -92,10 +88,11 @@ Ext.define("helloext.view.daily_repair.Grid", {
                     field: {
                         xtype: 'numberfield',
                         id : 'MAColumn',
+                        minValue : 0,
                         listeners:{
                             change: function (editor, value){
                                 myGrid = this.up('grid'); //ambil ke atas.
-                                if(value != ""){
+                                //if(value != ""){
                                     
                                     MAColumn = myGrid.getPlugin('RowEditing').editor.down('numberfield#MAColumn');
                                     PCBColumn = myGrid.getPlugin('RowEditing').editor.down('numberfield#PCBColumn');
@@ -105,7 +102,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
                                     totalValue = (MAColumn.value + PCBColumn.value + after_repair_qty_column.value )
                                     total.setValue(totalValue);
                                     // console.log({edtMinute: edtMinute.value, edtTargetSop: edtTargetSop.value,edtPlusMinus: edtPlusMinus.value, hasil})
-                                }
+                                // }
                             }
                         } 
                     }
@@ -113,10 +110,11 @@ Ext.define("helloext.view.daily_repair.Grid", {
                 {text: 'PCB', flex:2, dataIndex:'PCB', summaryType : 'sum' , field: {
                     xtype: 'numberfield',
                     id: 'PCBColumn',
+                    minValue : 0,
                     listeners:{
                             change: function (editor, value){
                                 myGrid = this.up('grid'); //ambil ke atas.
-                                if(value != ""){
+                                // if(value != ""){
                                     
                                     MAColumn = myGrid.getPlugin('RowEditing').editor.down('numberfield#MAColumn');
                                     PCBColumn = myGrid.getPlugin('RowEditing').editor.down('numberfield#PCBColumn');
@@ -126,7 +124,7 @@ Ext.define("helloext.view.daily_repair.Grid", {
                                     totalValue = (MAColumn.value + PCBColumn.value + after_repair_qty_column.value )
                                     total.setValue(totalValue);
                                     // console.log({edtMinute: edtMinute.value, edtTargetSop: edtTargetSop.value,edtPlusMinus: edtPlusMinus.value, hasil})
-                                }
+                                // }
                             }
                         }
                     } 
