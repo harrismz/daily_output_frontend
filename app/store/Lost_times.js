@@ -3,7 +3,7 @@ Ext.define('helloext.store.Lost_times', { //parameter pertama harus sesuai filep
     model: 'helloext.model.Lost_time',
     autoLoad:true,
     autoSync: true,
-    remoteSort: true,
+    // remoteSort: true,
     proxy: {
         type: 'rest',
         enablePaging:true,

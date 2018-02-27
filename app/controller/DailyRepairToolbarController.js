@@ -82,10 +82,10 @@ Ext.define('helloext.controller.DailyRepairToolbarController', {
         var store = this.getRepairsStore();
         var searchLineName = Ext.ComponentQuery.query('#searchLineName')[0];
 
-        console.log({
+        /*console.log({
             store : store.proxy,
             searchLineName : searchLineName
-        })
+        })*/
 
         store.proxy.extraParams = {}
 

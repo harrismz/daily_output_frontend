@@ -23,6 +23,8 @@ Ext.define("helloext.view.toolbar.Chart_permonth", {
             xtype : 'datefield',
             id: 'tanggal_Chart_permonth',
             format: 'Y-m',
+            fieldLabel:'Tanggal',
+            emptyText:'yyyy-mm-dd',
             labelPad: 15,
             labelWidth:40,
             requires: ['Ext.picker.Month'],

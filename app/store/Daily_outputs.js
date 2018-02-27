@@ -4,7 +4,7 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
     autoLoad:true,
     autoSync: true,
     // pageSize: 7,
-    remoteSort: true,
+    // remoteSort: true,
     
     proxy: {
         type: 'rest',
