@@ -53,18 +53,18 @@ Ext.define('helloext.view.daily_output_grid', {
     columns : [
         // { text: 'ID',  dataIndex: 'id', width:55, locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
 
-        {text: 'Line <br> Name', locked:true, dataIndex: 'line_name', editor: 'textfield' , field: {xtype: 'textfield'} },
+        {text: 'Line <br> Name', locked:true, dataIndex: 'line_name'/*, editor: 'textfield' , field: {xtype: 'textfield'}*/ },
 
         {
             text: 'Time',
             // flex : 2,
-            field: {
+            /*field: {
                 xtype: 'combobox', 
                 store: 'timeCombos',
                 displayField:'name',
                 valueField:'name',
                 queryMode: 'local' 
-            }, 
+            }, */
             dataIndex: 'time'
         },
 

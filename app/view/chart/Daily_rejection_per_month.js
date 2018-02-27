@@ -34,7 +34,7 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
           type: 'numeric',
           fields: ['AFTER_REPAIR_QTY', 'TOTAL_REPAIR_QTY' ],
           position: 'left',
-          // grid: true,
+          grid: true,
           // minimum: 0,
           // maximum: 250,
           label: {
@@ -44,7 +44,7 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
           type: 'Category',
           fields: 'tanggal',
           position: 'bottom',
-          // grid: true,
+          grid: true,
           label: {
               rotate: {
                   degrees: -45
