@@ -56,6 +56,7 @@ Ext.define("helloext.view.chart.Daily_rejection_per_month", {
 	    {
           type: 'line',
           axis: 'left',
+          title: 'AFTER_REPAIR_QTY',
           xField: 'tanggal',
           yField: 'AFTER_REPAIR_QTY',
           style: {
