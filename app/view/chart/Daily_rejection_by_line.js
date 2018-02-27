@@ -3,7 +3,6 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
     margin : '10 10 10 10',
     alias: 'widget.chart_daily_rejection_by_line',
     padding: '10 0 0 0',
-
     animate: true,
     shadow: false,
     insetPadding: 40,
@@ -11,15 +10,13 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
     	'background': '#fff',
     	'border-radius' : '5px'
     },
-
     legend: {
         position: 'top',
         boxStrokeWidth: 0,
         labelFont: '12px Helvetica'
     },
-    
     store: 'Qualities',
-
+    
     items :[
     	{
           type  : 'text',
@@ -55,6 +52,7 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
 	        }
 	    }
     ],
+    
     series: [
 	    {
             type: 'column',
@@ -79,6 +77,6 @@ Ext.define("helloext.view.chart.Daily_rejection_by_line", {
             xField: 'line_name',
             yField: ['TOTAL_REPAIR_QTY', 'AFTER_REPAIR_QTY' ]
         }
-	    
-   ]
+  	    
+    ]
 });

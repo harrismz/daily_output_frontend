@@ -1,20 +1,20 @@
-Ext.define('helloext.controller.Fa_qualityController', {
+Ext.define('helloext.controller.Chart_permonth_toolbarController', {
     extend: 'Ext.app.Controller',
     stores:[
-        'Dics', 'Qualities'
+        'Permonths'
     ],
     models:[
-        'Dic' , 'Quality'
+        'Permonth'
     ],
     init :  function(){
     	// console.log('hai im helloext')
     	this.control({
     		
-           'fa_quality_toolbar button#btnRefresh':{
+           'chart_permonth button#btnRefresh_Chart_permonth':{
                 click: this.onRefresh
             },
 
-            'fa_quality_toolbar #tanggal_fa_quality_toolbar':{
+            'chart_permonth #tanggal_Chart_permonth':{
                 change: this.valueOnChange
             }
 
@@ -25,31 +25,23 @@ Ext.define('helloext.controller.Fa_qualityController', {
     },
 
     onRefresh : function (){
-        var store = this.getDicsStore();
-        var store2 = this.getQualitiesStore();
+        var store = this.getPermonthsStore();
         // console.log('onRefresh', store)
         this.refresh(store);
-        this.refresh(store2);
     },
 
     refresh : function (store){
         store.load()
     },
 
-    tanggalOnChange: function (){
-        // console.log('tanggalOnChange')    
-    },
-
     valueOnChange : function (component, value){
         
         var param = this.getReference();
-        var store = this.getDicsStore();
-        var Qualities = this.getQualitiesStore();
+        var store = this.getPermonthsStore();
         // console.log(param, store);
         
         // return false;
         this.reload(store, param);
-        this.reload(Qualities, param);
         
     },
 
@@ -70,7 +62,7 @@ Ext.define('helloext.controller.Fa_qualityController', {
 
     getReference : function (){
         return {
-            tanggal: Ext.ComponentQuery.query('#tanggal_fa_quality_toolbar')[0].rawValue,
+            tanggal: Ext.ComponentQuery.query('#tanggal_Chart_permonth')[0].rawValue,
             //shift: Ext.ComponentQuery.query('combo#comboShift_fa_quality_toolbar')[0].value,
             //line_name: Ext.ComponentQuery.query('combo#comboLine_fa_quality_toolbar')[0].value
         }

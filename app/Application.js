@@ -45,7 +45,10 @@ Ext.define('helloext.Application', {
         'Daily_repair_container',
         'daily_repair.Grid',
         'daily_repair.Toolbar',
-        'chart.Daily_rejection_by_line'        
+        'chart.Daily_rejection_by_line',
+        'chart.Daily_rejection_per_month',
+        'Chart_month_container',
+        'toolbar.Chart_permonth'        
         
     ],
 
@@ -57,7 +60,8 @@ Ext.define('helloext.Application', {
         'indexToolbarController',
         'Daily_lost_time_toolbar',
         'Fa_qualityController',
-        'DailyRepairToolbarController'
+        'DailyRepairToolbarController',
+        'Chart_permonth_toolbarController'
     ],
 
     //Collection
@@ -69,7 +73,8 @@ Ext.define('helloext.Application', {
         'Lost_times',
         'Qualities',
         'Dics',
-        'Repairs'
+        'Repairs',
+        'Permonths'
     ],
 
     //model
@@ -80,7 +85,8 @@ Ext.define('helloext.Application', {
         'timeCombo',
         'Quality',
         'Dic',
-        'Repair'
+        'Repair',
+        'Permonth'
     ],
 
     getCurrentUser: function (token){
@@ -145,17 +151,25 @@ Ext.define('helloext.Application', {
                             height: 550
                         },
                         {
-                            title: 'FA QUALITY',
-                            xtype: 'fa_quality',
-
-                            height: 550
-                        },
-                        {
                             title: 'DAILY REPAIRS',
                             xtype: 'daily_repair',
                             bodyPadding : 10,
                             height: 550
+                        },
+                        {
+                            title: 'FA QUALITY CHART',
+                            xtype: 'fa_quality',
+                            // bodyPadding : 10,
+                            height: 550
+                        },
+                        {
+                            title : 'Per Month',
+                            xtype: 'chart_month_container',
+                            // region: 'south',
+                            height : 550
                         }
+
+                        
 
                     ],
                     renderTo: "mainPanel"

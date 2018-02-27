@@ -1,6 +1,6 @@
-Ext.define('helloext.view.Fa_quality_container', {
+Ext.define('helloext.view.Chart_month_container', {
     extend: 'Ext.container.Container',
-    xtype: 'fa_quality',
+    xtype: 'chart_month_container',
     style: { 
         "background-image" : "url(resources/img.jpg) !important"
     },
@@ -20,23 +20,13 @@ Ext.define('helloext.view.Fa_quality_container', {
 
     items: [
         {
-            xtype : 'fa_quality_toolbar',
+            xtype : 'chart_permonth',
             region : 'north'
         },
         {
-            xtype : 'chart_daily_rejection_by_line',
-            region : 'center'
-        },
-        {
-            xtype: 'chart_div_responsibilities',
-            region: 'east',
-            width : '30%'
-        }/*,
-        {
             xtype: 'chart_daily_rejection_per_month',
-            region: 'south',
-            height : '40%'
-        }*/
+            region: 'center'
+        }
 
     ]
 });

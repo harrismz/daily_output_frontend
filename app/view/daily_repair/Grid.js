@@ -49,8 +49,15 @@ Ext.define("helloext.view.daily_repair.Grid", {
         {text: 'Line <br> Name', locked:true,  dataIndex: 'line_name',
             items: [{ 
                 xtype: 'textfield',
+                id : 'searchLineName',
                 flex : 1,
-                margin: '1 2 0 2'
+                margin: '1 2 0 2',
+                enableKeyEvents: true,
+                emptyText : 'Type and Enter',
+                buffer : 500,
+                listeners :{
+                    buffer : 500
+                }
             }]
         },
         {

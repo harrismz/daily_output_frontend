@@ -12,6 +12,10 @@ Ext.define('helloext.controller.DailyRepairToolbarController', {
     		
             'daily_repair_toolbar #tanggal_daily_repair_toolbar':{
                 change: this.valueOnChange
+            },
+
+            'daily_repair_grid #searchLineName':{
+                keyup : this.onSearch
             }
  
     	});
@@ -45,8 +49,29 @@ Ext.define('helloext.controller.DailyRepairToolbarController', {
         return {
             tanggal: Ext.ComponentQuery.query('#tanggal_daily_repair_toolbar')[0].rawValue
         }
-    } 
+    },
 
+    onSearch : function(component, e){
+
+        //console.log(component, e.keyCode)
+        if (e.keyCode == 13) {
+            var param = this.getReference();
+            var store = this.getRepairsStore();
+            
+            store.proxy.setExtraParam('tanggal', param.tanggal);
+            store.proxy.setExtraParam('line_name',component.rawValue);
+            
+            store.loadData([],false);
+
+            store.load(function (records, operation, success){
+                if (success && store.totalCount == 0 ){
+                    var message = 'Tanggal : '+ param.tanggal+ '<br> shift : ' + param.shift+ '<br> line : ' + param.line_name+ ' <br> ';
+                    Ext.Msg.alert('Info', message + 'Data Kosong!');
+                }           
+            });
+        }
+
+    } 
 
 
 });
