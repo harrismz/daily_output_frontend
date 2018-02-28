@@ -869,12 +869,16 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.model.Daily_output": [],
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
+  "helloext.model.Lost_time_per_line": [],
+  "helloext.model.Lost_time_per_month": [],
   "helloext.model.Permonth": [],
   "helloext.model.Quality": [],
   "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
+  "helloext.store.Lost_time_per_lines": [],
+  "helloext.store.Lost_time_per_months": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Permonths": [],
   "helloext.store.Qualities": [],
@@ -895,6 +899,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.StdManPowerView": [],
   "helloext.view.TargetView": [],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_lost_time_per_line": [],
+  "helloext.view.chart.Daily_lost_time_per_month": [],
   "helloext.view.chart.Daily_rejection_by_line": [],
   "helloext.view.chart.Daily_rejection_per_month": [],
   "helloext.view.chart.delay_type": [],
@@ -1935,12 +1941,16 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.model.Daily_output": [],
   "helloext.model.Dic": [],
   "helloext.model.Lost_time": [],
+  "helloext.model.Lost_time_per_line": [],
+  "helloext.model.Lost_time_per_month": [],
   "helloext.model.Permonth": [],
   "helloext.model.Quality": [],
   "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
   "helloext.store.Dics": [],
+  "helloext.store.Lost_time_per_lines": [],
+  "helloext.store.Lost_time_per_months": [],
   "helloext.store.Lost_times": [],
   "helloext.store.Permonths": [],
   "helloext.store.Qualities": [],
@@ -1984,6 +1994,12 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.target_view"
   ],
   "helloext.view.Viewport": [],
+  "helloext.view.chart.Daily_lost_time_per_line": [
+    "widget.chart_daily_lost_time_per_line"
+  ],
+  "helloext.view.chart.Daily_lost_time_per_month": [
+    "widget.chart_daily_lost_time_per_month"
+  ],
   "helloext.view.chart.Daily_rejection_by_line": [
     "widget.chart_daily_rejection_by_line"
   ],

@@ -48,7 +48,9 @@ Ext.define('helloext.Application', {
         'chart.Daily_rejection_by_line',
         'chart.Daily_rejection_per_month',
         'Chart_month_container',
-        'toolbar.Chart_permonth'        
+        'toolbar.Chart_permonth',
+        'chart.Daily_lost_time_per_line',
+        'chart.Daily_lost_time_per_month'        
         
     ],
 
@@ -74,7 +76,9 @@ Ext.define('helloext.Application', {
         'Qualities',
         'Dics',
         'Repairs',
-        'Permonths'
+        'Permonths',
+        'Lost_time_per_lines',
+        'Lost_time_per_months'
     ],
 
     //model
@@ -86,7 +90,9 @@ Ext.define('helloext.Application', {
         'Quality',
         'Dic',
         'Repair',
-        'Permonth'
+        'Permonth',
+        'Lost_time_per_line',
+        'Lost_time_per_month'
     ],
 
     getCurrentUser: function (token){
@@ -149,6 +155,18 @@ Ext.define('helloext.Application', {
                             bodyPadding : 10,
                             xtype: 'daily_lost_time_grid',
                             height: 550
+                        },
+                        {
+                            title : 'DAILY LOST TIME CHART',
+                            bodyPadding : 10,
+                            xtype : 'chart_daily_lost_time_per_line',
+                            height : 550
+                        },
+                        {
+                            title : 'DAILY LOST TIME CHART',
+                            bodyPadding : 10,
+                            xtype : 'chart_daily_lost_time_per_month',
+                            height : 550
                         },
                         {
                             title: 'DAILY REPAIRS',
