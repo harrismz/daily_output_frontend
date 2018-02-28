@@ -75,7 +75,8 @@ Ext.define('helloext.Application', {
         'Daily_lost_time_toolbar',
         'Fa_qualityController',
         'DailyRepairToolbarController',
-        'Chart_permonth_toolbarController'
+        'Chart_permonth_toolbarController',
+        'Daily_lost_time_chart_toolbar'
     ],
 
     //Collection
