@@ -1,8 +1,6 @@
 Ext.define("helloext.view.toolbar.Chart_permonth", {
     extend: 'Ext.toolbar.Toolbar',
-    style:{
-    	'border-radius' : '5px'
-    },
+    
     alias : 'widget.chart_permonth',
     items: [
         /*{
