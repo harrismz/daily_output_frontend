@@ -56,7 +56,7 @@ Ext.define("helloext.view.chart.Daily_lost_time_per_month", {
     
     series: [
 	    {
-            type: 'column',
+            type: 'line',
             axis: 'left',
             highlight: true,
             tips: {

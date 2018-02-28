@@ -595,6 +595,7 @@ $include-helloext-store-timecombos: true;
 $include-helloext-util-config: true;
 $include-helloext-view-chart_month_container: true;
 $include-helloext-view-create: true;
+$include-helloext-view-daily_lost_time_chart_container: true;
 $include-helloext-view-daily_repair_container: true;
 $include-helloext-view-downloadview: true;
 $include-helloext-view-fa_quality_container: true;
@@ -620,6 +621,7 @@ $include-helloext-view-daily_repair-toolbar: true;
 $include-helloext-view-indextoolbarview: true;
 $include-helloext-view-loginview: true;
 $include-helloext-view-toolbar-chart_permonth: true;
+$include-helloext-view-toolbar-daily_lost_time_chart_toolbar: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */

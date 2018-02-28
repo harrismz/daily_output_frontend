@@ -28,29 +28,41 @@ Ext.define('helloext.Application', {
     views: [
         // TODO: add views here
         /*'user.ActionPanel',*/
-        'loginView',
-        'Create',
-        'daily_output_grid',
-        'RegisterUser',
-        'MyToolBar',
-        'DownloadView',
+        //chart
         'chart.delay_type',
         'chart.target_output',
-        'indexToolbarView',
-        'daily_lost_time.grid',
-        'daily_lost_time.toolbar',
         'chart.div_responsibilities',
-        'Fa_quality_container',
-        'Fa_quality_toolbar',
-        'Daily_repair_container',
-        'daily_repair.Grid',
-        'daily_repair.Toolbar',
         'chart.Daily_rejection_by_line',
         'chart.Daily_rejection_per_month',
         'Chart_month_container',
-        'toolbar.Chart_permonth',
         'chart.Daily_lost_time_per_line',
-        'chart.Daily_lost_time_per_month'        
+        'chart.Daily_lost_time_per_month',
+        'toolbar.Daily_lost_time_chart_toolbar',        
+
+        //toolbar
+        'MyToolBar',
+        'indexToolbarView',
+        'daily_lost_time.toolbar',
+        'Fa_quality_toolbar',
+        'daily_repair.Toolbar',
+        'toolbar.Chart_permonth',
+
+        //grid
+        'daily_output_grid',
+        'daily_lost_time.grid',
+        'daily_repair.Grid',
+
+        //others
+        'loginView',
+        'Create',
+        'RegisterUser',
+        'DownloadView',
+
+        //container
+        'Fa_quality_container',
+        'Daily_repair_container',
+        'Daily_lost_time_chart_container'
+        
         
     ],
 
@@ -159,13 +171,7 @@ Ext.define('helloext.Application', {
                         {
                             title : 'DAILY LOST TIME CHART',
                             bodyPadding : 10,
-                            xtype : 'chart_daily_lost_time_per_line',
-                            height : 550
-                        },
-                        {
-                            title : 'DAILY LOST TIME CHART',
-                            bodyPadding : 10,
-                            xtype : 'chart_daily_lost_time_per_month',
+                            xtype : 'daily_lost_time_chart_container',
                             height : 550
                         },
                         {
@@ -175,13 +181,13 @@ Ext.define('helloext.Application', {
                             height: 550
                         },
                         {
-                            title: 'QUALITY CHART',
+                            title: 'DAILY REPAIRS CHART',
                             xtype: 'fa_quality',
                             // bodyPadding : 10,
                             height: 550
                         },
                         {
-                            title : 'QUALITY CHART PER MONTH',
+                            title : 'DAILY REPAIRS CHART PER MONTH',
                             xtype: 'chart_month_container',
                             // region: 'south',
                             height : 550

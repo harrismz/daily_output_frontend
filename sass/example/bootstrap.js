@@ -889,6 +889,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.util.Config": [],
   "helloext.view.Chart_month_container": [],
   "helloext.view.Create": [],
+  "helloext.view.Daily_lost_time_chart_container": [],
   "helloext.view.Daily_repair_container": [],
   "helloext.view.DownloadView": [],
   "helloext.view.Fa_quality_container": [],
@@ -913,7 +914,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.daily_repair.Toolbar": [],
   "helloext.view.indexToolbarView": [],
   "helloext.view.loginView": [],
-  "helloext.view.toolbar.Chart_permonth": []
+  "helloext.view.toolbar.Chart_permonth": [],
+  "helloext.view.toolbar.Daily_lost_time_chart_toolbar": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1965,6 +1967,9 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.Create": [
     "widget.booksform"
   ],
+  "helloext.view.Daily_lost_time_chart_container": [
+    "widget.daily_lost_time_chart_container"
+  ],
   "helloext.view.Daily_repair_container": [
     "widget.daily_repair"
   ],
@@ -2039,6 +2044,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.toolbar.Chart_permonth": [
     "widget.chart_permonth"
+  ],
+  "helloext.view.toolbar.Daily_lost_time_chart_toolbar": [
+    "widget.daily_lost_time_chart_toolbar"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");
