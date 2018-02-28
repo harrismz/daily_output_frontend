@@ -9,12 +9,12 @@ Ext.define('helloext.view.Fa_quality_container', {
         type: 'border'
     },
 
-    defaults: {
+    /*defaults: {
         collapsible: true,
         split: {
             size : 20
         }
-    },
+    },*/
 
     autoScroll: true,
 

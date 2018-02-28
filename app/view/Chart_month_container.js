@@ -9,12 +9,12 @@ Ext.define('helloext.view.Chart_month_container', {
         type: 'border'
     },
 
-    defaults: {
+    /*defaults: {
         collapsible: true,
         split: {
             size : 20
         }
-    },
+    },*/
 
     autoScroll: true,
 
