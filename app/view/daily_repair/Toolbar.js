@@ -19,21 +19,6 @@ Ext.define("helloext.view.daily_repair.Toolbar", {
             id: 'btnRefresh_daily_repair_toolbar',
             text: 'Refresh' 
         }, '-',
-        /*{   
-            text: 'comboShift',
-            xtype: 'combo',
-            fieldLabel:'Shift',
-            labelPad: 15,
-            labelWidth:20,
-            store: 'comboShifts',
-            emptyText : 'Shift',
-            id: 'comboShift_daily_repair_toolbar',
-            displayField:'name',
-            valueField:'name',
-            queryMode: 'local',
-            forceSelection: true,
-            value:'A'
-        },*/
         {
             xtype:'button',
             text: 'Log Out',
@@ -41,6 +26,14 @@ Ext.define("helloext.view.daily_repair.Toolbar", {
                 localStorage.clear(); //hapus localStorage
                 window.location.reload(); //refresh page
             }
-        }      
+        },
+        {
+            xtype :'button',
+            text : 'Help',
+            handler : function (){
+                var link = 'http://'+helloext.util.Config.hostname()+'/daily_output/public/';
+                window.open(link);
+            }
+        }       
     ]
 });

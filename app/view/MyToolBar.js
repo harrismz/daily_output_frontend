@@ -73,6 +73,14 @@ Ext.define("helloext.view.MyToolBar", {
                 localStorage.clear(); //hapus localStorage
                 window.location.reload(); //refresh page
             }
+        },
+        {
+            xtype :'button',
+            text : 'Help',
+            handler : function (){
+                var link = 'http://'+helloext.util.Config.hostname()+'/daily_output/public/';
+                window.open(link);
+            }
         }      
     ]
 });
