@@ -246,11 +246,11 @@ Ext.define('helloext.view.daily_output_grid', {
             ]
         },
         
-        {text: 'Problem', /*flex : 2,*/ editor: 'textareafield', dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  height: 25/*, resizable:true*/}},
+        {text: 'Problem', /*flex : 2,*/  dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  /*height: 25*//*, resizable:true*/}},
 
         {text: 'DIC', /*flex : 2,*/ dataIndex: 'dic',field: {xtype: 'textfield', emptyText:'Department In Charge' }},
 
-        {text: 'Action', /*flex : 2,*/ editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' , height: 25}}
+        {text: 'Action', /*flex : 2,*/ editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' /*, height: 25*/}}
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
