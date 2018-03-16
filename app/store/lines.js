@@ -13,6 +13,7 @@ Ext.define('helloext.store.lines', { //parameter pertama harus sesuai filepath
     	{id:8, name: '8'},
     	{id:9, name: '9'},
     	{id:10, name: '10'},
+        {id:11, name: '11'},
     	{id:12, name: '12'},
     	{id:13, name: '13'},
     	{id:14, name: '14'},
@@ -28,7 +29,9 @@ Ext.define('helloext.store.lines', { //parameter pertama harus sesuai filepath
     	{id:24, name: '24'},
     	{id:25, name: '25'},
     	{id:26, name: 'TNR.1'},
-    	{id:27, name: 'TNR.2'}
+    	{id:27, name: 'TNR.2'},
+        {id:28, name: 'BAL.1'},
+        {id:29, name: 'BAL.2'}
     ]
 
 });
