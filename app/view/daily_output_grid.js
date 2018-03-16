@@ -57,6 +57,7 @@ Ext.define('helloext.view.daily_output_grid', {
 
         {
             text: 'Time',
+            locked:true,
             // flex : 2,
             /*field: {
                 xtype: 'combobox', 
@@ -71,6 +72,7 @@ Ext.define('helloext.view.daily_output_grid', {
         {
             text: 'Minute',
             dataIndex: 'minute' ,
+            locked:true,
             // flex : 2,
             field: {
                 xtype: 'numberfield',
