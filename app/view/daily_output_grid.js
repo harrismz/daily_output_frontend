@@ -202,10 +202,11 @@ Ext.define('helloext.view.daily_output_grid', {
                             store.suspendAutoSync(); //suspense dulu
                             store.each(function(model){
                                 // console.log(model)
-                                model.set('target_sop', value )
-
+                                if (model.index < 10) {
+                                    model.set('target_sop', value )
+                                }
                             })
-
+                            store.resumeAutoSync();
                             store.sync();
                             field.setValue(''); 
                         }
