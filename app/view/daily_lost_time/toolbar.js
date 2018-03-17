@@ -42,7 +42,7 @@ Ext.define("helloext.view.daily_lost_time.toolbar", {
             valueField:'name',
             queryMode: 'local',
             forceSelection: true,
-            value:'1'
+            value: helloext.util.Config.getLineNameString()
         },
         {
             xtype:'button',

@@ -137,6 +137,7 @@ Ext.define('helloext.Application', {
             params: {token: token},
             success: function (form, action){
                 //kalau aktif, masuk/
+                //fungsi ini harus selesai duluan sebelum jalan fungsi dibawahnya
                 self.getCurrentUser(token); //untuk get current user
 
                 Ext.create('Ext.tab.Panel', {

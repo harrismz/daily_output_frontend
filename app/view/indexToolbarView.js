@@ -45,7 +45,7 @@ Ext.define("helloext.view.indexToolbarView", {
             valueField:'name',
             queryMode: 'local',
             forceSelection: true,
-            value:'1'
+            value: helloext.util.Config.getLineNameString()
         },
         /*{
             text: 'Download',

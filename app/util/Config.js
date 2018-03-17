@@ -31,7 +31,7 @@ Ext.define('helloext.util.Config', {
             console.log(default_line)
            return  default_line.line_id;
         }else{
-            return null;
+            return 1;
         }    
     },
     getLineNameString: function(){
