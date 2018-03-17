@@ -15,7 +15,7 @@ Ext.define('helloext.store.Daily_outputs', { //parameter pertama harus sesuai fi
         extraParams: {
             tanggal: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getDate(),
             shift: 'A',
-            line_name: 1,
+            line_name: helloext.util.Config.getLineName() ,
             users_id: helloext.util.Config.getUser(),
             token : helloext.util.Config.getToken()
         },  

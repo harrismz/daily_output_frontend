@@ -25,6 +25,23 @@ Ext.define('helloext.util.Config', {
             return null
         }
     },
+    getLineName: function (){
+        if (localStorage.getItem('user') != null){
+           var default_line =  JSON.parse( localStorage.getItem('user') ).default_line;
+            console.log(default_line)
+           return  default_line.line_id;
+        }else{
+            return null;
+        }    
+    },
+    getLineNameString: function(){
+        if (localStorage.getItem('user') != null){
+           var default_line =  JSON.parse( localStorage.getItem('user') ).default_line.line_id.toString();
+           return  default_line;
+        }else{
+            return '1'; //default value
+        }    
+    },
     getToken : function(){
         // return localStorage.getItem('token');
         if (localStorage.getItem('token') != null){

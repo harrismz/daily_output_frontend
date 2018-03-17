@@ -53,7 +53,7 @@ Ext.define("helloext.view.MyToolBar", {
             valueField:'name',
             queryMode: 'local',
             forceSelection: true,
-            value:'1'
+            value: helloext.util.Config.getLineNameString()
         },
         {
             text: 'Download',
