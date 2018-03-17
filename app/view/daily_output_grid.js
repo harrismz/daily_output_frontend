@@ -53,12 +53,25 @@ Ext.define('helloext.view.daily_output_grid', {
     columns : [
         // { text: 'ID',  dataIndex: 'id', width:55, locked   : true, summaryRenderer:function () {return '<b>Total<b/>'} },
 
-        {text: 'Line <br> Name', locked:true, dataIndex: 'line_name'/*, editor: 'textfield' , field: {xtype: 'textfield'}*/ },
+        {
+            text: 'Line <br> Name',
+            locked:true,
+            dataIndex: 'line_name',
+            width: 50,
+            style: {
+                "font-size": '7pt !important'
+            }
+            /*, editor: 'textfield' , field: {xtype: 'textfield'}*/
+        },
 
         {
             text: 'Time',
             locked:true,
-            // flex : 2,
+            width: 60,
+            style: {
+                "font-size": '7pt !important'
+            },
+            // flex : 1,
             /*field: {
                 xtype: 'combobox', 
                 store: 'timeCombos',
@@ -73,6 +86,10 @@ Ext.define('helloext.view.daily_output_grid', {
             text: 'Minute',
             dataIndex: 'minute' ,
             locked:true,
+            width: 55,
+            style: {
+                "font-size": '7pt !important'
+            },
             // flex : 2,
             field: {
                 xtype: 'numberfield',
@@ -121,7 +138,10 @@ Ext.define('helloext.view.daily_output_grid', {
             dataIndex: 'target_sop',
             summaryType: 'sum',
             dock:'bottom',
-            // flex : 2,
+            flex : 2.5,
+            style: {
+                "font-size": '7pt !important'
+            },
             field: {
                 xtype: 'numberfield',
                 id:'edtTargetSop',
@@ -167,8 +187,13 @@ Ext.define('helloext.view.daily_output_grid', {
             }
         },
 
-        {text: 'OCS <br> Output', dataIndex: 'osc_output',summaryType: 'sum', dock:'bottom', 
-            //flex : 2,
+        {
+            text: 'OCS <br> Output',
+            dataIndex: 'osc_output',
+            summaryType: 'sum',
+            dock:'bottom',
+            style: {"font-size": '7pt !important'}, 
+            flex : 2.5,
             field: { xtype: 'numberfield',
                 id: 'edtOscOutput',
 
@@ -205,11 +230,12 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {
-            text: 'Plus Minus',
+            text: '+ / -',
             dataIndex: 'plus_minus',
             summaryType: 'sum',
             dock:'bottom',
-            // flex : 2,
+            // style: {"font-size": '7pt !important'},
+            flex : 3,
             field: {
                 xtype: 'numberfield',
                 decimalPrecision: 2,
@@ -227,32 +253,89 @@ Ext.define('helloext.view.daily_output_grid', {
             text: 'Lost Hours', 
             dataIndex: 'lost_hour', 
             summaryType: 'sum',
-            decimalPrecision: 2,
-            // flex : 2,
+            style: {"font-size": '7pt !important'},
+            decimalPrecision: 4,
+            flex : 3,
             dock:'bottom',
             field: {xtype: 'numberfield', decimalPrecision: 2}
         },
 
         {
             text: 'DELAY TYPE',
-             
+            // flex : 8, 
             columns:[
-                {text: 'BOARD <br> DELAY', /*flex : 2,*/ dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'PART <br> DELAY', /*flex : 2,*/ dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'EQP <br> TROUBLE', /*flex : 2,*/ dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'QUALITY <br> PROB', /*flex : 2,*/ dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
-                {text: 'BAL. <br> PROB', /*flex : 2,*/ dataIndex: 'bal_problem', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'OTHERS', /*flex : 2,*/ dataIndex: 'others' , field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'SUPPORT', /*flex : 2,*/ dataIndex: 'support', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
-                {text: 'CHANGE <br> MODEL', /*flex : 2,*/ dataIndex: 'change_model', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
+                {text: 'BOARD <br> DELAY',style: {
+                    /*'-webkit-transform': 'rotate(270deg)',
+                    '-moz-transform': 'rotate(270deg)',
+                    '-o-transform': 'rotate(270deg)',
+                    '-ms-transform': 'rotate(270deg)',
+                    transform: 'rotate(270deg)',
+                    display: 'inline-block',*/
+                    "font-size": '6pt !important'
+                    /* need to hard code a height for this to work */
+                    /* you could use Ext.util.TextMetrics if you needed to dynamically determine the text size */
+                    // height: '40px',
+                },  flex : 0.5, sort:false, dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'PART<br>DELAY',style: {"font-size": '7pt !important'},flex : 0.5, dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'EQP<br>PROB',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'QLTY<br>PROB',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
+                {text: 'BAL.<br>PROB',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'bal_problem', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'OTHERS', flex : 0.5,style: {"font-size": '6pt !important'}, dataIndex: 'others' , field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'SUPPORT', flex : 0.5,style: {"font-size": '6pt !important'}, dataIndex: 'support', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {text: 'CHG<br>MODEL',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'change_model', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' }
             ]
         },
         
-        {text: 'Problem', /*flex : 2,*/  dataIndex: 'problem',field: {xtype: 'textarea',emptyText:'Problem Causing the Delay',  /*height: 25*//*, resizable:true*/}},
+        {
+            text: 'Problem',
+            flex : 6,
+            dataIndex: 'problem',
+            field: {
+                xtype: 'textarea',
+                emptyText:'Problem Causing the Delay',
+                grow: true,
+                completeOnEnter: false,
+                enableKeyEvents: true, //Listen to keyevents
+                listeners: {
+                    keydown: function(field, e) {
+                        if (e.getKey() == e.ENTER) {
+                            var component = field.getValue();
+                            component += '\n';
+                            field.setValue(component);
+                            e.stopEvent(); // Stop event propagation
+                        }
+                    }
+                }
+                /*, resizable:true*/  /*height: 25*/
+            }
+        },
 
-        {text: 'DIC', /*flex : 2,*/ dataIndex: 'dic',field: {xtype: 'textfield', emptyText:'Department In Charge' }},
+        {text: 'DIC', flex : 3,style:{"font-size": '7pt !important'}, dataIndex: 'dic',field: {xtype: 'textarea', emptyText:'Department In Charge' }},
 
-        {text: 'Action', /*flex : 2,*/ editor: 'textareafield', dataIndex: 'action',field: {xtype: 'textarea', emptyText:'Action yang diambil' /*, height: 25*/}}
+        {
+            text: 'Action',
+            flex : 5,
+            editor: 'textareafield',
+            dataIndex: 'action',
+            field: {
+                xtype: 'textarea',
+                emptyText:'Action yang diambil',
+                grow: true,
+                completeOnEnter: false,
+                enableKeyEvents: true, //Listen to keyevents
+                listeners: {
+                    keydown: function(field, e) {
+                        if (e.getKey() == e.ENTER) {
+                            var component = field.getValue();
+                            component += '\n';
+                            field.setValue(component);
+                            e.stopEvent(); // Stop event propagation
+                        }
+                    }
+                }
+                /*, height: 25*/
+             }
+        }
 
         // {text: 'users_id', dataIndex: 'users_id',field: {xtype: 'textfield'}},
 
