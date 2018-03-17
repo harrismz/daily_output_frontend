@@ -134,11 +134,13 @@ Ext.define('helloext.view.daily_output_grid', {
         },
 
         {   
-            text: 'Target <br> Sop',
+            text: 'Target<br>Sop',
             dataIndex: 'target_sop',
             summaryType: 'sum',
             dock:'bottom',
             flex : 2.5,
+            sort:false,
+            sortable: false,
             style: {
                 "font-size": '7pt !important'
             },
@@ -184,7 +186,32 @@ Ext.define('helloext.view.daily_output_grid', {
                      value = 0;
                    }                
                 return value;
-            }
+            },
+            items:[{
+                xtype: 'textfield',
+                emptyText:'isi target',
+                margin: '0 1 0 1',
+                flex: 1,
+                enableKeyEvents: true,
+                listeners:{
+                    keydown: function(field, e) {
+                        if (e.getKey() == e.ENTER) {
+                            var store = Ext.data.StoreManager.lookup('Daily_outputs');
+                            value = field.getValue();
+                            console.log(value, store, store.count() )
+                            store.suspendAutoSync(); //suspense dulu
+                            store.each(function(model){
+                                // console.log(model)
+                                model.set('target_sop', value )
+
+                            })
+
+                            store.sync();
+                            field.setValue(''); 
+                        }
+                    }
+                }
+            }]
         },
 
         {
@@ -264,18 +291,32 @@ Ext.define('helloext.view.daily_output_grid', {
             text: 'DELAY TYPE',
             // flex : 8, 
             columns:[
-                {text: 'BOARD <br> DELAY',style: {
-                    /*'-webkit-transform': 'rotate(270deg)',
-                    '-moz-transform': 'rotate(270deg)',
-                    '-o-transform': 'rotate(270deg)',
-                    '-ms-transform': 'rotate(270deg)',
-                    transform: 'rotate(270deg)',
-                    display: 'inline-block',*/
-                    "font-size": '6pt !important'
-                    /* need to hard code a height for this to work */
-                    /* you could use Ext.util.TextMetrics if you needed to dynamically determine the text size */
-                    // height: '40px',
-                },  flex : 0.5, sort:false, dataIndex: 'board_delay', field: {xtype: 'numberfield', dataIndex: 'board_delay', step:0.01, decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
+                {
+                    text: 'BOARD <br> DELAY',
+                    style: {
+                        /*'-webkit-transform': 'rotate(270deg)',
+                        '-moz-transform': 'rotate(270deg)',
+                        '-o-transform': 'rotate(270deg)',
+                        '-ms-transform': 'rotate(270deg)',
+                        transform: 'rotate(270deg)',
+                        display: 'inline-block',*/
+                        "font-size": '6pt !important'
+                        /* need to hard code a height for this to work */
+                        /* you could use Ext.util.TextMetrics if you needed to dynamically determine the text size */
+                        // height: '40px',
+                    },
+                    flex : 0.5, 
+                    sort:false,
+                    dataIndex: 'board_delay',
+                    field: {
+                        xtype: 'numberfield',
+                        dataIndex: 'board_delay',
+                        step:0.01,
+                        decimalPrecision:2
+                    },
+                    summaryType: 'sum',
+                    dock:'bottom'
+                },
                 {text: 'PART<br>DELAY',style: {"font-size": '7pt !important'},flex : 0.5, dataIndex: 'part_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'EQP<br>PROB',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'eqp_trouble', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom' },
                 {text: 'QLTY<br>PROB',style: {"font-size": '7pt !important'}, flex : 0.5, dataIndex: 'quality_problem_delay', field: {xtype: 'numberfield',step:0.01,decimalPrecision:2}, summaryType: 'sum', dock:'bottom'},
