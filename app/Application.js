@@ -117,12 +117,17 @@ Ext.define('helloext.Application', {
                 // console.log({form: form, action: action})
                 // var user = JSON.parse(form.responseText )
                 localStorage.setItem('user', form.responseText )
+
             },
 
             failure: function (form, action){
                 console.log({form: form, action: action})
             }
         }) 
+    },
+
+    runProgram:  function (){
+
     },
 
     launch: function() {
@@ -138,7 +143,7 @@ Ext.define('helloext.Application', {
             success: function (form, action){
                 //kalau aktif, masuk/
                 //fungsi ini harus selesai duluan sebelum jalan fungsi dibawahnya
-                self.getCurrentUser(token); //untuk get current user
+                //self.getCurrentUser(token); //untuk get current user
 
                 Ext.create('Ext.tab.Panel', {
                     title: 'DAILY OUTPUT CONTROL',
@@ -194,9 +199,6 @@ Ext.define('helloext.Application', {
                             // region: 'south',
                             height : 550
                         }
-
-                        
-
                     ],
                     renderTo: "mainPanel"
                 });

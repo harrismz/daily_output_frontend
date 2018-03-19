@@ -65,9 +65,23 @@ Ext.define("helloext.view.loginView", {
                         params: paramater,
                         success: function (form, action){
                             var returnValue = JSON.parse(form.responseText)
-                            // console.log(returnValue)
-                            localStorage.setItem("token", returnValue.token);                                    
-                            window.location.reload();
+                            localStorage.setItem("token", returnValue.token);
+                            
+                            var token = returnValue.token;
+
+                            Ext.Ajax.request({
+                                url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/auth/me',
+                                method: 'GET',
+                                params: {token: token},
+                                success: function (form, action){
+                                    localStorage.setItem('user', form.responseText )
+                                    window.location.reload(); //refresh
+                                },
+                                failure: function (form, action){
+                                    console.log({form: form, action: action})
+                                }
+                            })
+
                         },
                         failure: function (form, action){
                             // console.log({form, action})

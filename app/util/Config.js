@@ -28,7 +28,7 @@ Ext.define('helloext.util.Config', {
     getLineName: function (){
         if (localStorage.getItem('user') != null){
            var default_line =  JSON.parse( localStorage.getItem('user') ).default_line;
-            console.log(default_line)
+            //console.log(default_line)
            return  default_line.line_id;
         }else{
             return 1;
@@ -42,10 +42,26 @@ Ext.define('helloext.util.Config', {
             return '1'; //default value
         }    
     },
+    setUser: function (token){
+        Ext.Ajax.request({
+            url: 'http://'+helloext.util.Config.hostname()+'/daily_output/public/api/auth/me',
+            method: 'GET',
+            params: {token: token},
+            success: function (form, action){
+                localStorage.setItem('user', form.responseText )
+                
+            },
+            failure: function (form, action){
+                console.log({form: form, action: action})
+            }
+        }) 
+    },
     getToken : function(){
         // return localStorage.getItem('token');
         if (localStorage.getItem('token') != null){
-           return localStorage.getItem('token') ;
+           var token = localStorage.getItem('token');
+           // this.setUser(token);    
+           return token ;
         }else{
             return null
         }  
