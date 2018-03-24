@@ -25,7 +25,9 @@ Ext.define('helloext.model.Daily_output', {
      'action',
      'users_id',
      'shift',
-     'tanggal'
+     'tanggal',
+     //
+     'efisiensi'
     ]
 
     /*proxy: {

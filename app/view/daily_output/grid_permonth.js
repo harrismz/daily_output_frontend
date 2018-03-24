@@ -266,6 +266,16 @@ Ext.define('helloext.view.daily_output.grid_permonth', {
         },
 
         {
+            text: 'Efisiensi<br>(%)', 
+            dataIndex: 'efisiensi', 
+            width: 60,
+            summaryType: 'sum',
+            style: {"font-size": '7pt !important'},
+            decimalPrecision: 2,
+            dock:'bottom',
+        },
+
+        {
             text: 'DELAY TYPE',
             // flex : 8, 
             columns:[
