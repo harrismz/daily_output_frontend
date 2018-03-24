@@ -5,6 +5,7 @@ Ext.define('helloext.store.comboShifts', { //parameter pertama harus sesuai file
     data: [
     	{id:1, name: 'A'},
     	{id:2, name: 'B'}
+
     ]
 
 });

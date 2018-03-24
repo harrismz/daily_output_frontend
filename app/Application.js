@@ -37,7 +37,15 @@ Ext.define('helloext.Application', {
         'Chart_month_container',
         'chart.Daily_lost_time_per_line',
         'chart.Daily_lost_time_per_month',
-        'toolbar.Daily_lost_time_chart_toolbar',        
+
+        'chart.daily_output.Main',
+        'chart.daily_output.Barchart',
+        'chart.daily_output.Barchart_permonth',
+        
+        //toolbar chart
+        'toolbar.Daily_lost_time_chart_toolbar',     
+        'toolbar.daily_output.Toolbar',     
+
 
         //toolbar
         'MyToolBar',
@@ -51,12 +59,15 @@ Ext.define('helloext.Application', {
         'daily_output_grid',
         'daily_lost_time.grid',
         'daily_repair.Grid',
+        'daily_output.grid_perday',
+        'daily_output.grid_permonth',
 
         //others
         'loginView',
         'Create',
         'RegisterUser',
         'DownloadView',
+        'daily_output.Main',
 
         //container
         'Fa_quality_container',
@@ -76,7 +87,8 @@ Ext.define('helloext.Application', {
         'Fa_qualityController',
         'DailyRepairToolbarController',
         'Chart_permonth_toolbarController',
-        'Daily_lost_time_chart_toolbar'
+        'Daily_lost_time_chart_toolbar',
+        'Daily_output_chart_toolbarController'
     ],
 
     //Collection
@@ -91,7 +103,10 @@ Ext.define('helloext.Application', {
         'Repairs',
         'Permonths',
         'Lost_time_per_lines',
-        'Lost_time_per_months'
+        'Lost_time_per_months',
+        'Daily_outputs_perday',
+        'Daily_outputs_permonth'
+
     ],
 
     //model
@@ -168,7 +183,18 @@ Ext.define('helloext.Application', {
                             },
                             
                             height: 550
-                        },
+                        },{
+                            title : 'DAILY OUTPUT SUMMARY INFO',
+                            // bodyPadding : 10,
+                            xtype : 'daily_output_main',
+                            height : 550
+                        },/*{
+                            title : 'DAILY OUTPUT SUMMARY CHART',
+                            // bodyPadding : 10,
+                            xtype : 'daily_output_chart_main',
+                            height : 550,
+                            // width : '100%'
+                        },*/                      
                         {
                             title: 'DAILY LOST TIME',
                             bodyPadding : 10,
