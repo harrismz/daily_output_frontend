@@ -15,7 +15,7 @@ Ext.define('helloext.view.daily_output.Main', {
   },
 
   items : [{
-          height : 550,
+          // height : 550,
           title : 'GRID PER DAY',
           xtype : 'daily_output_grid_perday',
           region : 'center'
@@ -23,6 +23,8 @@ Ext.define('helloext.view.daily_output.Main', {
          title : 'GRID PER MONTH',
          xtype : 'daily_output_grid_permonth',
          region : 'east',
+         collapsible: true,
+         split: true, 
          width : '50%' 
   }]   
 
