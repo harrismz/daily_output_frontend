@@ -14,7 +14,7 @@ Ext.define('helloext.util.Config', {
     	if ( window.location.hostname == 'localhost'){
 		    return 'localhost';
 		}else{
-            return  window.location.hostname + '/t_web';
+            return  window.location.hostname; // + '/t_web';
         }
                 
  	},

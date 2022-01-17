@@ -860,6 +860,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_chart_toolbar": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
+  "helloext.controller.Daily_output_chart_toolbarController": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
   "helloext.controller.Fa_qualityController": [],
@@ -877,6 +878,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
+  "helloext.store.Daily_outputs_perday": [],
+  "helloext.store.Daily_outputs_permonth": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_time_per_lines": [],
   "helloext.store.Lost_time_per_months": [],
@@ -905,18 +908,25 @@ Ext.ClassManager.addNameAlternateMappings({
   "helloext.view.chart.Daily_lost_time_per_month": [],
   "helloext.view.chart.Daily_rejection_by_line": [],
   "helloext.view.chart.Daily_rejection_per_month": [],
+  "helloext.view.chart.daily_output.Barchart": [],
+  "helloext.view.chart.daily_output.Barchart_permonth": [],
+  "helloext.view.chart.daily_output.Main": [],
   "helloext.view.chart.delay_type": [],
   "helloext.view.chart.div_responsibilities": [],
   "helloext.view.chart.target_output": [],
   "helloext.view.daily_lost_time.grid": [],
   "helloext.view.daily_lost_time.toolbar": [],
+  "helloext.view.daily_output.Main": [],
+  "helloext.view.daily_output.grid_perday": [],
+  "helloext.view.daily_output.grid_permonth": [],
   "helloext.view.daily_output_grid": [],
   "helloext.view.daily_repair.Grid": [],
   "helloext.view.daily_repair.Toolbar": [],
   "helloext.view.indexToolbarView": [],
   "helloext.view.loginView": [],
   "helloext.view.toolbar.Chart_permonth": [],
-  "helloext.view.toolbar.Daily_lost_time_chart_toolbar": []
+  "helloext.view.toolbar.Daily_lost_time_chart_toolbar": [],
+  "helloext.view.toolbar.daily_output.Toolbar": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1935,6 +1945,7 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.controller.DailyRepairToolbarController": [],
   "helloext.controller.Daily_lost_time_chart_toolbar": [],
   "helloext.controller.Daily_lost_time_toolbar": [],
+  "helloext.controller.Daily_output_chart_toolbarController": [],
   "helloext.controller.Daily_outputs": [],
   "helloext.controller.DownloadViewController": [],
   "helloext.controller.Fa_qualityController": [],
@@ -1952,6 +1963,8 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.model.Repair": [],
   "helloext.model.timeCombo": [],
   "helloext.store.Daily_outputs": [],
+  "helloext.store.Daily_outputs_perday": [],
+  "helloext.store.Daily_outputs_permonth": [],
   "helloext.store.Dics": [],
   "helloext.store.Lost_time_per_lines": [],
   "helloext.store.Lost_time_per_months": [],
@@ -2013,6 +2026,15 @@ Ext.ClassManager.addNameAliasMappings({
   "helloext.view.chart.Daily_rejection_per_month": [
     "widget.chart_daily_rejection_per_month"
   ],
+  "helloext.view.chart.daily_output.Barchart": [
+    "widget.daily_output_barchart"
+  ],
+  "helloext.view.chart.daily_output.Barchart_permonth": [
+    "widget.daily_output_barchart_permonth"
+  ],
+  "helloext.view.chart.daily_output.Main": [
+    "widget.daily_output_chart_main"
+  ],
   "helloext.view.chart.delay_type": [
     "widget.chart_delay_type"
   ],
@@ -2027,6 +2049,15 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.daily_lost_time.toolbar": [
     "widget.daily_lost_time_toolbar"
+  ],
+  "helloext.view.daily_output.Main": [
+    "widget.daily_output_main"
+  ],
+  "helloext.view.daily_output.grid_perday": [
+    "widget.daily_output_grid_perday"
+  ],
+  "helloext.view.daily_output.grid_permonth": [
+    "widget.daily_output_grid_permonth"
   ],
   "helloext.view.daily_output_grid": [
     "widget.daily_output_grid",
@@ -2049,6 +2080,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "helloext.view.toolbar.Daily_lost_time_chart_toolbar": [
     "widget.daily_lost_time_chart_toolbar"
+  ],
+  "helloext.view.toolbar.daily_output.Toolbar": [
+    "widget.toolbar_daily_output_toolbar"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.2");

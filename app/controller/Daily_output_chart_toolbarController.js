@@ -164,7 +164,7 @@ Ext.define('helloext.controller.Daily_output_chart_toolbarController', {
                 shift : param.shift
             },
             callback : function (records, operation, success){
-                console.log({records, operation, success})        
+                // console.log({records, operation, success})        
             }
         });
 
@@ -193,4 +193,4 @@ Ext.define('helloext.controller.Daily_output_chart_toolbarController', {
         win.focus();*/
         Ext.widget('downloadView'); //instantiate DownloadView class
     }
-});
+})
