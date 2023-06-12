@@ -67,6 +67,23 @@ Ext.define('helloext.controller.MyToolBar', {
             {id:20, name: '01-02', durasi: 5, jumat: 30}
         ];
 
+        var n =[
+            {id:1, name: '06-07', durasi: 60, jumat: 60 },
+            {id:2, name: '07-08', durasi: 60, jumat: 50 },
+            {id:3, name: '08-09', durasi: 50, jumat: 50 },
+            {id:4, name: '09-10', durasi: 60, jumat: 60 },
+            {id:5, name: '10-11', durasi: 50, jumat: 50 },
+            {id:6, name: '11-12', durasi: 60, jumat: 60 },
+            {id:7, name: '12-13', durasi: 25, jumat: 10 },
+            {id:8, name: '13-14', durasi: 60, jumat: 50 },
+            {id:9, name: '14-15', durasi: 60, jumat: 60 },
+            {id:10, name: '15-16', durasi: 5, jumat: 30 },
+            {id:11, name: '16-17', durasi: 60, jumat: 60},
+            {id:12, name: '17-18', durasi: 60, jumat: 50},
+            {id:13, name: '18-19', durasi: 50, jumat: 50},
+            {id:14, name: '19-20', durasi: 60, jumat: 60}
+        ];
+
         if(param == 'a'){
             return a;
         }else{

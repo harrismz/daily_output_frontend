@@ -12,7 +12,7 @@ Ext.define('helloext.util.Config', {
 
     hostname: function(){
     	if ( window.location.hostname == 'localhost'){
-		    return 'localhost';
+		    return 'localhost:8072';
 		}else{
             return  window.location.hostname; // + '/t_web';
         }
